@@ -1,0 +1,1 @@
+export { useFocusComment } from "./hook";

@@ -1,0 +1,1576 @@
+{
+  "app": {
+    "App": {
+      "title": "v-milo: Find Group"
+    },
+    "Account": {
+      "title": "Account Management"
+    },
+    "Activity": {
+      "title": "My Activity"
+    },
+    "Admin": {
+      "title": "Admin Page"
+    },
+    "Boards": {
+      "title": "All Boards"
+    },
+    "BoardMain": {
+      "title": "Board",
+      "invalidBoardId": "{boardId} is an invalid board format.",
+      "wrongGroup": "Cannot access in this group.",
+      "fetchFailed": "Unable to load the board."
+    },
+    "CreatePost": {
+      "title": "Create Post"
+    },
+    "ManagingBoard": {
+      "title": "Board Management"
+    },
+    "UpdatePost": {
+      "title": "Edit Post",
+      "invalidPostId": "{postId} is an invalid post format.",
+      "fetchFailed": "Unable to load the post."
+    },
+    "CreateBoard": {
+      "title": "Create Board"
+    },
+    "EmailLogin": {
+      "title": "Email Login"
+    },
+    "Hot": {
+      "title": "Popular Posts"
+    },
+    "JoinGroup": {
+      "title": "Join Group"
+    },
+    "Notification": {
+      "title": "Notifications"
+    },
+    "Point": {
+      "title": "Points"
+    },
+    "PostMain": {
+      "title": "Post",
+      "invalidPostId": "{postId} is an invalid post format.",
+      "wrongGroup": "Cannot access in this group.",
+      "fetchFailed": "Unable to load the post."
+    },
+    "Restriction": {
+      "title": "Restriction Details"
+    },
+    "Search": {
+      "title": "Search: {q}"
+    },
+    "Setting": {
+      "title": "Settings"
+    },
+    "WithdrawComplete": {
+      "title": "Withdrawal Completed"
+    }
+  },
+  "pages": {
+    "AccountPage": {
+      "withdrawGroup": "Leave Group",
+      "withdrawGroupMessage": "Leaving the group will remove your account details and you won't be able to log in again. Do you wish to proceed?",
+      "withdrawGroupConfirm": "Are you sure you want to leave? You can't undo this action once your account is deleted.",
+      "withdrawProcessing": "Processing withdrawal...",
+      "wrongAccess": "Invalid Access.",
+      "manageAccount": "Manage Account",
+      "group": "Group",
+      "groupJoinedAt": "Join Date"
+    },
+    "AdminPage": {
+      "onlyAdmin": "Accessible only by administrators.",
+      "noAccessRight": "You do not have access rights.",
+      "adminPage": "Admin Page",
+      "home": "Home",
+      "category": "Category",
+      "member": "Member",
+      "admin": "Administrator",
+      "restriction": "Restrictions",
+      "contents": "Content",
+      "toMain": "Back to Main",
+
+      "AdminTab": {
+        "pleaseEnterEmail": "Please enter the email of the administrator to be added.",
+        "wrongEmailFormat": "Please enter a valid email format.",
+        "addAdminSuccess": "Administrator added successfully.",
+        "addAdminFailed": "Failed to add administrator.",
+        "adminAlreadyExist": "This administrator is already registered.",
+        "userNotExist": "No user found with this email.",
+        "manageAdmin": "Manage Administrators",
+        "addAdmin": "Add Administrator",
+
+        "GroupAdminItem": {
+          "manageIntro": "Manage Home Settings",
+          "manageAdmin": "Manage Administrators",
+          "manageMember": "Manage Members",
+          "manageCategory": "Manage Categories",
+          "manageCensor": "Content Censorship",
+          "manageMuter": "Manage Usage Restrictions",
+          "deleteConfirmMsg": "Are you sure you want to delete?",
+          "deleteSuccess": "Administrator deleted successfully.",
+          "deleteFailed": "Failed to delete administrator.",
+          "editSuccess": "Administrator permissions updated successfully.",
+          "editFailed": "Failed to update administrator permissions.",
+          "me": "me",
+          "edit": "Edit",
+          "delete": "Delete",
+          "allRights": "All Rights",
+          "rights": "Rights",
+          "editAdminRight": "Edit Administrator Rights",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        }
+      },
+      "CategoryTab": {
+        "boardCategory": "Board Categories",
+        "boardList": "Board List",
+
+        "CategoryBoardSection": {
+          "noCategory": "No Category",
+
+          "BoardPreviewItem": {
+            "categoryConnectSuccess": "Category successfully connected. Please refresh to check.",
+            "categoryConnectFailed": "Failed to connect category.",
+            "moveToBoard": "Go to Board",
+            "assignCategory": "Assign Category",
+
+            "CategorySelectDialog": {
+              "cancel": "Cancel",
+              "apply": "Apply"
+            }
+          }
+        },
+        "CategorySection": {
+          "reorderSuccess": "Category order successfully changed.",
+          "reorderFailed": "Failed to change category order.",
+          "deleteCategory": "Delete Category",
+          "deleteCategoryMsg": "Are you sure you want to delete this category? Linked board information will be removed.",
+          "deleteCategorySuccess": "Category successfully deleted.",
+          "deleteCategoryFailed": "Failed to delete category.",
+          "updateCategorySuccess": "Category successfully updated.",
+          "updateCategoryFailed": "Failed to update category.",
+          "cancel": "Cancel",
+          "apply": "Apply",
+          "reorder": "Reorder",
+          "edit": "Edit",
+          "delete": "Delete",
+
+          "AddCategoryButton": {
+            "addSuccess": "Category successfully added.",
+            "addFailed": "Failed to add category.",
+            "add": "Add"
+          },
+          "CategoryEditorDialog": {
+            "category": "Category",
+            "cancel": "Cancel",
+            "apply": "Apply"
+          }
+        }
+      },
+      "CensorTab": {
+        "manageContents": "Content Management",
+        "hiddenBoards": "Hidden Boards",
+      
+        "TrashedBoardList": {
+          "restoreBoard": "Restore Board",
+          "restoreBoardMsg": "Do you want to restore this board?",
+          "restoreBoardSuccess": "Board restored successfully.",
+          "restoreBoardFailed": "Failed to restore the board.",
+          "restore": "Restore",
+          "noTrashedBoards": "No hidden boards."
+        }
+      },
+      "IntroTab": {
+        "nameUpdateSuccess": "Name updated successfully!",
+        "nameUpdateFailed": "Failed to update the name.",
+        "logoUpdateSuccess": "Logo updated successfully!",
+        "logoUpdateFailed": "Failed to update the logo.",
+        "shortNameUpdateSuccess": "Short name updated successfully!",
+        "shortNameUpdateFailed": "Failed to update the short name.",
+        "descriptionUpdateSuccess": "Description updated successfully!",
+        "descriptionUpdateFailed": "Failed to update the description.",
+        "domainUpdateSuccess": "Domain updated successfully!",
+        "domainUpdateFailed": "Failed to update the domain.",
+        "domainAlreadyExist": "This domain already exists.",
+        "themeColorUpdateSuccess": "Theme color updated successfully!",
+        "themeColorUpdateFailed": "Failed to update the theme color.",
+        "protectionUpdateSuccess": "Group visibility range updated successfully!",
+        "protectionUpdateFailed": "Failed to update the group visibility range.",
+        "allowedUserCreateBoard": "User board creation allowed!",
+        "disallowedUserCreateBoard": "User board creation not allowed.",
+        "userCreateBoardUpdateFailed": "Failed to update board creation permission.",
+        "groupSetting": "Group Settings",
+        "groupLogo": "Group Logo",
+        "groupName": "Group Name",
+        "groupShortName": "Group Short Name",
+        "groupShortNameHelper": "The short group name is displayed instead of the logo. If left blank, it will be replaced with the group name.",
+        "groupDescription": "Group Description",
+        "noDescription": "No Description",
+        "domain": "Domain",
+        "themeColor": "Theme Color",
+        "groupProtection": "Group Visibility",
+        "allowUserCreateBoard": "Allow User to Create Board",
+        "allowUserCreateBoardHelper": "Users can freely create boards. If turned off, only administrators can create boards.",
+      
+        "EditableThemeColor": {
+          "editThemeColor": "Edit Theme Color",
+          "prevColor": "Previous Color",
+          "newColor": "New Color",
+          "themeColor": "Theme Color",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        },
+        "GroupKeyCheckDialog": {
+          "validateMinLen": "Please enter more than {n} characters.",
+          "validateMaxLen": "Please enter less than {n} characters.",
+          "validateAllowedChars": "Only letters, numbers, and special characters are allowed.",
+          "validateNotUsable": "This group name is not usable.",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        }
+      },
+      "MemberTab": {
+        "manageMember": "Member Management",
+        "groupMember": "Group Member",
+        "inviteGroup": "Invite to Group",
+      
+        "CurrentMemberSection": {
+          "groupMember": "Group Member",
+          "publicDesc": "*Public: All users can join the group",
+          "protectedDesc": "*Protected: Only invited users can join the group",
+          "privateDesc": "*Private: Only invited users can join the group"
+        },
+        "InvitationSection": {
+          "invitedUser": "Invited User",
+          "noInvitedUser": "No members have been invited.",
+      
+          "InvitationItem": {
+            "cancelInvitation": "Cancel Invitation",
+            "cancelInvitationPublicMsg": "Do you want to cancel the invitation?",
+            "cancelInvitationPrivateMsg": "Do you want to cancel the invitation? Users not invited cannot join the group.",
+            "cancelInvitationSuccess": "Invitation successfully cancelled.",
+            "cancelInvitationFailed": "Failed to cancel the invitation."
+          },
+          "InviteButton": {
+            "alreadyRegistered": "Already a registered member of the group.",
+            "alreadyDeclined": "Member has already declined the invitation.",
+            "inviteSuccess": "Invitation email sent. You can check the invitation list.",
+            "inviteFailed": "Failed to send invitation email.",
+            "invite": "Invite",
+            "email": "Email",
+            "groupInvitation": "Group Member Invitation",
+            "cancel": "Cancel",
+            "apply": "Apply"
+          }
+        }
+      },
+      "MuterTab": {
+        "restriction": "Usage Restriction",
+        "noRestrictedUser": "No restricted users.",
+      
+        "GroupMuterItem": {
+          "deleteRestriction": "Remove Usage Restriction",
+          "deleteRestrictionMsg": "Do you want to remove the usage restriction?",
+          "deleteRestrictionSuccess": "Usage restriction removed successfully.",
+          "deleteRestrictionFailed": "Failed to remove usage restriction.",
+          "anonymousMember": "Anonymous Group Member",
+          "reason": "Reason",
+          "duration": "Duration of Restriction",
+          "delete": "Delete",
+          "all": "All",
+          "unprocessed": "Unprocessed",
+          "ignored": "Ignored",
+          "resolved": "Resolved"
+        }
+      }
+    },
+    "ActivityPage": {
+      "cannotAccessTab": "Cannot access tab \"{tab}\".",
+      "boardSubscribed": "Subscribed Boards",
+      "myPosts": "My Posts",
+      "myComments": "My Comments",
+      "myBookmark": "Bookmarks",
+      "wrongAccess": "Incorrect access.",
+      "noAccount": "Unable to load account information."
+    },
+    "BoardListPage": {
+      "createBoard": "Create Board",
+    
+      "BoardList": {
+        "noBoards": "No boards found.",
+        "BoardPreview": {
+          "blocked": "Blocked",
+          "subscribed": "Subscribed",
+          "hiddenByAdmin": "Hidden by Admin",
+          "plusPosts": "+ {numMore} more"
+        }
+      },
+      "CategoryFilterSelector": {
+        "all": "All",
+
+        "AllCategoryButton": {
+          "showMore": "More",
+          "selectCategory": "Select Board Category",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        }
+      }
+    },
+    "BoardMainPage": {
+      "searchResult": "Search Results",
+      "toBoardHome": "To Board Home",
+      "post": "Post",
+      "boardInfo": "Board Info",
+      "boardInfoMb": "Info",
+      "liveChat": "Live Chat",
+      "boardRule": "Board Rules",
+      "hiddenByAdmin":"Hidden by Admin",
+    
+      "AboutBoard": {
+        "manageBoard": "Manage Board",
+        "allowPostManagerOnly": "Only Managers Can Post",
+        "subscribe": "Subscribe",
+        "post": "Posts",
+        "createdAt": "Created Date"
+      },
+      "AuthorPreview": {
+        "updateSuccess": "Updated successfully!",
+        "updateFailed": "Update failed.",
+        "anonymous": "Anonymous",
+        "edit": "Edit",
+        "write": "Write",
+        "createPost": "Create Post"
+      },
+      "BoardFollowButton": {
+        "subscribeSuccess": "Subscribed successfully.",
+        "subscribeFailed": "Subscription failed.",
+        "unsubscribeSuccess": "Unsubscribed successfully.",
+        "unsubscribeFailed": "Unsubscription failed.",
+        "blocked": "Blocked",
+        "unsubscribe": "Unsubscribe",
+        "subscribed": "Subscribed",
+        "subscribe": "Subscribe"
+      },
+      "FlagSelector": {
+        "all": "All"
+      },
+      "LiveChatPreview": {
+        "join": "Join"
+      },
+      "MuterNotifyBox": {
+        "boardRestriction": "Board Usage Restriction",
+        "period": "Restriction Period",
+        "reason": "Reason for Restriction"
+      },
+      "PinnedPost": {
+        "pinnedPost": "Pinned Post",
+        "expand": "Expand Pinned",
+        "fold": "Fold Pinned"
+      }
+    },
+    "ChatPage": {
+      "ChatListSection": {
+        "noChat": "No chats yet.",
+        "clickToStartChat": "Click on a nickname in a post or comment to start chatting."
+      },
+      "ChatRoomSection": {
+        "ChatInput": {
+          "theOtherPartyLeftChatRoom": "The other party has left the chat room.",
+          "typeMessage": "type a message..."
+        },
+        "MessageList": {
+          "failed": "Failed to send",
+          "sending": "Sending..."
+        }
+      }
+    },
+    "ConfigureAccountPage": {
+      "loadingFailed": "Failed to load user information.",
+      "loadingComplete": "Loading complete for {email}!",
+      "loadingAccount": "Loading account..."
+    },
+    "CreateBoardPage": {
+      "restricted": "You are restricted from creating a board.",
+      "checkRestriction": "View restriction details",
+      "adminOnly": "Only administrators can create boards.",
+    
+      "CreateBoardForm": {
+        "createBoardSuccess": "\"{boardName}\" board created successfully.",
+        "nameAlreadyExist": "Board name already exists",
+        "nameAlreadyExistMsg": "The board name (${boardName}) already exists. Please register a different name.",
+        "createBoard": "Create Board",
+        "board": "Board",
+        "boardName": "Board Name",
+        "boardNameHelper": "Tip) A name that represents the character of the board is good.",
+        "boardDescription": "Board Description",
+        "boardDescriptionHelper": "Tip) Please describe what the board is for."
+      }
+    },
+    "EmailLoginPage": {
+      "loggedIn": "Logged in.",
+      "toHome": "To Home",
+    
+      "EmailRequestStep": {
+        "verificationRequestFailed": "Failed to request email verification.",
+        "pleaseTypeEmail": "Please enter the email to login.",
+        "noNeedPassword": "No password needed :)",
+        "verify": "Verify Email"
+      },
+      "VerificationStep": {
+        "loginSuccess": "Logged in with {email} :)",
+        "verifyFailed": "Verification failed.",
+        "verificationNotExist": "Email verification request not found.",
+        "trialOver": "Exceeded attempt limit. Please try again later.",
+        "invalidCode": "Invalid verification code.",
+        "codeSent": "Verification code sent to {email}.",
+        "verificationCode": "Verification Code",
+        "verify": "Verify",
+        "timeOver": "Verification time has elapsed. Please try again.",
+        "toHome": "To Home"
+      }
+    },
+    "CreatePostPage": {
+      "loginOnly": "Available only after login.",
+      "groupRestricted": "Group restricted, unable to create a post.",
+      "managerOnly": "Only board managers can post in this board.",
+      "shouldFlag": "Flag setting is mandatory in \"{boardName}\". Please select a flag.",
+      "shouldTitle": "Please enter a title for the post.",
+      "createPostSuccess": "Post published successfully.",
+      "cancelPost": "Cancel Post",
+      "cancelPostMsg": "Do you want to cancel the post in progress and return to the board?",
+      "draftShouldTitle": "Please enter a title for the post. (Can be changed later.)",
+      "draftSuccess": "Post saved as draft successfully.",
+      "draftFailed": "Failed to save post as draft."
+    },
+    "FeedPage": {
+      "recentPosts": "Recent Posts",
+      "hotPosts":"Popular Posts",
+    
+      "CreatePostSelector": {
+        "whatsYourThought": "What are you thinking of posting today?",
+        "whichBoard": "Which board to post?",
+        "searchWithKeywords": "Search with keywords..."
+      },
+      "BoardSidebar": {
+        "recentVisit": "Recently Visited",
+        "subscribed": "Subscribed",
+        "activeBoards": "Active Boards",
+        "noSubscribedBoards": "No subscribed boards.",
+        "noRecentBoards": "No recently visited boards."
+      },
+      "HotPostList": {
+        "showAll": "Show All",
+        "noHotPosts": "No posts today"
+      },
+      "RecentPostList": {
+        "noRecentPosts": "No recent posts."
+      }
+    },
+    "HotPage": {
+      "recentVisit": "Recent Visits",
+      "hotPosts": "Popular Posts"
+    },
+    "ManagingPage": {
+      "invalidBoardId": "Invalid board ID format.",
+      "censorContent": "Censor",
+      "content": "Approve/Delete",
+      "report": "Report",
+      "user": "User",
+      "restriction": "Usage Restriction",
+      "manager": "Manager",
+      "manageBoard": "Board Management",
+      "intro": "Introduction",
+      "info": "Board Info",
+      "userExposure": "User Info",
+      "contentSetting": "Content Settings",
+      "etc": "Etc",
+      "exit": "Back to Board",
+    
+      "NoRightIndicator": {
+        "noRight": "You do not have management rights."
+      },
+      "CensorTab": {
+        "all": "All",
+        "exceptProcessed": "Unprocessed",
+        "trashed": "Deleted",
+        "approved": "Approved",
+        "postCensor": "Post Approval and Deletion",
+        "processStatus": "Process Status"
+      },
+      "ContentsTab": {
+        "updateSuccess": "Updated successfully!",
+        "updateFailed": "Update failed.",
+        "contentSetting": "Content (Post/Comment) Settings",
+        "allowPost": "Allowed Activity Range",
+        "postManagerOnly": "Only Allow Managers to Post",
+        "postManagerOnlyHelper": "You can set it so that only managers can post.",
+        "flagSetting": "Post Flag Settings",
+        "flagSettingHelper": "Use flags to categorize posts.",
+        "useFlag": "Use Post Flags",
+        "postOption": "Post Options",
+        "postOptionHelper": "Allow options based on the nature of the posts. 'NSFW' or 'Spoiler Alert' options will prevent content from being previewed and ask for user consent before showing the content.",
+        "useNsfw": "Use NSFW",
+        "useSpoiler": "Use Spoiler Alert",
+    
+        "FlagSection": {
+          "deleteFlag": "Delete Flag",
+          "deleteFlagMsg": "Do you want to delete the flag being edited and cancel?",
+          "flagAddSuccess": "Flag added successfully.",
+          "flagAddFailed": "Unable to add flag.",
+          "forceFlag": "Force Post Flag",
+          "forceFlagHelper": "Users must choose a flag to be able to submit a post.",
+          "allowMultiple": "Allow Multiple Selection",
+          "addFlag": "Add Flag",
+    
+          "FlagItem": {
+            "cancelFlag": "Cancel Flag Creation",
+            "cancelFlagMsg": "Do you want to cancel and delete the flag being edited?",
+            "editFlagSuccess": "Flag edited successfully!",
+            "editFlagFailed": "Failed to update flag.",
+            "deleteFlag": "Delete Flag",
+            "deleteFlagMsg": "Deleting a flag will remove it from all tagged posts. Do you want to delete?",
+            "managerOnly": "Managers Only",
+            "edit": "Edit",
+            "delete": "Delete"
+          }
+        }
+      },
+      "EtcTab": {
+        "updateSuccess": "Updated successfully!",
+        "updateFailed": "Update failed.",
+        "etcSetting": "Other Settings",
+        "liveChat": "Live Chat",
+        "liveChatHelper": "Live Chat is a chat space where subscribers of the board can freely talk.",
+        "categorySetting": "Category Settings",
+        "categorySettingHelper": "Set the categories for the board.",
+        "category": "Category",
+    
+        "CategorySelectSection": {
+          "categoryUpdateSuccess": "Category updated successfully.",
+          "categoryUpdateFailed": "Unable to update category.",
+          "categorySetting": "Category Settings",
+          "selectCategory": "Select Board Category",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        }
+      },
+      "ExposureTab": {
+        "updateSuccess": "Updated successfully!",
+        "updateFailed": "Update failed.",
+        "userExposureSetting": "User Public Information Settings",
+        "flairSetting": "User Flair Settings",
+        "flairSettingHelper": "Use it when users want to reveal additional information about themselves.",
+        "useFlair": "Use User Flair",
+        "defaultNickname": "Default Nickname",
+        "defaultNicknameHelper": "\"Default Nickname\" is displayed when a user hasn't set their nickname or flair. You can use the default 'Anonymous' or set it freely according to the board's nature, e.g., 'cutie', 'Unnamed', etc.",
+        "anonymous": "Anonymous",
+        "defaultAvatar": "Default Avatar (Profile Picture)",
+        "defaultAvatarHelper": "\"Default Avatar\" is displayed when a user hasn't set their avatar. You can use the default avatar or set it freely according to the board's nature.",
+        "preview": "Preview Selector",
+    
+        "AvatarSection": {
+          "defaultAvatar": "Default Avatar"
+        },
+        "FlairSection": {
+          "AddFlairBox": {
+            "flairGroupCreateSuccess": "Flair group created successfully.",
+            "flairGroupCreateFailed": "Unable to create flair group.",
+            "addFlairGroup": "Add Flair Group",
+            "flairGroup": "Flair Group",
+            "groupName": "Group Name",
+            "groupNameHelper": "e.g., MBTI",
+            "flairGuide": "Flair Guideline",
+            "flairGuideHelper": "e.g., Please choose your MBTI :)",
+            "cancel": "Cancel",
+            "apply": "Apply"
+          },
+          "FlairBoxItem": {
+            "updateSuccess": "Updated successfully!",
+            "updateFailed": "Update failed.",
+            "deleteFlairGroup": "Delete Flair Group",
+            "deleteAllFlairMsg": "Please delete all flairs in the group to remove it.",
+            "deleteFlairGroupMsg": "Do you want to delete the group?",
+            "deleteFlairGroupSuccess": "Flair group deleted successfully.",
+            "deleteFlairGroupFailed": "Unable to delete flair group.",
+            "cancelFlair": "Cancel Flair Creation",
+            "cancelFlairMsg": "Do you want to cancel and delete the flair being edited?",
+            "addFlairSuccess": "Flair added successfully.",
+            "addFlairFailed": "Unable to add flair.",
+            "editFlairSuccess": "Flair edited successfully!",
+            "editFlairFailed": "Failed to update flair.",
+            "reorderSuccess": "Order changed successfully.",
+            "reorderFailed": "Failed to change order.",
+            "groupName": "Group Name",
+            "groupNameHelper": "e.g., MBTI",
+            "flairGuide": "Flair Guideline",
+            "flairGuideHelper": "e.g., Please choose your MBTI :)",
+            "allowCustomize": "Allow Customization",
+            "allowCustomizeHelper": "Users can create and use their own flairs.",
+            "allowMultiple": "Allow Multiple Selection",
+            "cancel": "Cancel",
+            "reorder": "Reorder",
+            "applyOrder": "Apply Order",
+            "addFlair": "Add Flair",
+            "apply": "Apply",
+    
+            "FlairItem": {
+              "cancelFlair": "Cancel Flair Creation",
+              "cancelFlairMsg": "Do you want to cancel and delete the flair being edited?",
+              "updateSuccess": "Updated successfully!",
+              "updateFailed": "Update failed.",
+              "deleteFlair": "Delete Flair",
+              "deleteFlairMsg": "Deleting a flair will remove it from all tagged users. Do you want to delete?",
+              "deleteFlairSuccess": "Flair deleted successfully.",
+              "deleteFlairFailed": "Unable to delete flair.",
+              "managerOnly":"Managers Only",
+              "edit": "Edit",
+              "delete": "Delete"
+            }
+          }
+        }
+      },
+      "InfoTab": {
+        "boardInfo": "Board Info",
+    
+        "RulesSection": {
+          "ruleAdded": "New rule added.",
+          "ruleEdited": "Rule edited.",
+          "reorderSuccess": "Order changed successfully.",
+          "reorderFailed": "Failed to change order.",
+          "boardRule": "Board Rules",
+          "cancel": "Cancel",
+          "apply": "Apply",
+          "reorder": "Reorder",
+          "noRule": "No board rules.",
+    
+          "RuleAddButton": {
+            "cancelRule": "Cancel Rule Creation",
+            "cancelRuleMsg": "Do you want to cancel and delete the rule being created?",
+            "addRule": "Add Rule"
+          },
+          "RuleEditorDialog": {
+            "titleIfEmpty": "If left blank, it will be replaced with the rule name.",
+            "ruleTitle": "Rule Name",
+            "ruleNameHelper": "e.g., Use Polite Language",
+            "description": "Detailed Description",
+            "descriptionHelper": "e.g., Please use polite language in posts and comments.",
+            "applyRange": "Apply Range",
+            "postAndComment": "Posts + Comments",
+            "postOnly": "Posts Only",
+            "commentOnly": "Comments Only",
+            "reportReason": "Report Reason",
+            "reportReasonHelper": "e.g., Offensive Language",
+            "cancel": "Cancel",
+            "edit": "Edit",
+            "apply": "Apply"
+          },
+          "RuleItem": {
+            "cancelRule": "Cancel Rule Creation",
+            "cancelRuleMsg": "Do you want to discard the rule in progress and cancel?",
+            "description": "Description",
+            "applyRange": "Application Range",
+            "postAndComment": "Post + Comment",
+            "postOnly": "Post Only",
+            "commentOnly": "Comment Only",
+            "reportReason": "Reason for Report",
+            "createdAt": "Creation Date",
+            "edit": "Edit",
+            "delete": "Delete"
+          }
+        }
+      },
+      "IntroTab": {
+        "updateSuccess": "Updated successfully!",
+        "updateFailed": "Update failed.",
+        "bgUpdateSuccess": "Background image updated successfully.",
+        "bgUpdateFailed": "Failed to update background image.",
+        "avatarUpdateSuccess": "Avatar updated successfully.",
+        "avatarUpdateFailed": "Failed to update avatar.",
+        "nameUpdateSuccess": "Board name updated successfully.",
+        "nameUpdateFailed": "Failed to update board name.",
+        "descriptionUpdateSuccess": "Board description updated successfully.",
+        "descriptionUpdateFailed": "Failed to Update Board Description.",
+        "themeColorUpdateSuccess": "Theme Color Updated Successfully.",
+        "themeColorUpdateFailed": "Failed to Update Theme Color.",
+        "introPage": "Intro Page",
+        "noEditRight": "No Edit Rights",
+        "boardDescription": "Board Description",
+        "themeColor": "Theme Color",
+    
+        "EditableBoardAvatar": {
+          "imageUploadFailed": "Image Upload Failed.",
+          "changeProfile": "Change Profile Picture",
+          "defaultAvatar": "Default Avatar"
+        },
+        "EditableBoardBg": {
+          "imageUploadFailed": "Image Upload Failed.",
+          "deleteBgMsg": "Do you want to delete the background image?",
+          "deleteBg": "Delete Background Image",
+          "editBg": "Edit Background Image"
+        },
+        "EditableBoardName": {
+          "checkingDuplicate": "Checking for Duplicates..",
+          "alreadyExist": "This Board Name Already Exists.",
+          "nameIsValid": "This board name is available.",
+          "boardName": "Board Name",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        },
+        "EditableTheme": {
+          "useThemeColor": "Use Theme Color",
+          "editThemeColor": "Edit Theme Color",
+          "prevColor": "Previous Color",
+          "newColor": "New Color",
+          "themeColor": "Theme Color",
+          "cancel": "Cancel",
+          "apply": "Apply"
+        }
+      },
+      "ManagerTab": {
+        "manageManager": "Manage Managers",
+    
+        "AddManagerButton": {
+          "addManagerSuccess": "Manager added successfully.",
+          "addManagerFailed": "Failed to add manager.",
+          "addManager": "Add Manager",
+          "addManagerHelper": "Only users with a \"unique nickname\" registered on the board can be added as managers.",
+          "cancel": "Cancel",
+          "register": "Register"
+        },
+        "ManagerItem": {
+          "contentCensor": "Content Censorship",
+          "contentCensorDetail": "Set board rules, review and process reports, approve or delete posts/comments",
+          "manageManager": "Manager Management",
+          "manageManagerDetail": "Add/Delete managers and modify permissions",
+          "manageMuter": "Usage Restriction Management",
+          "manageMuterDetail": "Add/Modify/Delete user restrictions",
+          "manageWrite": "Post Writing Permission Management",
+          "manageWriteDetail": "Allow post creation (applies when set to managers only)",
+          "manageIntro": "Intro Page Management",
+          "manageIntroDetail": "Set thumbnails and write board introductions, pin/unpin posts",
+          "manageInfo": "Board Information Management",
+          "manageInfoDetail": "Add/Modify/Delete board usage rules",
+          "manageExposure": "User Public Information Management",
+          "manageExposureDetail": "Set user flags, default avatars and nicknames",
+          "manageContent": "Content Settings Management",
+          "manageContentDetail": "Set post flags, post options",
+          "manageEtc": "Other Settings Management",
+          "manageEtcDetail": "Live chat settings, category settings",
+          "deleteManager": "Delete Manager",
+          "deleteManagerMsg": "Do you want to delete this manager?",
+          "deleteManagerSuccess": "Manager deleted successfully.",
+          "deleteManagerFailed": "Failed to delete manager.",
+          "removeUserManageRight": "Revoke User Management Rights",
+          "removeUserManageRightMsg": "Revoking my user management rights will prevent me from modifying other users' permissions in the future. Do you want to proceed?",
+          "removeUserManageRightSuccess": "User management rights revoked.",
+          "allRights": "All Rights",
+          "cancel": "Cancel",
+          "apply": "Apply",
+          "edit": "Edit",
+          "delete": "Delete"
+        }
+      },
+      "MuterTab": {
+        "noRestrictedUser": "No users are currently restricted.",
+        "boardRestriction": "Board Usage Restriction",
+        "boardRestrictionHelper": "Restricted users cannot create posts or comments during the restriction period.",
+    
+        "MuterItem": {
+          "deleteRestriction": "Lift Restriction",
+          "deleteRestrictionMsg": "Do you want to lift the usage restriction?",
+          "deleteRestrictionSuccess": "Usage restriction lifted.",
+          "deleteRestrictionFailed": "Failed to lift usage restriction.",
+          "edit": "Edit",
+          "delete": "Delete",
+          "reason": "Reason"
+        }
+      },
+      "ReportTab": {
+        "reports": "Reports",
+        "postReport": "Post Reports",
+        "commentReport": "Comment Reports",
+        "status": "Processing Status",
+        "all": "All",
+        "unprocessed": "Unprocessed",
+        "ignored": "Ignored",
+        "resolved": "Resolved"
+      }
+    },
+    "NotificationPage": {
+      "notification": "Notification",
+      "noNotification": "No notifications."
+    },
+    "PointPage": {},
+    "PostPage": {
+      "PostItem": {
+        "deletePost": "Delete Post",
+        "deletePostMsg": "Once you delete the post, you will no longer be able to view it. Do you want to delete the post?",
+        "deletePostSuccess": "Post has been deleted.",
+        "deletePostFailed": "Failed to delete the post.",
+        "viewN": "Views {numCheck}",
+        "commentN": "Comments {numComment}",
+        "share": "Share",
+        "bookmark": "Bookmark",
+        "report": "Report",
+        "deletedByAuthor": "Deleted by Author",
+        "hiddenByAdmin": "Hidden by Administrator",
+        "hiddenByBoardManager": "Hidden by Board Manager",
+        "alertNsfw": "May contain sensitive content.",
+        "alertSpoiler": "May contain spoilers.",
+        "board": "Board",
+        "edited": "Edited",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "CommentSection": {
+        "pleaseTypeComment": "Please type a comment.",
+        "comment": "Comments",
+        "commentRestricted": "Comment posting is restricted."
+      }
+    },
+    "RestrictionPage": {
+      "restrictions": "Restriction Details",
+      "status": "Status",
+      "restricted": "Restricted",
+      "reason": "Reason",
+      "duration": "Duration of Restriction",
+      "noRestriction": "No restriction details."
+    },
+    "SearchPage": {
+      "post": "Post",
+      "board": "Board"
+    },
+    "SettingPage": {
+      "page": "Page",
+      "notification": "Notification",
+      "board": "Board",
+      "chat": "Chat",
+  
+      "BoardTab": {
+        "blockedBoard": "Blocked Boards",
+        "boardSetting": "Board Settings",
+        "block": "Block",
+  
+        "BlockedBoardSection": {
+          "unblockBoard": "Unblock Board",
+          "unblockBoardMsg": "Do you want to unblock this board?",
+          "unblockBoardSuccess": "Board unblocked successfully.",
+          "unblockBoardFailed": "Failed to unblock board.",
+          "noBlockedBoard": "No blocked boards."
+        }
+      },
+      "ChatTab": {
+        "blockedUser": "Blocked Users",
+        "chatSetting": "Chat Settings",
+  
+        "BlockedUserSection": {
+          "unblockUser": "Unblock User",
+          "unblockUserMsg": "Do you want to unblock this user from chat?",
+          "unblockUserSuccess": "User unblocked successfully.",
+          "unblockUserFailed": "Failed to unblock user.",
+          "noBlockedUser": "No blocked users."
+        }
+      },
+      "NotificationTab": {
+        "userOnly": "Available only after login.",
+        "notificationSetting": "Notification Settings",
+        "notificationDetail": "Detailed Notification Settings",
+        "commentOnPost": "Comments on Post",
+        "commentOnComment": "Comments on Comment",
+        "postHidden": "Post Hidden",
+        "postHiddenHelper": "Receive notifications when your post is hidden by a board manager.",
+        "commentHidden": "Comment Hidden",
+        "commentHiddenHelper": "Receive notifications when your comment is hidden by a board manager."
+      },
+      "PageTab": {
+        "pageSetting": "Page Settings",
+        "all": "All",
+        "darkMode": "Dark Mode",
+        "language": "Language",
+        "home": "Home (Feed)",
+        "defaultPostSort": "Default Post Sorting",
+        "sortHot": "Hot",
+        "sortRecent": "Recent",
+        "allBoard": "Boards",
+        "defaultBoardSort": "Default Board Sorting",
+        "sortActive": "Active",
+        "sortFollower": "Follower",
+        "sortRecentCreated": "New",
+        "boardMain": "Inside Board",
+        "defaultCommentSort": "Default Comment Sorting",
+        "sortVote": "Popular",
+        "sortDiscussed": "Discussed",
+        "sortOld": "Old"
+      },
+      "PostTab": {
+        "postSetting": "Post Settings"
+      }
+    },
+    "UpdatePostPage": {
+      "shouldFlag": "Please select a flag for \"{boardName}\" as it's mandatory.",
+      "shouldTitle": "Please enter a title for the post.",
+      "createPostSuccess": "Post published successfully.",
+      "cancelPost": "Cancel Post",
+      "cancelPostMsg": "Do you want to cancel and discard this post?",
+      "draftShouldTitle": "Please enter a title for the post. (You can change it later.)",
+      "draftSaveSuccess": "Draft saved successfully.",
+      "loginOnly": "Available after login.",
+      "publishedAt": "Published On",
+      "editing": "Editing"
+    },
+    "WithdrawCompletePage": {
+      "withdrawComplete": "Withdrawal completed.",
+      "toHome": "Go to Home"
+    }
+  },
+  "components": {
+    "$layouts": {
+      "MainDrawerLayout": {
+        "home": "Home",
+        "popular": "Popular Posts",
+        "boards": "All Boards",
+        "createBoard": "Create Board",
+        "recentVisit": "Recent Visits",
+        "subscribed": "Subscribed",
+        "managing": "Managing"
+      }
+    },
+    "$providers": {
+      "GroupProvider": {
+        "loadSuccess": "Entered group \"{groupName}\" :)",
+        "loadFail": "Unable to find the group.",
+        "loadingGroup": "Loading Group...",
+        "groupFindFailed": "Failed to find group {groupDomain}.",
+        "retry": "Retry"
+      }
+    },
+    "$statusTools": {
+      "loadFailed": "Unable to load data.",
+      "toHome": "Go to Home",
+      "retry": "Retry",
+      "loading": "Loading..."
+    },
+    "AuthorFingerprint": {
+      "me": "Me",
+      "author": "Author",
+      "boardManager": "Board Manager"
+    },
+    "AuthorSelector": {
+      "imageUploadFailed": "Image upload failed.",
+      "alertMaxFlair": "You can select up to {n} flairs.",
+      "selectProfile": "Set Board Profile",
+      "nickname": "Nickname",
+      "anonymous": "Anonymous",
+      "checkingDuplicate": "Checking for duplicates...",
+      "alreadyExist": "Nickname already in use by someone on the board.",
+      "nicknameValid": "Nickname is available.",
+      "cancel": "Cancel",
+      "apply": "Apply",
+  
+      "FlairSection": {
+        "multipleSelect": "Multiple selection available",
+  
+        "FlairBoxItem": {
+          "deleteFlair": "Delete Flair",
+          "deleteFlairMsg": "Do you want to delete this flair?",
+          "cancelFlair": "Cancel Flair Creation",
+          "cancelFlairMsg": "Do you want to cancel and discard this flair in progress?",
+          "addFlair": "Add Custom",
+          "delete": "Delete"
+        }
+      }
+    },
+    "BoardAuthor": {
+      "unknown": "Unknown",
+      "anonymous": "Anonymous"
+    },
+    "BoardAuthorInteraction": {
+      "chatBlocked": "User unable to chat",
+      "chatBlockedMsg": "You cannot chat with users who are blocked or have blocked you.",
+      "chat": "Chat",
+      "managerFeature": "Board Manager Feature",
+      "muteBoard": "Restrict Board Usage",
+      "adminFeature": "Admin Feature",
+      "muteGroup": "Restrict Group Usage"
+    },
+    "BoardList": {
+      "noBoard": "No boards found."
+    },
+    "BoardMenuButton": {
+      "subscribeSuccess": "Subscribed to board successfully.",
+      "subscribeFailed": "Failed to subscribe to board.",
+      "unsubscribeSuccess": "Unsubscribed from board successfully.",
+      "unsubscribeFailed": "Failed to unsubscribe from board.",
+      "boardBlock": "Block {boardName}",
+      "boardBlockMsg": "Blocking the board will prevent it from being recommended in your feed. Do you want to block it?",
+      "boardBlockSuccess": "Board blocked successfully. It will no longer be recommended in your feed.",
+      "boardBlockFailed": "Failed to block board.",
+      "unblockBoard": "Unblock {boardName}",
+      "unblockBoardMsg": "Do you want to unblock this board?",
+      "unblockBoardSuccess": "Board unblocked successfully.",
+      "unblockBoardFailed": "Failed to unblock board.",
+      "trashBoard": "Hide Board",
+      "trashBoardMsg": "Hiding the board will remove it from users' views. Do you want to hide it?",
+      "trashBoardSuccess": "Board hidden successfully. You can unhide it in the admin page > content management.",
+      "trashBoardFailed": "Failed to hide board.",
+      "restoreBoard": "Restore Board",
+      "restoreBoardMsg": "Restoring the board will make it visible to users again. Do you want to restore it?",
+      "restoreBoardSuccess": "Board restored successfully.",
+      "restoreBoardFailed": "Failed to restore board.",
+      "unsubscirbe": "Unsubscribe",
+      "subscribe": "Subscribe",
+      "unblock": "Unblock",
+      "block": "Block",
+      "adminFeature": "Admin Feature"
+    },
+    "BoardSortChips": {
+      "sortActive": "Active",
+      "sortFollower": "Followers",
+      "sortRecentCreated": "New"
+    },
+    "BoardUserLookup": {
+      "searchUser": "Search User"
+    },
+    "CategorySelector": {
+      "noCategory": "No category."
+    },
+    "ChatMessageItem": {
+      "anonymous": "Anonymous"
+    },
+    "ChatRoomItem": {
+      "unknown": "Unknown",
+      "leftRoom": "Left Room"
+    },
+    "CommentInput": {
+      "typeComment": "Write a comment.",
+      "boardManager": "Board Manager",
+      "cancel": "Cancel",
+      "submit": "Submit"
+    },
+    "CommentItem": {
+      "loadCommentFailed": "Unable to load comments.",
+      "plusComments": "+ {numHidden} more comments",
+      "deleted": "Deleted",
+      "numChildrenComment": "{numChildren} comments",
+      "deletedByAdmin": "Deleted by Admin",
+      "deletedByBoardManager": "Deleted by Board Manager",
+      "edited": "Edited",
+      "reply": "Reply",
+  
+      "CommentMenuButton": {
+        "deleteComment": "Delete Comment",
+        "deleteCommentMsg": "Do you want to delete this comment?",
+        "deleteCommentSuccess": "Comment deleted successfully.",
+        "deleteCommentFailed": "Failed to delete comment.",
+        "trashCommentSuccess": "Comment trashed successfully.",
+        "trashCommentFailed": "Failed to trash comment.",
+        "report": "Report",
+        "edit": "Edit",
+        "delete": "Delete",
+        "adminFeature": "Admin Features",
+        "trash": "Trash"
+      },
+      "CommentModifier": {
+        "editSuccess": "Comment edited successfully.",
+        "editFailed": "Failed to edit comment.",
+        "cancel": "Cancel",
+        "edit": "Edit"
+      }
+    },
+    "CommentList": {
+      "noComments": "No comments found.",
+      "commentOnComment": "Comment on Comment",
+      "commentOnPost": "Comment on Post"
+    },
+    "CommentSortChips": {
+      "sortVote": "Popular",
+      "sortDiscussed": "Discussed",
+      "sortOld": "Old",
+      "sortRecent": "Recent"
+    },
+    "FlagEditor": {
+      "pleaseSelectBg": "Please choose a background color.",
+      "label": "Flag Text",
+      "bgColor": "Background Color",
+      "textColor": "Text Color",
+      "managerOnly": "Managers Only",
+      "useGuideline": "Use Guideline",
+      "useGuidelineHelper": "You can write a detailed description for the flag.",
+      "flagGuideline": "Flag Guideline",
+      "flagGuidelineHelper": "e.g., Select this flag when the post is XXX.",
+      "cancel": "Cancel",
+      "apply": "Apply"
+    },
+    "FlairEditor": {
+      "label": "Flag Text",
+      "managerOnly": "Managers Only",
+      "bgColor": "Background Color",
+      "textColor": "Text Color",
+      "cancel": "Cancel",
+      "apply": "Apply"
+    },
+    "FollowingSelector": {
+      "following": "Subscribed",
+      "all": "All",
+      "notFollowing": "Not Subscribed"
+    },
+    "GroupInfoDialog": {
+      "copiedToClipboard": "Copied to clipboard.",
+      "noDescription": "No description",
+      "adminGroup": "Group Management",
+      "accessInfo": "Access Information",
+      "close": "Close"
+    },
+    "GroupProtectionSelector": {
+      "public": "Public",
+      "publicHelper": "Anyone can see this group and join",
+      "protected": "Protected",
+      "protectedHelper": "Anyone can see this group, but only invited members can join",
+      "private": "Private",
+      "privateHelper": "Only invited members can see and join this group",
+      "groupProtectionRange": "Group Visibility Range",
+      "cancel": "Cancel",
+      "apply": "Apply"
+    },
+    "LocaleSelector": {
+      "selectLanguage": "Select Language",
+      "cancel": "Cancel",
+      "apply": "Apply"
+    },
+    "ManagingSection": {
+      "approveSuccess": "Approved successfully.",
+      "approveFailed": "Failed to approve.",
+      "deleteSuccess": "Deleted successfully.",
+      "deleteFailed": "Failed to delete.",
+      "ignoredReports": "{n} ignored reports",
+      "resolvedReports": "{n} resolved reports",
+      "managingHistory": "Managing History",
+      "approve": "Approve",
+      "approved": "Approved",
+      "trash": "Delete",
+      "trashedByAdmin": "Deleted by Admin",
+      "trashed": "Deleted",
+      "reportList": "Report List",
+  
+      "DeleteReasonDialog": {
+        "typeReason": "Please enter a reason for deletion.",
+        "trashReason": "Reason for Deletion",
+        "trashReasonHelper": "e.g., Violation of board rule MM",
+        "cancel": "Cancel",
+        "trash": "Delete"
+      },
+      "ManagingLogItem": {
+        "approve": "Approve",
+        "trash": "Delete",
+        "groupAdmin": "Group Admin",
+        "reason": "Reason"
+      }
+    },
+    "Navbar": {
+      "allBoard": "Boards",
+  
+      "NavbarActions": {
+        "joinGroup": "Join Group",
+        "login": "Login",
+  
+        "AccountButton": {
+          "logout": "Logout",
+          "logoutMsg": "Do you want to log out?",
+          "login": "Login"
+        },
+        "ChatBox": {
+          "chat": "Chat",
+  
+          "ChatPreviewBox": {
+            "ChatRoomMenuButton": {
+              "cannotBlock": "This user cannot be blocked.",
+              "blockUser": "Block User",
+              "blockUserMsg": "Blocking a user will prevent you from seeing their chats. Do you want to block them?",
+              "blockUserSuccess": "User blocked successfully. You can unblock them in settings.",
+              "blockUserFailed": "Failed to block user.",
+              "leaveChat": "Leave Chat",
+              "leaveChatMsg": "Leaving the chat will make you unable to view the chat history. Do you want to leave?",
+              "leaveChatFailed": "Failed to leave the chat.",
+              "closeChat": "Close Chat",
+              "leave": "Leave"
+            }
+          }
+        },
+        "NotificationBox": {
+          "notification": "Notification",
+          "noNotification": "No notifications yet.",
+          "showAll": "Show All"
+        },
+        "UserButton": {
+          "logout": "Logout",
+          "logoutMsg": "Do you want to log out?",
+          "logoutSucess": "Logged out successfully.",
+          "point": "Points",
+          "myActivity": "My Activity",
+          "manageAccount": "Account",
+          "setting": "Settings",
+          "restriction": "Restriction Details"
+        },
+        "SearchBar": {}
+      },
+      "NavbarLogo": {
+        "switchGroupSuccess": "Entered group \"{groupName}\" :)",
+        "adminPage": "Admin Page"
+      },
+      "NavbarMenuButton": {},
+      "SearchBar": {
+        "loading": "Loading",
+        "board": "Board",
+        "search": "Search"
+      }
+    },
+    "NotificationItem": {
+      "commentOnPostMsg": "\"{commentBody}\" on your post \"{postTitle}\"",
+      "commentOnCommentMsg": "\"{childBody}\" on your comment \"{parentBody}\"",
+      "createManagerMsg": "You have been made a manager of board \"{boardName}\".",
+      "deleteManagerMsg": "Your manager privileges for board \"{boardName}\" have been revoked.",
+      "trashPostMsg": "Your post \"{postTitle}\" has been deleted. Reason: {reason}",
+      "trashCommentMsg": "Your comment \"{commentBody}\" has been deleted. Reason: {reason}"
+    },
+    "PollEditor": {
+      "missingText": "Missing Option Text",
+      "missingTextMsg": "Please enter text for all option items.",
+      "pollTitle": "Poll Title",
+      "pollTitleHelper": "(Optional) Please enter a poll title.",
+      "descriptionHelper": "(Optional) Please enter a description.",
+      "minCandMsg": "Please add at least 2 items.",
+      "addCand": "Add Item",
+      "pollExpiresAt": "Poll Expiration Time",
+      "periodSetting": "Set Poll Duration",
+      "allowMultiple": "Allow Multiple Selection",
+      "cancel": "Cancel",
+      "modify": "Modify",
+      "create": "Create",
+  
+      "EditablePollCand": {
+        "deleteCand": "Delete Item",
+        "deleteCandMsg": "Do you want to delete this item?",
+        "imgUploadFailed": "Image upload failed.",
+        "initializeImage": "Re-select Image",
+        "initializeImageMsg": "Do you want to remove the selected poll thumbnail image and choose again?",
+        "typeCand": "Please enter an option.",
+        "addImage": "Add Image",
+        "delete": "Delete"
+      }
+    },
+    "PollItem": {
+      "voteFailed": "Failed to vote.",
+      "edit": "Edit",
+      "allowMultiple": "Allow Multiple Selection",
+      "untilTime": "Closes at {until}",
+      "myVote": "My Vote",
+      "previewResult": "Preview Results",
+      "voteAgain": "Vote Again",
+      "submit": "Vote",
+  
+      "EditPollDialog": {
+        "cancelEdit": "Cancel Poll Edit",
+        "cancelEditMsg": "Do you want to discard your changes and cancel editing the poll?",
+        "editSuccess": "Poll edited successfully!",
+        "editFailed": "Failed to edit poll."
+      }
+    },
+    "PostCommentList": {
+      "noComments": "No comments yet."
+    },
+    "PostEditor": {
+      "selectReserveTimeAgain": "Please reselect the reservation time.",
+      "saveDraft": "Save Draft",
+      "nsfw": "NSFW",
+      "spoiler": "Spoiler",
+      "post": "Post",
+      "video": "Video",
+      "image": "Image",
+      "poll": "Poll",
+      "title": "Title",
+      "placeholder": "Please write your post. \n ※ Click the cursor to open the toolbar",
+      "advanced": "Advanced",
+      "advancedSetting": "Advanced Settings",
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "boardManager": "Board Manager",
+      "boardManagerHelper": "It will be indicated next to my account that I am a board manager.",
+  
+      "EmptyMediaEditor": {
+        "dragAndDropOr": "Drag & Drop or",
+        "upload": "Upload"
+      },
+      "FlagSelector": {
+        "flag": "Flag",
+        "selectFlag": "Select Flag",
+        "allowMultiple": "Allow Multiple Selection",
+        "cancel": "Cancel",
+        "apply": "Apply"
+      },
+      "PhotoEditor": {
+        "deleteImage": "Delete Image",
+        "deleteImageMsg": "Do you want to delete this image?",
+        "closeEditor": "Close Image Editor",
+        "closeEditorMsg": "Do you want to close the image editor?",
+        "dragImageOr": "Drag an image or"
+      },
+      "PostDraftBox": {
+        "deleteDraft": "Delete Draft",
+        "deleteDraftMsg": "Do you want to delete the selected draft?",
+        "restoreDraft": "Restore Draft",
+        "restoreDraftMsg": "Do you want to restore the selected draft? (Current writing will be lost.)",
+        "savedDrafts": "{n} saved drafts",
+  
+        "DraftPostItem": {
+          "reservedAt": "Reserved"
+        }
+      },
+      "ReserveTimePicker": {
+        "reserveAt": "Schedule Post",
+        "reservedAt": "Reserved At",
+        "reserveAtHelper": "You can post at the selected time.",
+        "cancelReserve": "Cancel Reservation"
+      },
+      "ThumbnailSelector": {
+        "cannotCropExternal": "Cannot crop external image (Source: {externalUrl}).",
+        "selectAgain": "Select Again",
+        "selectAgainMsg": "Do you want to cancel the current thumbnail and select again?",
+        "postThumbnail": "Post Thumbnail",
+        "postThumbnailHelper": "The thumbnail will be displayed in post previews and when sharing links.",
+        "selectThumbnail": "Select Thumbnail",
+        "crop": "Crop",
+        "addImageToSelect": "Add an image to the post to select a thumbnail.",
+        "cancel": "Cancel",
+        "apply": "Apply"
+      },
+      "VideoEditor": {
+        "dragVideoOr": "Drag a video or",
+        "uploading": "Uploading",
+        "deleteVideo": "Delete Video"
+      }
+    },
+    "PostList": {
+      "noPosts": "No posts found."
+    },
+    "PostMenuButton": {
+      "cannotPinDeleted": "Cannot pin a deleted post.",
+      "pinSuccess": "Pinned as a notice. Please refresh to check.",
+      "pinFailed": "Failed to register as notice.",
+      "unpinSuccess": "Unpinned successfully. Please refresh to check.",
+      "unpinFailed": "Failed to unpin.",
+      "bookmarkSuccess": "Post bookmarked successfully.",
+      "bookmarkFailed": "Failed to bookmark the post.",
+      "unbookmarkSuccess": "Bookmark removed successfully.",
+      "unbookmarkFailed": "Failed to remove bookmark.",
+      "trashSuccess": "Post successfully deleted.",
+      "trashFailed": "Failed to delete the post.",
+      "share": "Share",
+      "report": "Report",
+      "unbookmark": "Remove Bookmark",
+      "bookmark": "Bookmark",
+      "managerFeature": "Board Manager Feature",
+      "unpin": "Unpin",
+      "pin": "Pin Post",
+      "restrictAuthor": "Restrict Author",
+      "adminFeature": "Admin Feature",
+      "trashPost": "Delete Post",
+  
+      "PostShareDialog": {
+        "copiedToClipboard": "Copied to clipboard.",
+        "copy": "Copy"
+      }
+    },
+    "PostPreview": {
+      "spoiler": "Spoiler",
+      "nsfw": "NSFW",
+      "plusImgs": "+ {numMore} more images",
+      "pinned": "Pinned",
+      "bookmark": "Bookmark",
+      "deletedByAdmin": "Deleted by Admin",
+      "deletedByBoardManager": "Deleted by Board Manager",
+      "deleted": "Deleted",
+      "reply": "Write a Reply"
+    },
+    "PostSortChips": {
+      "sortHot": "Hot",
+      "sortRecent": "Recent",
+      "sortVote": "Popular",
+      "sortDiscussed": "Discussed"
+    },
+    "RangeSelector": {
+      "today": "Today",
+      "1week": "1 Week",
+      "1month": "1 Month",
+      "3month": "3 Months",
+      "1year": "1 Year",
+      "all": "All",
+      "publishedAt": "Published Date"
+    },
+    "ReportItem": {
+      "ignoreSuccess": "Report ignored successfully.",
+      "resolveSuccess": "Report resolved successfully.",
+      "report": "Report",
+      "ignore": "Ignore",
+      "resolve": "Resolve",
+      "ignored": "Ignored",
+      "resolved": "Resolved"
+    },
+    "ReportSummary": {
+      "processStatus": "Report Processing Status",
+      "all": "All",
+      "ignored": "Ignored",
+      "resolved": "Resolved",
+      "noReport": "No relevant report details."
+    },
+    "RichEditor2": {
+      "heading": "Heading",
+      "list": "List",
+      "numList": "Numbered",
+      "code": "Code",
+      "text": "Text",
+  
+      "ImageAddDialog": {
+        "closeEditor": "Close Image Editor",
+        "closeEditorMsg": "Do you want to discard the images in progress and close the editor?",
+        "imageUploadFailed": "Image upload failed.",
+        "imageAlreadyIncluded": "This image is already included.",
+        "upload": "Upload",
+        "dragAndDropOr": "Drag & Drop or",
+        "cancel": "Cancel",
+        "apply": "Apply"
+      },
+      "PollAddDialog": {
+        "createPollSuccess": "Poll created successfully!",
+        "createPollFailed": "Failed to create poll.",
+        "cancelPoll": "Cancel Poll Creation",
+        "cancelPollMsg": "Do you want to discard the content in progress and cancel the poll creation?"
+      },
+      "buttons": {
+        "LinkIB": {
+          "invalidUrl": "This is not a valid URL format.",
+          "selectText": "Please select the text to link.",
+          "typeLinkMsg": "Put link here.."
+        },
+        "LinkAddIB": {
+          "checkHttp": "This is not a valid URL format. Please enter a domain starting with http:// or https://.",
+          "invalidUrl": "This is not a valid URL format.",
+          "text": "Text",
+          "preview": "Preview",
+          "typeLinkMsg": "Put link here.."
+        },
+        "TweetIB": {
+          "invalidTweet": "This is not a valid twitter id or link format.",
+          "tweetIdOrLink": "Tweet ID or share link."
+        },
+        "YoutubeIB": {
+          "invalidYoutube": "This is not a valid YouTube link format.",
+          "typeLinkMsg": "Put YouTube link here..."
+        }
+      }
+    },
+    "Voter": {
+      "pleaseCheckNetwork": "Please check your network connection.",
+      "cantVoteMyPost": "You cannot vote on your own post.",
+      "cantVoteMyComment": "You cannot vote on your own comment."
+    }
+  },
+  "ui": {
+    "tools": {
+      "ColorPicker": {
+        "moreColors": "More Colors.."
+      },
+      "EditableAvatar": {
+        "ProfileEditButton": {
+          "changeImage": "Change Image",
+          "defaultAvatar":"Default Avatar"
+        }
+      },
+      "EditableTextField": {
+        "cancel": "Cancel",
+        "apply": "Apply"
+      },
+      "ImageCropper": {
+        "zoom": "Zoom",
+        "rotate": "Rotate",
+        "cancel": "Cancel",
+        "apply": "Apply"
+      },
+      "ImageModal": {
+        "thisPicture": "This Picture",
+        "all": "All"
+      }
+    }
+  },
+  "hooks": {
+    "dialogs": {
+      "BlockAuthorDialog": {
+        "editSuccess": "Successfully edited.",
+        "createSuccess": "User restricted. You can lift this restriction in 'Board Manager Page > Restrictions'.",
+        "duration": "Restriction Duration",
+        "1week": "1 Week",
+        "1month": "1 Month",
+        "3month": "3 Months",
+        "1year": "1 Year",
+        "untilDate": "Until {until}",
+        "boardRestriction": "Board Usage Restriction",
+        "boardRestrictionMsg": "The user will not be able to post or comment on the board during the restriction period.",
+        "groupRestriction": "Group Usage Restriction",
+        "groupRestrictionMsg": "The user will not be able to post or comment in any board within the group during the restriction period.",
+        "reason": "Reason for Restriction",
+        "cancel": "Cancel",
+        "submit": "Submit"
+      },
+      "ConfirmDialog": {
+        "cancel": "Cancel",
+        "ok": "OK",
+        "groupMemberOnlyMsg": "This feature is only available to group members.",
+        "loginOnlyMsg": "This feature is available after login."
+      },
+      "LoginDialog": {
+        "loginWithEmail": "Login with Email",
+  
+        "GoogleLoginButton": {
+          "loginSuccess": "Logged in with {email} :)",
+          "loginFailed": "Failed to log in with Google.",
+          "loginWithGoogle": "Login with Google"
+        }
+      },
+      "PostDialog": {
+        "moveToPage": "Move to Page"
+      },
+      "ReportDialog": {
+        "ruleViolation": "Boar Rules Violation",
+        "ruleViolationMsg": "In cases where the Board's own rules are violated",
+        "spam": "Spam",
+        "spamMsg": "In cases of posting content for advertising or sales purposes",
+        "hate": "Hatered",
+        "hateMsg": "In cases of denigrating or expressing hate speech based on race, gender, religion, nationality, etc.",
+        "scam": "Scam",
+        "scamMsg": "In cases of attempting or engaging in impersonation, leaks, fraud, or attempting to deceive other users",
+        "sexual": "Sexual",
+        "sexualMsg": "In cases involving sexual content or inappropriate encounters",
+        "repeat": "Repetition",
+        "repeatMsg": "In cases of repeatedly posting the same content or performing the same actions",
+        "threatening": "Threatening",
+        "threateningMsg": "In cases of threatening or intimidating others",
+        "copyrightViolation": "Copyright Violation",
+        "copyRightViolationMsg": "In cases of posting content that violates copyright",
+        "illegal": "Illegal",
+        "illegalMsg": "In cases of promoting or engaging in illegal activities such as piracy, hacking, cybercrimes, gambling, etc.",
+        "reportSuccess": "Reported successfully.",
+        "reportFailed": "Failed to report.",
+        "reportReason": "Reason for Report",
+        "typeMoreReason": "(Optional) If you have more to add, please write it here.",
+        "moreReason": "Additional Report Reason",
+        "selectReportReason": "Select Report Reason",
+        "prev": "Previous",
+        "next": "Next",
+        "cancel": "Cancel",
+        "submit": "Submit"
+      }
+    }
+  }
+}

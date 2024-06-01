@@ -1,0 +1,1576 @@
+{
+  "app": {
+    "App": {
+      "title": "v-milo: 그룹 찾기"
+    },
+    "Account": {
+      "title": "계정 관리"
+    },
+    "Activity": {
+      "title": "내 활동"
+    },
+    "Admin": {
+      "title": "관리자 페이지"
+    },
+    "Boards": {
+      "title": "모든 게시판"
+    },
+    "BoardMain": {
+      "title": "게시판",
+      "invalidBoardId": "{boardId} 는 올바르지 않은 게시판 형식이에요.",
+      "wrongGroup": "해당 그룹에서는 접근할 수 없어요.",
+      "fetchFailed": "게시판을 불러올 수 없어요."
+    },
+    "CreatePost": {
+      "title": "게시글 작성"
+    },
+    "ManagingBoard": {
+      "title": "게시판 관리"
+    },
+    "UpdatePost": {
+      "title": "게시글 수정",
+      "invalidPostId": "{postId} 는 올바르지 않은 게시글 형식이에요.",
+      "fetchFailed": "게시글을 불러올 수 없어요."
+    },
+    "CreateBoard": {
+      "title": "게시판 만들기"
+    },
+    "EmailLogin": {
+      "title": "이메일 로그인"
+    },
+    "Hot": {
+      "title": "인기 게시글"
+    },
+    "JoinGroup": {
+      "title": "그룹 가입"
+    },
+    "Notification": {
+      "title": "알림"
+    },
+    "Point": {
+      "title": "포인트"
+    },
+    "PostMain": {
+      "title": "게시글",
+      "invalidPostId": "{postId} 는 올바르지 않은 게시글 형식이에요.",
+      "wrongGroup": "해당 그룹에서는 접근할 수 없어요.",
+      "fetchFailed": "게시글을 불러올 수 없어요."
+    },
+    "Restriction": {
+      "title": "제한 내역"
+    },
+    "Search": {
+      "title": "검색: {q}"
+    },
+    "Setting": {
+      "title": "설정"
+    },
+    "WithdrawComplete": {
+      "title": "탈퇴 완료"
+    }
+  },
+  "pages": {
+    "AccountPage": {
+      "withdrawGroup": "그룹 탈퇴",
+      "withdrawGroupMessage": "그룹을 탈퇴하면 계정 정보가 삭제되고 다시 로그인 할 수 없어요. 탈퇴하시겠어요?",
+      "withdrawGroupConfirm": "정말 탈퇴하시겠어요? 탈퇴한 이후 계정을 되돌릴 수 없어요.",
+      "withdrawProcessing": "탈퇴 처리중...",
+      "wrongAccess": "잘못된 접근입니다.",
+      "manageAccount": "계정 관리",
+      "group": "그룹",
+      "groupJoinedAt": "가입일"
+    },
+    "AdminPage": {
+      "onlyAdmin": "관리자만 접근할 수 있어요.",
+      "noAccessRight": "접근 권한이 없어요.",
+      "adminPage": "관리자 페이지",
+      "home": "홈",
+      "category": "카테고리",
+      "member": "멤버 관리",
+      "admin": "관리자",
+      "restriction": "이용 제한",
+      "contents": "컨텐츠 관리",
+      "toMain": "메인으로",
+
+      "AdminTab": {
+        "pleaseEnterEmail": "추가할 관리자의 이메일을 입력해주세요.",
+        "wrongEmailFormat": "올바른 형식의 이메일을 입력해주세요.",
+        "addAdminSuccess": "관리자가 추가됐어요.",
+        "addAdminFailed": "관리자 추가에 실패했어요.",
+        "adminAlreadyExist": "이미 등록되어있는 관리자에요.",
+        "userNotExist": "해당 이메일을 가진 유저가 없어요.",
+        "manageAdmin": "관리자 관리",
+        "addAdmin": "관리자 추가",
+
+        "GroupAdminItem": {
+          "manageIntro": "홈 설정",
+          "manageAdmin": "관리자 관리",
+          "manageMember": "멤버 관리",
+          "manageCategory": "카테고리 관리",
+          "manageCensor": "컨텐츠 검열",
+          "manageMuter": "이용 제한 관리",
+          "deleteConfirmMsg": "정말 삭제하시겠어요?",
+          "deleteSuccess": "관리자를 삭제되었어요.",
+          "deleteFailed": "관리자 삭제에 실패했어요.",
+          "editSuccess": "관리자 권한이 수정됐어요.",
+          "editFailed": "관리자 권한 수정에 실패했어요.",
+          "me": "나",
+          "edit": "수정",
+          "delete": "삭제",
+          "allRights": "모든 권한",
+          "rights": "권한",
+          "editAdminRight": "관리자 권한 수정",
+          "cancel": "취소",
+          "apply": "적용"
+        }
+      },
+      "CategoryTab": {
+        "boardCategory": "게시판 카테고리",
+        "boardList": "게시판 목록",
+
+        "CategoryBoardSection": {
+          "noCategory": "카테고리가 없음",
+
+          "BoardPreviewItem": {
+            "categoryConnectSuccess": "카테고리가 연결되었어요. 새로고침 후 확인해주세요.",
+            "categoryConnectFailed": "카테고리 연결에 실패했어요.",
+            "moveToBoard": "게시판으로 이동",
+            "assignCategory": "카테고리 연결",
+
+            "CategorySelectDialog": {
+              "cancel": "취소",
+              "apply": "적용"
+            }
+          }
+        },
+        "CategorySection": {
+          "reorderSuccess": "카테고리 순서가 변경됐어요.",
+          "reorderFailed": "카테고리 순서 변경에 실패했어요.",
+          "deleteCategory": "카테고리 삭제",
+          "deleteCategoryMsg": "카테고리를 정말 삭제하시겠어요? 연결된 게시판 정보는 지워져요.",
+          "deleteCategorySuccess": "카테고리를 삭제했어요.",
+          "deleteCategoryFailed": "카테고리 삭제에 실패했어요.",
+          "updateCategorySuccess": "카테고리가 업데이트 되었어요.",
+          "updateCategoryFailed": "카테고리를 업데이트 할 수 없어요.",
+          "cancel": "취소",
+          "apply": "적용",
+          "reorder": "순서 변경",
+          "edit": "수정",
+          "delete": "삭제",
+
+          "AddCategoryButton": {
+            "addSuccess": "카테고리가 추가됐어요.",
+            "addFailed": "카테고리 추가에 실패했어요.",
+            "add": "추가"
+          },
+          "CategoryEditorDialog": {
+            "category": "카테고리",
+            "cancel": "취소",
+            "apply": "적용"
+          }
+        }
+      },
+      "CensorTab": {
+        "manageContents": "컨텐츠 관리",
+        "hiddenBoards": "숨겨진 게시판",
+
+        "TrashedBoardList": {
+          "restoreBoard": "게시판 복구",
+          "restoreBoardMsg": "게시판을 복구하시겠어요?",
+          "restoreBoardSuccess": "게시판이 복구됐어요.",
+          "restoreBoardFailed": "게시판 복구에 실패했어요.",
+          "restore": "복구",
+          "noTrashedBoards": "숨겨진 게시판이 없어요."
+        }
+      },
+      "IntroTab": {
+        "nameUpdateSuccess": "이름이 업데이트 되었어요!",
+        "nameUpdateFailed": "이름 업데이트에 실패했어요.",
+        "logoUpdateSuccess": "로고가 업데이트 되었어요!",
+        "logoUpdateFailed": "업데이트에 실패했어요.",
+        "shortNameUpdateSuccess": "짧은 이름이 업데이트 되었어요!",
+        "shortNameUpdateFailed": "짧은 이름 업데이트에 실패했어요.",
+        "descriptionUpdateSuccess": "설명이 업데이트 되었어요!",
+        "descriptionUpdateFailed": "설명 업데이트에 실패했어요.",
+        "domainUpdateSuccess": "도메인이 업데이트 되었어요!",
+        "domainUpdateFailed": "도메인 업데이트에 실패했어요.",
+        "domainAlreadyExist": "해당 도메인이 이미 존재해요.",
+        "themeColorUpdateSuccess": "테마 색상 업데이트 되었어요!",
+        "themeColorUpdateFailed": "테마 색상 업데이트에 실패했어요.",
+        "protectionUpdateSuccess": "그룹 공개 범위가 업데이트 되었어요!",
+        "protectionUpdateFailed": "그룹 공개 범위 업데이트에 실패했어요.",
+        "allowedUserCreateBoard": "유저들의 게시판 생성이 허용되었어요!",
+        "disallowedUserCreateBoard": "유저들의 게시판 생성이 허용되지 않아요.",
+        "userCreateBoardUpdateFailed": "게시판 생성 허용 업데이트에 실패했어요.",
+        "groupSetting": "그룹 설정",
+        "groupLogo": "그룹 로고",
+        "groupName": "그룹 이름",
+        "groupShortName": "그룹 짧은 이름",
+        "groupShortNameHelper": "짧은 그룹 이름은 로고 대신에 표시돼요. 비워두면 그룹 이름으로 대체돼요.",
+        "groupDescription": "그룹 설명",
+        "noDescription": "설명 없음",
+        "domain": "도메인",
+        "themeColor": "테마 색상",
+        "groupProtection": "그룹 공개 범위",
+        "allowUserCreateBoard": "게시판 자율 생성 허용",
+        "allowUserCreateBoardHelper": "유저들이 자유롭게 게시판을 생성할 수 있어요. 허용하지 않으면 관리자만 게시판을 생성할 수 있어요.",
+
+        "EditableThemeColor": {
+          "editThemeColor": "테마 색상 수정",
+          "prevColor": "기존 색상",
+          "newColor": "새 색상",
+          "themeColor": "테마 색상",
+          "cancel": "취소",
+          "apply": "적용"
+        },
+        "GroupKeyCheckDialog": {
+          "validateMinLen": "{n}자 이상 입력해주세요.",
+          "validateMaxLen": "{n}자 이하로 입력해주세요.",
+          "validateAllowedChars": "영문, 숫자, 특수문자만 사용할 수 있어요.",
+          "validateNotUsable": "사용할 수 없는 그룹 이름이에요.",
+          "cancel": "취소",
+          "apply": "적용"
+        }
+      },
+      "MemberTab": {
+        "manageMember": "멤버 관리",
+        "groupMember": "그룹 멤버",
+        "inviteGroup": "그룹 초대",
+
+        "CurrentMemberSection": {
+          "groupMember": "그룹 멤버",
+          "publicDesc": "*그룹 모두 공개: 모든 유저가 그룹에 가입할 수 있음",
+          "protectedDesc": "*그룹 제한 공개: 초대된 유저만 그룹에 가입할 수 있음",
+          "privateDesc": "*그룹 비공개: 초대된 유저만 그룹에 가입할 수 있음"
+        },
+        "InvitationSection": {
+          "invitedUser": "초대한 유저",
+          "noInvitedUser": "초대한 멤버가 없어요.",
+
+          "InvitationItem": {
+            "cancelInvitation": "초대 취소",
+            "cancelInvitationPublicMsg": "초대를 취소하시겠어요?",
+            "cancelInvitationPrivateMsg": "초대를 취소하시겠어요? 초대되지 않은 유저는 그룹에 가입할 수 없어요.",
+            "cancelInvitationSuccess": "초대가 취소됐어요.",
+            "cancelInvitationFailed": "초대 취소에 실패했어요."
+          },
+          "InviteButton": {
+            "alreadyRegistered": "이미 그룹에 등록된 멤버에요.",
+            "alreadyDeclined": "이미 초대를 거절한 멤버에요.",
+            "inviteSuccess": "초대 메일을 발송했어요. 초대 리스트에서 확인할 수 있어요.",
+            "inviteFailed": "초대 메일 발송에 실패했어요.",
+            "invite": "초대하기",
+            "email": "이메일",
+            "groupInvitation": "그룹 멤버 초대",
+            "cancel": "취소",
+            "apply": "적용"
+          }
+        }
+      },
+      "MuterTab": {
+        "restriction": "이용 제한",
+        "noRestrictedUser": "이용 제한된 유저가 없어요.",
+
+        "GroupMuterItem": {
+          "deleteRestriction": "이용 제한 해제",
+          "deleteRestrictionMsg": "이용 제한을 해제하시겠어요?",
+          "deleteRestrictionSuccess": "이용 제한이 해제됐어요.",
+          "deleteRestrictionFailed": "이용 제한 해제에 실패했어요.",
+          "anonymousMember": "익명의 그룹 멤버",
+          "reason": "이유",
+          "duration": "제한 기간",
+          "delete": "삭제",
+          "all": "모두",
+          "unprocessed": "미처리",
+          "ignored": "무시됨",
+          "resolved": "해결됨"
+        }
+      }
+    },
+    "ActivityPage": {
+      "cannotAccessTab": "탭 \"{tab}\"에 접근할 수 없어요.",
+      "boardSubscribed": "구독한 게시판",
+      "myPosts": "내 게시글",
+      "myComments": "내 댓글",
+      "myBookmark": "스크랩",
+      "wrongAccess": "잘못된 접근입니다.",
+      "noAccount": "계정 정보를 불러올 수 없어요."
+    },
+    "BoardListPage": {
+      "createBoard": "게시판 만들기",
+
+      "BoardList": {
+        "noBoards": "해당하는 게시판이 없어요.",
+        "BoardPreview": {
+          "blocked": "차단됨",
+          "subscribed": "구독중",
+          "hiddenByAdmin": "관리자에 의해 숨겨짐",
+          "plusPosts": "+ {numMore}개"
+        }
+      },
+      "CategoryFilterSelector": {
+        "all": "모든 게시판",
+
+        "AllCategoryButton": {
+          "showMore": "더보기",
+          "selectCategory": "게시판 카테고리 선택",
+          "cancel": "취소",
+          "apply": "적용"
+        }
+      }
+    },
+    "BoardMainPage": {
+      "searchResult": "검색 결과",
+      "toBoardHome": "게시판 홈으로",
+      "post": "게시글",
+      "boardInfo": "게시판 정보",
+      "boardInfoMb": "게시판 정보",
+      "liveChat": "라이브 챗",
+      "boardRule": "게시판 규칙",
+      "hiddenByAdmin":"관리자에 의해 숨겨짐",
+
+      "AboutBoard": {
+        "manageBoard": "게시판 관리",
+        "allowPostManagerOnly": "매니저만 글 작성 가능",
+        "subscribe": "구독",
+        "post": "게시글",
+        "createdAt": "만든 날짜"
+      },
+      "AuthorPreview": {
+        "updateSuccess": "업데이트 되었어요!",
+        "updateFailed": "업데이트에 실패했어요.",
+        "anonymous": "익명",
+        "edit": "수정하기",
+        "write": "글쓰기",
+        "createPost": "게시글 작성"
+      },
+      "BoardFollowButton": {
+        "subscribeSuccess": "구독했어요.",
+        "subscribeFailed": "구독에 실패했어요.",
+        "unsubscribeSuccess": "구독을 취소했어요.",
+        "unsubscribeFailed": "구독 취소에 실패했어요.",
+        "blocked": "차단됨",
+        "unsubscribe": "구독 취소",
+        "subscribed": "구독중",
+        "subscribe": "구독"
+      },
+      "FlagSelector": {
+        "all": "모두"
+      },
+      "LiveChatPreview": {
+        "join": "참여하기"
+      },
+      "MuterNotifyBox": {
+        "boardRestriction": "게시판 이용 제한",
+        "period": "제한 기간",
+        "reason": "제한 사유"
+      },
+      "PinnedPost": {
+        "pinnedPost": "고정 게시글",
+        "expand": "고정글 더보기",
+        "fold": "고정글 접기"
+      }
+    },
+    "ChatPage": {
+      "ChatListSection": {
+        "noChat": "채팅이 아직 없어요.",
+        "clickToStartChat": "게시글이나 댓글에서 닉네임을 클릭해서 채팅을 시작해보세요."
+      },
+      "ChatRoomSection": {
+        "ChatInput": {
+          "theOtherPartyLeftChatRoom": "상대가 채팅방을 나갔습니다.",
+          "typeMessage": "메시지를 입력해주세요.."
+        },
+        "MessageList": {
+          "failed": "전송 실패",
+          "sending": "전송중..."
+        }
+      }
+    },
+    "ConfigureAccountPage": {
+      "loadingFailed": "유저 정보를 불러오는데 실패했어요.",
+      "loadingComplete": "{email} 로딩 완료!",
+      "loadingAccount": "계정 로딩 중.."
+    },
+    "CreateBoardPage": {
+      "restricted": "이용 제한되어 게시판을 만들 수 없어요.",
+      "checkRestriction": "제한 내역 보기",
+      "adminOnly": "관리자만 게시판을 생성할 수 있어요.",
+
+      "CreateBoardForm": {
+        "createBoardSuccess": "\"{boardName}\"게시판이 생성됐어요.",
+        "nameAlreadyExist": "게시판 이름 중복",
+        "nameAlreadyExistMsg": "게시판 이름(${boardName})이 이미 존재해요. 다른 이름을 등록해주세요.",
+        "createBoard": "게시판 만들기",
+        "board": "게시판",
+        "boardName": "게시판 이름",
+        "boardNameHelper": "Tip) 게시판의 성격을 잘 드러내는 이름이 좋아요.",
+        "boardDescription": "게시판 설명",
+        "boardDescriptionHelper": "Tip) 무엇을 위한 게시판인지 설명을 적어주세요."
+      }
+    },
+    "EmailLoginPage": {
+      "loggedIn": "로그인 되었어요.",
+      "toHome": "홈으로",
+
+      "EmailRequestStep": {
+        "verificationRequestFailed": "이메일 인증 요구에 실패했어요.",
+        "pleaseTypeEmail": "로그인을 진행할 이메일을 입력해주세요.",
+        "noNeedPassword": "패스워드는 필요 없어요 :)",
+        "verify": "메일 인증하기"
+      },
+      "VerificationStep": {
+        "loginSuccess": "{email}로 로그인했어요 :)",
+        "verifyFailed": "인증에 실패했어요.",
+        "verificationNotExist": "이메일 인증 요청 정보가 존재하지 않아요.",
+        "trialOver": "시도 제한 한도를 초과했어요. 나중에 다시 시도해주세요.",
+        "invalidCode": "올바르지 않은 인증코드에요.",
+        "codeSent": "{email}로 인증코드가 전송되었어요.",
+        "verificationCode": "인증코드",
+        "verify": "인증",
+        "timeOver": "인증 가능 시간이 지났어요. 다시 시도해주세요.",
+        "toHome": "홈으로"
+      }
+    },
+    "CreatePostPage": {
+      "loginOnly": "로그인 후 이용 가능합니다.",
+      "groupRestricted": "그룹 이용이 제한되어 글을 작성할 수 없어요.",
+      "managerOnly": "해당 게시판은 게시판 매니저만 글을 작성할 수 있어요.",
+      "shouldFlag": "\"{boardName}\"에서는 플래그 설정이 필수에요. 플래그를 선택해주세요.",
+      "shouldTitle": "게시글의 제목을 입력해주세요.",
+      "createPostSuccess": "게시글이 게시되었어요.",
+      "cancelPost": "게시글 취소",
+      "cancelPostMsg": "작성중인 게시글을 취소하고 게시판으로 돌아가시겠어요?",
+      "draftShouldTitle": "게시글의 제목을 입력해주세요. (추후에 변경할 수 있어요.)",
+      "draftSuccess": "게시글이 임시저장되었어요.",
+      "draftFailed": "게시글 임시저장에 실패했어요."
+    },
+    "FeedPage": {
+      "recentPosts": "최근 본 게시글",
+      "hotPosts":"인기 게시글",
+
+      "CreatePostSelector": {
+        "whatsYourThought": "오늘은 어떤 글을 쓸까요?",
+        "whichBoard": "어느 게시판에 글을 쓸까요?",
+        "searchWithKeywords": "키워드로 검색.."
+      },
+      "BoardSidebar": {
+        "recentVisit": "최근 방문",
+        "subscribed": "구독",
+        "activeBoards": "활발한 게시판",
+        "noSubscribedBoards": "구독한 게시판이 없어요.",
+        "noRecentBoards": "최근 방문한 게시판이 없어요."
+      },
+      "HotPostList": {
+        "showAll": "모두 보기",
+        "noHotPosts": "오늘 게시글이 없어요."
+      },
+      "RecentPostList": {
+        "noRecentPosts": "최근 게시글이 없어요."
+      }
+    },
+    "HotPage": {
+       "recentVisit": "최근 방문",
+       "hotPosts": "인기 게시글"
+    },
+    "ManagingPage": {
+      "invalidBoardId": "올바르지 않은 형식의 게시판 아이디입니다.",
+      "censorContent": "컨텐츠 검열",
+      "content": "승인/삭제",
+      "report": "신고사항",
+      "user": "유저",
+      "restriction": "이용 제한",
+      "manager": "매니저 관리",
+      "manageBoard": "게시판 관리",
+      "intro": "소개 페이지",
+      "info": "게시판 정보",
+      "userExposure": "유저 공개 정보",
+      "contentSetting": "컨텐츠 설정",
+      "etc": "기타 설정",
+      "exit": "게시판 돌아가기",
+
+      "NoRightIndicator": {
+        "noRight": "관리 권한이 없습니다."
+      },
+      "CensorTab": {
+        "all": "모두",
+        "exceptProcessed": "미처리",
+        "trashed": "삭제됨",
+        "approved": "승인됨",
+        "postCensor": "게시글 승인 및 삭제",
+        "processStatus": "처리 상태"
+      },
+      "ContentsTab": {
+        "updateSuccess": "업데이트 되었어요!",
+        "updateFailed": "업데이트에 실패했어요.",
+        "contentSetting": "컨텐츠(게시글/댓글) 설정",
+        "allowPost": "활동 허용 범위",
+        "postManagerOnly": "글 작성 매니저만 허용",
+        "postManagerOnlyHelper": "매니저만 게시글을 작성할 수 있도록 설정할 수 있어요.",
+        "flagSetting": "게시글 플래그 설정",
+        "flagSettingHelper": "플래그를 통해 게시글의 카테고리를 나눌 수 있어요.",
+        "useFlag": "게시글 플래그 사용",
+        "postOption": "게시글 옵션",
+        "postOptionHelper": "게시판에 올라오는 게시글의 성격에 따라 옵션을 허용해보세요.  '후방주의' 또는 '스포일러 방지'를 사용하면 게시글의 내용이 미리보기에 노출되지 않고 내용이 보여지기 전에 팝업을 통해 유저의 동의를 받아요.",
+        "useNsfw": "후방주의 사용",
+        "useSpoiler": "스포일러 방지 사용",
+
+        "FlagSection": {
+          "deleteFlag": "플래그 삭제",
+          "deleteFlagMsg": "작성중인 플래그를 지우고 취소할까요?",
+          "flagAddSuccess": "플래그가 추가되었어요.",
+          "flagAddFailed": "플래그를 추가할 수 없어요.",
+          "forceFlag": "게시글 플래그 강제하기",
+          "forceFlagHelper": "유저가 게시글을 작성할 때 플래그를 고르지 않으면 제출할 수 없어요.",
+          "allowMultiple": "다중 선택 허용",
+          "addFlag": "플래그 추가",
+
+          "FlagItem": {
+            "cancelFlag": "플래그 작성 취소",
+            "cancelFlagMsg": "수정중인 플래그를 지우고 취소하시겠어요?",
+            "editFlagSuccess": "플래그가 수정되었어요!",
+            "editFlagFailed": "플래그 업데이트에 실패했어요.",
+            "deleteFlag": "플래그 삭제",
+            "deleteFlagMsg": "플래그를 삭제하면 이미 태그되어있던 게시글에서 플래그 연결이 해지돼요. 플래그를 삭제하시겠어요?",
+            "managerOnly": "매니저만 허용",
+            "edit": "수정",
+            "delete": "삭제"
+          }
+        }
+      },
+      "EtcTab": {
+        "updateSuccess": "업데이트 되었어요!",
+        "updateFailed": "업데이트에 실패했어요.",
+        "etcSetting": "기타 설정",
+        "liveChat": "라이브 챗",
+        "liveChatHelper": "라이브 챗은 게시판의 구독자들끼리 자유롭게 이야기 나눌수 있는 채팅 공간이에요.",
+        "categorySetting": "카테고리 설정",
+        "categorySettingHelper": "게시판의 카테고리를 설정해보세요.",
+        "category": "카테고리",
+
+        "CategorySelectSection": {
+          "categoryUpdateSuccess": "카테고리가 업데이트 되었어요.",
+          "categoryUpdateFailed": "카테고리를 업데이트 할 수 없어요.",
+          "categorySetting": "카테고리 설정",
+          "selectCategory": "게시판 카테고리 선택",
+          "cancel": "취소",
+          "apply": "적용"
+        }
+      },
+      "ExposureTab": {
+        "updateSuccess": "업데이트 되었어요!",
+        "updateFailed": "업데이트에 실패했어요.",
+        "userExposureSetting": "유저 공개 정보 설정",
+        "flairSetting": "유저 플래그 설정",
+        "flairSettingHelper": "유저가 자신에 대한 추가적인 정보를 드러낼 때 활용해보세요.",
+        "useFlair": "유저 플래그 사용",
+        "defaultNickname": "익명 닉네임",
+        "defaultNicknameHelper": "\"익명 닉네임\"은 유저가 닉네임 또는 플래그를 설정하지 않았을 때 대신 표시돼요. 기본값인 \"익명\" 을 사용해도 좋지만 게시판 성격에 맞게 자유롭게 설정할 수 있어요. ex) 무명의 댕댕이, (이름없음) 등",
+        "anonymous": "익명",
+        "defaultAvatar": "익명 아바타(프로필 사진)",
+        "defaultAvatarHelper": "\"익명 아바타\"는 유저가 아바타를 설정하지 않았을 때 기본으로 표시돼요. 기본 아바타도 좋지만 게시판 성격에 맞게 자유롭게 설정할 수 있어요.",
+        "preview": "선택창 미리보기",
+
+        "AvatarSection": {
+          "defaultAvatar" :"익명 아바타"
+        },
+        "FlairSection": {
+          "AddFlairBox": {
+            "flairGroupCreateSuccess": "플래그 그룹이 생성되었어요.",
+            "flairGroupCreateFailed": "플래그 그룹을 생성할 수 없어요.",
+            "addFlairGroup": "플래그 그룹 추가",
+            "flairGroup": "플래그 그룹",
+            "groupName": "그룹 이름",
+            "groupNameHelper": "ex) MBTI",
+            "flairGuide": "플래그 가이드라인",
+            "flairGuideHelper": "ex) 자신의 MBTI를 골라주세요 :)",
+            "cancel": "취소",
+            "apply": "적용"
+          },
+          "FlairBoxItem": {
+            "updateSuccess": "업데이트 되었어요!",
+            "updateFailed": "업데이트에 실패했어요.",
+            "deleteFlairGroup": "플래그 그룹 삭제",
+            "deleteAllFlairMsg": "그룹을 삭제하기 위해서 그룹에 모든 플레어를 삭제해주세요.",
+            "deleteFlairGroupMsg": "그룹을 삭제하시겠어요?",
+            "deleteFlairGroupSuccess": "플래그 그룹을 삭제하였어요.",
+            "deleteFlairGroupFailed": "플래그 그룹을 삭제할 수 없어요.",
+            "cancelFlair": "플래그 작성 취소",
+            "cancelFlairMsg": "작성중인 플래그를 지우고 취소하시겠어요?",
+            "addFlairSuccess": "플래그가 추가되었어요.",
+            "addFlairFailed": "플래그를 추가할 수 없어요.",
+            "editFlairSuccess": "플래그가 수정되었어요!",
+            "editFlairFailed": "플래그 업데이트에 실패했어요.",
+            "reorderSuccess": "순서가 변경되었어요.",
+            "reorderFailed": "순서 변경에 실패했어요.",
+            "groupName": "그룹 이름",
+            "groupNameHelper": "ex) MBTI",
+            "flairGuide": "플래그 가이드라인",
+            "flairGuideHelper": "ex) 자신의 MBTI를 골라주세요 :)",
+            "allowCustomize": "자율 설정 허용",
+            "allowCustomizeHelper": "유저가 직접 본인의 플래그를 만들어서 사용할 수 있어요.",
+            "allowMultiple": "다중 선택 허용",
+            "cancel": "취소",
+            "reorder": "순서 변경",
+            "applyOrder": "순서 적용",
+            "addFlair": "플래그 추가",
+            "apply": "적용",
+
+            "FlairItem": {
+              "cancelFlair": "플래그 작성 취소",
+              "cancelFlairMsg": "작성중인 플래그를 지우고 취소하시겠어요?",
+              "updateSuccess": "업데이트 되었어요!",
+              "updateFailed": "업데이트에 실패했어요.",
+              "deleteFlair": "플래그 삭제",
+              "deleteFlairMsg": "플래그를 삭제하면 이미 태깅되어있던 유저들의 플래그가 모두 삭제돼요. 삭제하시겠어요?",
+              "deleteFlairSuccess": "플래그를 삭제했어요.",
+              "deleteFlairFailed": "플래그를 삭제할 수 없어요.",
+              "managerOnly":"매니저만 허용",
+              "edit": "수정",
+              "delete": "삭제"
+            }
+          }
+        }
+      },
+      "InfoTab": {
+        "boardInfo": "게시판 정보",
+
+        "RulesSection": {
+          "ruleAdded": "새 룰이 추가되었어요.",
+          "ruleEdited": "룰이 수정되었어요.",
+          "reorderSuccess": "순서가 변경되었어요.",
+          "reorderFailed": "순서 변경에 실패했어요.",
+          "boardRule": "게시판 규칙",
+          "cancel": "취소",
+          "apply": "적용",
+          "reorder": "순서 변경",
+          "noRule": "게시판 규칙이 없어요.",
+
+          "RuleAddButton": {
+            "cancelRule": "룰 작성 취소",
+            "cancelRuleMsg": "작성중인 룰을 지우고 취소하시겠어요?",
+            "addRule": "룰 추가"
+          },
+          "RuleEditorDialog": {
+            "titleIfEmpty": "비워두면 룰 이름으로 대체돼요.",
+            "ruleTitle": "룰 이름",
+            "ruleNameHelper": "ex) 존댓말 사용",
+            "description": "상세 설명",
+            "descriptionHelper": "ex) 게시글 및 댓글에는 존댓말을 사용해주세요.",
+            "applyRange": "적용 범위",
+            "postAndComment": "게시글 + 댓글",
+            "postOnly": "게시글만",
+            "commentOnly": "댓글만",
+            "reportReason": "신고 사유",
+            "reportReasonHelper": "ex) 불쾌한 표현",
+            "cancel": "취소",
+            "edit": "수정",
+            "apply": "적용"
+          },
+          "RuleItem": {
+            "cancelRule": "룰 작성 취소",
+            "cancelRuleMsg": "작성중인 룰을 지우고 취소하시겠어요?",
+            "description": "설명",
+            "applyRange": "적용 범위",
+            "postAndComment": "게시글 + 댓글",
+            "postOnly": "게시글만",
+            "commentOnly": "댓글만",
+            "reportReason":"신고 사유",
+            "createdAt": "생성 날짜",
+            "edit": "수정",
+            "delete": "삭제"
+          }
+        }
+      },
+      "IntroTab": {
+        "updateSuccess": "업데이트 되었어요!",
+        "updateFailed": "업데이트에 실패했어요.",
+        "bgUpdateSuccess": "배경사진이 업데이트 되었어요.",
+        "bgUpdateFailed": "배경사진 업데이트에 실패했어요.",
+        "avatarUpdateSuccess": "아바타가 업데이트 되었어요.",
+        "avatarUpdateFailed": "아바타 업데이트에 실패했어요.",
+        "nameUpdateSuccess": "게시판 이름이 업데이트 되었어요.",
+        "nameUpdateFailed": "게시판 이름 업데이트에 실패했어요.",
+        "descriptionUpdateSuccess": "게시판 설명이 업데이트 되었어요.",
+        "descriptionUpdateFailed": "게시판 설명 업데이트에 실패했어요.",
+        "themeColorUpdateSuccess": "테마 색상이 업데이트 되었어요.",
+        "themeColorUpdateFailed": "테마 색상 업데이트에 실패했어요.",
+        "introPage": "소개 페이지",
+        "noEditRight": "수정권한 없음",
+        "boardDescription": "게시판 설명",
+        "themeColor": "테마 색상",
+
+        "EditableBoardAvatar": {
+          "imageUploadFailed": "이미지 업로드에 실패했어요.",
+          "changeProfile": "프로필 사진 변경",
+          "defaultAvatar": "기본 아바타"
+        },
+        "EditableBoardBg": {
+          "imageUploadFailed": "이미지 업로드에 실패했어요.",
+          "deleteBgMsg": "배경사진을 삭제하시겠어요?",
+          "deleteBg": "배경사진 삭제",
+          "editBg": "배경사진 수정"
+        },
+        "EditableBoardName": {
+          "checkingDuplicate": "중복확인을 진행중이에요..",
+          "alreadyExist": "이미 존재하는 게시판 이름이에요.",
+          "nameIsValid": "사용 가능한 게시판 이름이에요.",
+          "boardName": "게시판 이름",
+          "cancel": "취소",
+          "apply": "적용"
+        },
+        "EditableTheme": {
+          "useThemeColor": "테마 색상 사용",
+          "editThemeColor": "테마 색상 수정",
+          "prevColor":"기존 색상",
+          "newColor": "새 색상",
+          "themeColor":"테마 색상",
+          "cancel": "취소",
+          "apply": "적용"
+        }
+      },
+      "ManagerTab": {
+        "manageManager": "매니저 관리",
+
+        "AddManagerButton": {
+          "addManagerSuccess": "매니저가 추가되었어요.",
+          "addManagerFailed": "매니저를 추가할 수 없어요.",
+          "addManager": "매니저 추가",
+          "addManagerHelper": "게시판에 \"고유 닉네임\"을 등록한 유저만 매니저로 등록할 수 있어요.",
+          "cancel": "취소",
+          "register": "등록"
+        },
+        "ManagerItem": {
+          "contentCensor": "컨텐츠 검열",
+          "contentCensorDetail": "게시판 규칙 설정, 신고 확인 및 처리, 게시글/댓글 승인 및 삭제",
+          "manageManager": "매니저 관리",
+          "manageManagerDetail": "매니저 추가/삭제 및 권한 수정",
+          "manageMuter": "이용 제한 관리",
+          "manageMuterDetail": "유저 이용제한 추가/수정/삭제",
+          "manageWrite": "글 작성 권한 관리",
+          "manageWriteDetail": "게시글 작성 허용 (매니저만 작성 가능 설정시 적용)",
+          "manageIntro": "소개 페이지 관리",
+          "manageIntroDetail": "썸네일 설정 및 게시판 소개글 작성, 고정글 등록 및 해제",
+          "manageInfo": "게시판 정보 관리",
+          "manageInfoDetail": "게시판 이용수칙 추가/수정/삭제",
+          "manageExposure": "유저 공개 정보 관리",
+          "manageExposureDetail": "유저 플래그 설정, 기본 아바타 및 닉네임 설정",
+          "manageContent": "컨텐츠 설정 관리",
+          "manageContentDetail": "게시글 플래그 설정, 게시글 옵션 설정",
+          "manageEtc": "기타 설정 관리",
+          "manageEtcDetail": "라이브 챗 설정, 카테고리 설정",
+          "deleteManager": "매니저 삭제",
+          "deleteManagerMsg": "매니저를 삭제하시겠어요?",
+          "deleteManagerSuccess": "매니저를 삭제했어요.",
+          "deleteManagerFailed": "매니저를 삭제할 수 없어요.",
+          "removeUserManageRight": "유저 관리 권한 해제",
+          "removeUserManageRightMsg": "나의 유저 관리 권한을 해제하면 앞으로 다른 유저의 권한을 수정할 수 없어요. 적용하시겠어요?",
+          "removeUserManageRightSuccess": "유저 관리 권한을 해제했어요.",
+          "allRights": "모든 권한",
+          "cancel": "취소",
+          "apply": "적용",
+          "edit": "수정",
+          "delete": "삭제"
+        }
+      },
+      "MuterTab": {
+        "noRestrictedUser": "이용 제한된 유저가 없어요.",
+         "boardRestriction": "게시판 이용 제한",
+         "boardRestrictionHelper": "이용 제한된 유저는 제한 기간 동안 게시물 작성 및 댓글 작성을 할 수 없어요.",
+
+         "MuterItem": {
+            "deleteRestriction": "이용 제한 해제",
+            "deleteRestrictionMsg": "이용 제한을 해제하시겠어요?",
+            "deleteRestrictionSuccess": "이용 제한을 해제했어요.",
+            "deleteRestrictionFailed": "이용 제한을 해제할 수 없어요.",
+            "edit": "수정",
+            "delete": "삭제",
+            "reason": "이유"
+         }
+      },
+      "ReportTab": {
+        "reports": "신고 사항",
+        "postReport": "게시글 신고",
+        "commentReport": "댓글 신고",
+        "status": "처리 상태",
+        "all": "모두",
+        "unprocessed": "미처리",
+        "ignored": "무시됨",
+        "resolved": "해결됨"
+      }
+    },
+    "NotificationPage": {
+      "notification": "알림",
+      "noNotification": "알림이 없어요."
+    },
+    "PointPage": {},
+    "PostPage": {
+      "PostItem": {
+        "deletePost": "게시글 삭제",
+        "deletePostMsg": "게시글을 삭제하면 더 이상 게시글을 확인할 수 없어요. 게시글을 삭제하시겠어요?",
+        "deletePostSuccess": "게시글이 삭제되었어요.",
+        "deletePostFailed": "게시글을 삭제할 수 없어요.",
+        "viewN": "조회수 {numCheck}회",
+        "commentN": "댓글 {numComment}개",
+        "share": "공유",
+        "bookmark": "스크랩",
+        "report": "신고",
+        "deletedByAuthor": "작성자에 의해 삭제됨",
+        "hiddenByAdmin": "관리자에 의해 숨김처리됨",
+        "hiddenByBoardManager": "게시판 매니저에 의해 숨김처리됨",
+        "alertNsfw": "선정적인 내용이 포함되어 있을 수 있어요.",
+        "alertSpoiler": "스포일러가 포함되어 있을 수 있어요.",
+        "board": "게시판",
+        "edited": "수정됨",
+        "edit": "수정",
+        "delete": "삭제"
+      },
+      "CommentSection": {
+        "pleaseTypeComment": "댓글을 입력해주세요.",
+        "comment": "댓글",
+        "commentRestricted": "댓글 작성이 제한되었어요."
+      }
+    },
+    "RestrictionPage": {
+      "restrictions": "이용 제한 내역",
+      "status": "상태",
+      "restricted": "이용 제한됨",
+      "reason": "사유",
+      "duration": "제한 기간",
+      "noRestriction": "이용 제한 내역이 없어요."
+    },
+    "SearchPage": {
+      "post": "게시글",
+      "board": "게시판"
+    },
+    "SettingPage": {
+      "page": "페이지",
+      "notification": "알림",
+      "board": "게시판",
+      "chat": "채팅",
+
+      "BoardTab": {
+        "blockedBoard": "차단한 게시판",
+        "boardSetting": "게시판 설정",
+        "block": "차단",
+
+        "BlockedBoardSection": {
+          "unblockBoard": "차단 해제",
+          "unblockBoardMsg": "게시판 차단을 해제하시겠어요?",
+          "unblockBoardSuccess": "게시판 차단이 해제되었어요.",
+          "unblockBoardFailed": "게시판 차단 해제에 실패했어요.",
+          "noBlockedBoard": "차단한 게시판이 없어요."
+        }
+      },
+      "ChatTab": {
+        "blockedUser": "차단한 유저",
+        "chatSetting": "채팅 설정",
+
+        "BlockedUserSection": {
+          "unblockUser": "차단 해제",
+          "unblockUserMsg": "채팅 차단을 해제하시겠어요?",
+          "unblockUserSuccess": "차단이 해제되었어요.",
+          "unblockUserFailed": "차단 해제에 실패했어요.",
+          "noBlockedUser": "차단한 유저가 없어요."
+        }
+      },
+      "NotificationTab": {
+        "userOnly": "로그인 후 이용할 수 있어요.",
+        "notificationSetting": "알림 설정",
+        "notificationDetail": "알림 상세 설정",
+        "commentOnPost": "게시글에 댓글",
+        "commentOnComment": "댓글에 댓글",
+        "postHidden": "게시글 숨겨짐",
+        "postHiddenHelper": "게시판 매니저에 의해서 내 게시글이 숨겨질 때 알림이 전송돼요.",
+        "commentHidden": "댓글 숨겨짐",
+        "commentHiddenHelper": "게시판 매니저에 의해서 내 댓글이 숨겨질 때 알림이 전송돼요."
+      },
+      "PageTab": {
+        "pageSetting": "페이지 설정",
+        "all": "전체",
+        "darkMode": "다크 모드",
+        "language": "언어",
+        "home": "홈 (피드)",
+        "defaultPostSort": "기본 게시글 정렬",
+        "sortHot": "추천순",
+        "sortRecent": "최신순",
+        "allBoard": "모든 게시판",
+        "defaultBoardSort": "기본 게시판 정렬",
+        "sortActive": "활발한 순",
+        "sortFollower": "구독자 순",
+        "sortRecentCreated": "최신 생성 순",
+        "boardMain": "게시판 내부",
+        "defaultCommentSort": "기본 댓글 정렬",
+        "sortVote": "인기순",
+        "sortDiscussed": "댓글순",
+        "sortOld": "작성순"
+      },
+      "PostTab": {
+        "postSetting": "게시글 설정"
+      }
+    },
+    "UpdatePostPage": {
+      "shouldFlag":"\"{boardName}\"에서는 플래그 설정이 필수에요. 플래그를 선택해주세요.",
+      "shouldTitle":"게시글의 제목을 입력해주세요.",
+      "createPostSuccess":"게시글이 게시되었어요.",
+      "cancelPost": "게시글 취소",
+      "cancelPostMsg": "작성중인 게시글을 지우고 취소하시겠어요?",
+      "draftShouldTitle":"게시글의 제목을 입력해주세요. (추후에 변경할 수 있어요.)",
+      "draftSaveSuccess": "임시 저장되었어요.",
+      "loginOnly": "로그인 후 이용 가능합니다.",
+      "publishedAt": "작성일",
+      "editing": "수정중"
+    },
+    "WithdrawCompletePage": {
+      "withdrawComplete": "탈퇴가 완료되었어요.",
+      "toHome": "홈으로"
+    }
+  },
+  "components": {
+    "$layouts": {
+      "MainDrawerLayout": {
+        "home": "홈",
+        "popular": "인기 게시글",
+        "boards": "모든 게시판",
+        "createBoard": "게시판 만들기",
+        "recentVisit": "최근 방문",
+        "subscribed": "구독",
+        "managing": "매니징"
+      }
+    },
+    "$providers": {
+      "GroupProvider": {
+        "loadSuccess": "그룹 \"{groupName}\"에 들어왔어요 :)",
+        "loadFail": "그룹을 찾을 수 없어요.",
+        "loadingGroup": "그룹 로딩 중..",
+        "groupFindFailed": "그룹 {groupDomain}를 찾는데 실패했어요.",
+        "retry": "다시 찾아보기"
+      }
+    },
+    "$statusTools": {
+      "loadFailed": "데이터를 불러올 수 없어요.",
+      "toHome": "홈으로",
+      "retry": "다시 시도",
+      "loading": "로딩중..."
+    },
+    "AuthorFingerprint": {
+      "me": "나",
+      "author": "글쓴이",
+      "boardManager": "게시판 매니저"
+    },
+    "AuthorSelector": {
+      "imageUploadFailed":"이미지 업로드에 실패했어요.",
+      "alertMaxFlair": "플래그는 최대 {n}개까지 선택 가능해요.",
+      "selectProfile": "게시판 프로필 설정",
+      "nickname": "닉네임",
+      "anonymous": "익명",
+      "checkingDuplicate": "중복확인을 진행중이에요..",
+      "alreadyExist": "게시판 누군가 사용중인 닉네임이에요.",
+      "nicknameValid": "사용 가능한 닉네임이에요.",
+      "cancel": "취소",
+      "apply": "적용",
+
+      "FlairSection": {
+        "multipleSelect": "다중 선택 가능",
+
+        "FlairBoxItem": {
+          "deleteFlair": "플래그 삭제",
+          "deleteFlairMsg": "플래그를 삭제하시겠어요?",
+          "cancelFlair": "플래그 작성 취소",
+          "cancelFlairMsg":"작성중인 플래그를 지우고 취소하시겠어요?",
+          "addFlair": "직접 추가",
+          "delete": "삭제"
+        }
+      }
+    },
+    "BoardAuthor": {
+      "unknown": "알 수 없음",
+      "anonymous": "익명"
+    },
+    "BoardAuthorInteraction": {
+      "chatBlocked": "채팅할 수 없는 유저",
+      "chatBlockedMsg": "차단하거나 차단된 유저와는 채팅할 수 없어요.",
+      "chat": "채팅하기",
+      "managerFeature": "게시판 매니저 기능",
+      "muteBoard": "게시판 이용 제한",
+      "adminFeature": "관리자 기능",
+      "muteGroup": "그룹 이용 제한"
+    },
+    "BoardList": {
+      "noBoard": "해당하는 게시판이 없어요."
+    },
+    "BoardMenuButton": {
+      "subscribeSuccess": "게시판을 구독했어요.",
+      "subscribeFailed": "게시판 구독에 실패했어요.",
+      "unsubscribeSuccess": "게시판 구독을 취소했어요.",
+      "unsubscribeFailed": "게시판 구독 취소에 실패했어요.",
+      "boardBlock": "{boardName} 차단",
+      "boardBlockMsg": "게시판을 차단하면 더 이상 피드에 추천되지 않아요. 차단하시겠어요?",
+      "boardBlockSuccess": "게시판이 차단되었어요. 더 이상 피드에 추천되지 않아요.",
+      "boardBlockFailed": "게시판 차단에 실패했어요.",
+      "unblockBoard": "{boardName} 차단 해제",
+      "unblockBoardMsg": "게시판 차단을 해제하시겠어요?",
+      "unblockBoardSuccess": "게시판 차단이 해제되었어요.",
+      "unblockBoardFailed": "게시판 차단 해제에 실패했어요.",
+      "trashBoard": "게시판 숨기기",
+      "trashBoardMsg": "게시판을 숨기면 더 이상 유저들의 화면에 노출되지 않아요. 숨기시겠어요?",
+      "trashBoardSuccess": "게시판이 숨겨졌어요. 관리자 페이지 > 컨텐츠 관리 에서 해제할 수 있어요.",
+      "trashBoardFailed": "게시판 숨기기에 실패했어요.",
+      "restoreBoard": "게시판 복구",
+      "restoreBoardMsg": "게시판을 복구하면 유저들의 화면에 다시 노출되요. 복구하시겠어요?",
+      "restoreBoardSuccess": "게시판 복구에 성공했어요.",
+      "restoreBoardFailed": "게시판 복구에 실패했어요.",
+      "unsubscirbe": "구독 취소",
+      "subscribe": "구독",
+      "unblock": "차단 해제",
+      "block": "차단",
+      "adminFeature": "관리자 기능"
+    },
+    "BoardSortChips": {
+      "sortActive": "활발한순",
+      "sortFollower": "구독자순",
+      "sortRecentCreated": "최신생성순"
+    },
+    "BoardUserLookup": {
+      "searchUser": "유저 검색"
+    },
+    "CategorySelector": {
+      "noCategory": "카테고리가 없어요."
+    },
+    "ChatMessageItem": {
+      "anonymous": "익명"
+    },
+    "ChatRoomItem": {
+      "unknown": "알 수 없음",
+      "leftRoom": "방 나감"
+    },
+    "CommentInput": {
+      "typeComment": "댓글을 작성해보세요.",
+      "boardManager": "게시판 매니저",
+      "cancel": "취소",
+      "submit": "댓글 작성"
+    },
+    "CommentItem": {
+      "loadCommentFailed": "댓글을 불러올 수 없어요.",
+      "plusComments": "+ 댓글 {numHidden}개",
+      "deleted": "삭제됨",
+      "numChildrenComment": "댓글 {numChildren}개",
+      "deletedByAdmin": "관리자에 의해 삭제됨",
+      "deletedByBoardManager": "게시판 매니저에 의해 삭제됨",
+      "edited": "수정됨",
+      "reply": "답글",
+
+      "CommentMenuButton": {
+        "deleteComment": "댓글 삭제",
+        "deleteCommentMsg": "작성한 댓글을 삭제하시겠어요?",
+        "deleteCommentSuccess": "댓글이 삭제됐어요.",
+        "deleteCommentFailed": "댓글을 삭제할 수 없어요.",
+        "trashCommentSuccess": "댓글이 삭제처리 되었어요.",
+        "trashCommentFailed": "댓글 삭제에 실패했어요.",
+        "report": "신고하기",
+        "edit": "수정하기",
+        "delete": "삭제하기",
+        "adminFeature": "관리자 기능",
+        "trash": "삭제처리"
+      },
+      "CommentModifier": {
+        "editSuccess": "댓글이 수정됐어요.",
+        "editFailed": "댓글 수정에 실패했어요.",
+        "cancel": "취소",
+        "edit": "수정"
+      }
+    },
+    "CommentList": {
+      "noComments": "해당하는 댓글이 없어요.",
+      "commentOnComment": "댓글에 댓글",
+      "commentOnPost": "게시글에 댓글"
+    },
+    "CommentSortChips": {
+      "sortVote": "인기순",
+      "sortDiscussed": "댓글순",
+      "sortOld": "작성순",
+      "sortRecent": "최신순"
+    },
+    "FlagEditor": {
+      "pleaseSelectBg": "배경 색을 골라주세요.",
+      "label": "플래그 텍스트",
+      "bgColor": "배경색",
+      "textColor": "글자색",
+      "managerOnly": "매니저만 허용",
+      "useGuideline": "가이드라인 사용",
+      "useGuidelineHelper": "플래그에 대한 상세 설명을 작성할 수 있어요.",
+      "flagGuideline": "플래그 가이드라인",
+      "flagGuidelineHelper": "x) 게시글이 ㅁㅁㅁ 일 때 선택해주세요!",
+      "cancel": "취소",
+      "apply": "적용"
+    },
+    "FlairEditor": {
+      "label": "플래그 텍스트",
+      "managerOnly": "매니저만 허용",
+      "bgColor": "배경색",
+      "textColor": "글자색",
+      "cancel": "취소",
+      "apply": "적용"
+    },
+    "FollowingSelector": {
+      "following": "구독만",
+      "all": "모두",
+      "notFollowing": "미구독"
+    },
+    "GroupInfoDialog": {
+      "copiedToClipboard": "클립보드에 복사했어요.",
+      "noDescription": "설명 없음",
+      "adminGroup": "그룹 관리",
+      "accessInfo": "접근 정보",
+      "close": "닫기"
+    },
+    "GroupProtectionSelector": {
+      "public": "전체 공개",
+      "publicHelper": "컨텐츠가 모두에게 공개되고 누구나 그룹에 가입할 수 있어요.",
+      "protected": "제한된 공개",
+      "protectedHelper": "컨텐츠가 모두에게 공개되지만 초대된 유저만 그룹에 가입할 수 있어요.",
+      "private": "공개 안함",
+      "privateHelper": "초대된 유저만 그룹에 가입할 수 있고 컨텐츠도 그룹 멤버만 볼 수 있어요.",
+      "groupProtectionRange": "그룹 공개 범위",
+      "cancel": "취소",
+      "apply": "적용"
+    },
+    "LocaleSelector": {
+      "selectLanguage": "언어 선택",
+      "cancel": "취소",
+      "apply": "적용"
+    },
+    "ManagingSection": {
+      "approveSuccess": "승인되었어요.",
+      "approveFailed": "승인에 실패했어요.",
+      "deleteSuccess": "삭제처리 되었어요.",
+      "deleteFailed": "삭제처리에 실패했어요.",
+      "ignoredReports": "무시된 신고 {n}개",
+      "resolvedReports": "해결된 신고 {n}개",
+      "managingHistory": "관리 기록",
+      "approve": "승인",
+      "approved": "승인됨",
+      "trash": "삭제",
+      "trashedByAdmin": "관리자에 의해 삭제됨",
+      "trashed": "삭제됨",
+      "reportList": "신고 내역",
+
+      "DeleteReasonDialog": {
+        "typeReason": "삭제하는 이유를 입력해주세요.",
+        "trashReason": "삭제 이유",
+        "trashReasonHelper": "ex) 게시판 규칙 ㅁㅁ를 위반함",
+        "cancel": "취소",
+        "trash": "삭제"
+      },
+      "ManagingLogItem": {
+        "approve": "승인",
+        "trash": "삭제",
+        "groupAdmin": "그룹 관리자",
+        "reason": "이유"
+      }
+    },
+    "Navbar": {
+      "allBoard": "모든 게시판",
+
+      "NavbarActions": {
+        "joinGroup": "그룹 가입",
+        "login": "로그인",
+
+        "AccountButton": {
+          "logout": "로그아웃",
+          "logoutMsg": "로그아웃 하시겠어요?",
+          "login": "로그인"
+        },
+        "ChatBox": {
+          "chat": "채팅",
+
+          "ChatPreviewBox": {
+            "ChatRoomMenuButton": {
+              "cannotBlock": "차단할 수 없는 유저에요.",
+              "blockUser": "유저 차단",
+              "blockUserMsg": "유저를 차단하면 해당 유저의 채팅을 확인할 수 없어요. 차단하시겠어요?",
+              "blockUserSuccess": "해당 유저의 채팅을 차단했어요. 설정에서 취소할 수 있어요.",
+              "blockUserFailed": "유저 차단에 실패했어요.",
+              "leaveChat": "채팅방 나가기",
+              "leaveChatMsg": "채팅을 나가면 더 이상 채팅 기록을 확인할 수 없어요. 채팅을 나가시겠어요?",
+              "leaveChatFailed": "채팅방 나가기에 실패했어요.",
+              "closeChat": "채팅 닫기",
+              "leave": "나가기"
+            }
+          }
+        },
+        "NotificationBox": {
+          "notification": "알림",
+          "noNotification": "알림이 아직 없어요.",
+          "showAll": "모두 보기"
+        },
+        "UserButton": {
+          "logout": "로그아웃",
+          "logoutMsg": "로그아웃 하시겠어요?",
+          "logoutSucess": "로그아웃 되었어요.",
+          "point": "포인트",
+          "myActivity": "내 활동",
+          "manageAccount": "계정 관리",
+          "setting": "설정",
+          "restriction": "이용 제한 내역"
+        },
+        "SearchBar": {}
+      },
+      "NavbarLogo": {
+        "switchGroupSuccess": "그룹 \"{groupName}\"에 들어왔어요 :)",
+        "adminPage": "관리자 페이지"
+      },
+      "NavbarMenuButton": {},
+      "SearchBar": {
+        "loading": "로딩중",
+        "board": "게시판",
+        "search": "검색"
+      }
+    },
+    "NotificationItem": {
+      "commentOnPostMsg": "내 글 \"{postTitle}\"에 댓글 \"{commentBody}\"",
+      "commentOnCommentMsg": "내 댓글 \"{parentBody}\"에 답글 \"{childBody}\"",
+      "createManagerMsg": "게시판 \"{boardName}\" 의 관리자로 등록되었어요.",
+      "deleteManagerMsg": "게시판 \"{boardName}\" 의 관리자 권한이 해제되었어요.",
+      "trashPostMsg": "내 글 \"{postTitle}\"이(가) 삭제되었어요. 이유: {reason}",
+      "trashCommentMsg": "내 댓글 \"{commentBody}\"이(가) 삭제되었어요. 이유: {reason}"
+    },
+    "PollEditor": {
+      "missingText": "선택지 텍스트 누락",
+      "missingTextMsg": "모든 선택지 항목의 텍스트를 입력해주세요.",
+      "pollTitle": "투표 제목",
+      "pollTitleHelper": "(선택) 투표 제목을 입력해주세요.",
+      "descriptionHelper": "(선택) 설명을 입력해주세요.",
+      "minCandMsg": "항목을 최소 2개 이상 추가해주세요.",
+      "addCand": "항목 추가",
+      "pollExpiresAt": "투표 종료 시각",
+      "periodSetting": "투표 기간 설정",
+      "allowMultiple": "다중 선택 허용",
+      "cancel": "취소",
+      "modify": "수정",
+      "create": "생성",
+
+      "EditablePollCand": {
+        "deleteCand": "항목 삭제",
+        "deleteCandMsg": "항목을 삭제하시겠어요?",
+        "imgUploadFailed": "이미지 업로드에 실패했어요.",
+        "initializeImage": "이미지 다시 선택",
+        "initializeImageMsg": "선택한 투표 썸네일 이미지를 지우고 다시 선택하시겠어요?",
+        "typeCand": "선택지를 입력해주세요.",
+        "addImage": "이미지 추가",
+        "delete" : "삭제"
+      }
+    },
+    "PollItem": {
+      "voteFailed": "투표에 실패했어요.",
+      "edit": "수정",
+      "allowMultiple":"다중 선택 허용",
+      "untilTime": "{until} 마감",
+      "myVote": "내 투표",
+      "previewResult": "결과 미리보기",
+      "voteAgain": "다시 투표하기",
+      "submit": "투표하기",
+
+      "EditPollDialog": {
+        "cancelEdit": "투표 수정 취소",
+        "cancelEditMsg": "수정중인 내용을 지우고 투표 수정을 취소하시겠어요?",
+        "editSuccess": "투표가 수정되었어요!",
+        "editFailed": "투표 수정에 실패했어요."
+      }
+    },
+    "PostCommentList": {
+      "noComments": "아직 댓글이 없어요."
+    },
+    "PostEditor": {
+      "selectReserveTimeAgain": "예약 시간을 다시 선택해주세요.",
+      "saveDraft": "임시 저장",
+      "nsfw": "후방",
+      "spoiler": "스포",
+      "post": "게시글",
+      "video": "동영상",
+      "image": "이미지",
+      "poll": "투표",
+      "title": "제목",
+      "placeholder": "게시글을 작성해주세요. \n ※ 커서를 클릭해서 툴바 오픈",
+      "advanced": "고급",
+      "advancedSetting": "고급 설정",
+      "cancel": "취소",
+      "submit": "제출",
+      "boardManager": "게시판 매니저",
+      "boardManagerHelper": "내 계정 옆에 내가 게시판 매니저임이 표시돼요.",
+
+      "EmptyMediaEditor": {
+        "dragAndDropOr": "드래그 & 드랍 또는",
+        "upload": "업로드"
+      },
+      "FlagSelector": {
+        "flag": "플래그",
+        "selectFlag": "플래그 선택",
+        "allowMultiple": "다중 선택 허용",
+        "cancel": "취소",
+        "apply": "적용"
+      },
+      "PhotoEditor": {
+        "deleteImage": "이미지 삭제",
+        "deleteImageMsg": "이미지를 삭제하시겠어요?",
+        "closeEditor": "이미지 에디터 닫기",
+        "closeEditorMsg": "이미지 에디터를 닫을까요?",
+        "dragImageOr": "이미지 드래그 또는"
+      },
+      "PostDraftBox": {
+        "deleteDraft": "임시저장 삭제",
+        "deleteDraftMsg": "선택한 임시저장 내역을 삭제하시겠어요?",
+        "restoreDraft": "임시저장 불러오기",
+        "restoreDraftMsg": "선택한 임시저장을 불러올까요? (작성중이던 글이 있다면 지워져요.)",
+        "savedDrafts": "저장된 원고 {n}개",
+
+        "DraftPostItem": {
+          "reservedAt": "예약"
+        }
+      },
+      "ReserveTimePicker": {
+        "reserveAt": "예약 게시",
+        "reservedAt": "예약 시간",
+        "reserveAtHelper": "선택한 시간에 게시글을 게시할 수 있어요.",
+        "cancelReserve": "예약 시간 취소"
+      },
+      "ThumbnailSelector": {
+        "cannotCropExternal": "외부 이미지 (출처: {externalUrl}) 는 크롭할 수 없어요.",
+        "selectAgain": "다시 고르기",
+        "selectAgainMsg": "지금 썸네일을 취소하고 다시 고르시겠어요?",
+        "postThumbnail": "게시글 썸네일",
+        "postThumbnailHelper": "썸네일은 게시글 미리보기, 또는 게시글 링크를 공유할 때 표시돼요.",
+        "selectThumbnail": "썸네일 선택",
+        "crop": "크롭 조정",
+        "addImageToSelect": "썸네일을 선택하려면 게시글에 이미지를 추가해주세요.",
+        "cancel": "취소",
+        "apply": "적용"
+      },
+      "VideoEditor": {
+        "dragVideoOr": "동영상 드래그 또는",
+        "uploading": "업로드 중",
+        "deleteVideo": "동영상 삭제"
+      }
+    },
+    "PostList": {
+      "noPosts": "해당하는 게시글이 없어요."
+    },
+    "PostMenuButton": {
+      "cannotPinDeleted": "삭제된 글은 고정할 수 없어요.",
+      "pinSuccess": "고정글로 등록했어요. 새로고침 후 확인해주세요.",
+      "pinFailed": "공지등록에 실패했어요.",
+      "unpinSuccess": "고정이 해지되었어요. 새로고침 후 확인해주세요.",
+      "unpinFailed": "고정 해지에 실패했어요.",
+      "bookmarkSuccess": "게시글을 스크랩 했어요.",
+      "bookmarkFailed": "게시글 스크랩에 실패했어요.",
+      "unbookmarkSuccess": "게시글 스크랩을 취소했어요.",
+      "unbookmarkFailed": "스크랩 취소에 실패했어요.",
+      "trashSuccess": "게시글이 삭제처리 되었어요.",
+      "trashFailed": "삭제에 실패했어요.",
+      "share": "공유하기",
+      "report": "신고하기",
+      "unbookmark": "스크랩 취소",
+      "bookmark": "스크랩",
+      "managerFeature": "게시판 매니저 기능",
+      "unpin": "고정 해지",
+      "pin": "글 고정",
+      "restrictAuthor": "글쓴이 이용 제한",
+      "adminFeature":"관리자 기능",
+      "trashPost": "게시글 삭제",
+
+      "PostShareDialog": {
+        "copiedToClipboard": "클립보드에 복사되었어요." ,
+        "copy": "복사"
+      }
+    },
+    "PostPreview": {
+      "spoiler": "스포 포함",
+      "nsfw": "후방 주의",
+      "plusImgs": "+ {numMore}장",
+      "pinned": "고정됨",
+      "bookmark": "스크랩",
+      "deletedByAdmin": "관리자에 의해 삭제됨",
+      "deletedByBoardManager": "게시판 매니저에 의해 삭제됨",
+      "deleted": "삭제됨",
+      "reply": "답글 작성"
+    },
+    "PostSortChips": {
+      "sortHot": "추천순",
+      "sortRecent": "최신순",
+      "sortVote": "인기순",
+      "sortDiscussed": "댓글순"
+    },
+    "RangeSelector": {
+      "today": "오늘",
+      "1week": "일주일",
+      "1month": "한달",
+      "3month": "3달",
+      "1year": "1년",
+      "all": "전체",
+      "publishedAt": "작성 날짜"
+    },
+    "ReportItem": {
+      "ignoreSuccess": "신고가 무시되었어요.",
+      "resolveSuccess": "신고가 해결 처리 되었어요.",
+      "report": "신고",
+      "ignore": "무시",
+      "resolve": "해결",
+      "ignored": "무시됨",
+      "resolved": "해결됨"
+    },
+    "ReportSummary": {
+      "processStatus": "신고 처리 상태",
+      "all": "모두",
+      "ignored": "무시됨",
+      "resolved": "해결됨",
+      "noRreport": "해당하는 신고내역이 없어요."
+    },
+    "RichEditor2": {
+      "heading": "헤딩",
+      "list": "리스트",
+      "numList": "숫자 리스트",
+      "code": "코드",
+      "text": "텍스트",
+
+      "ImageAddDialog": {
+        "closeEditor":"이미지 에디터 닫기",
+        "closeEditorMsg": "작성중인 이미지들을 지우고 에디터를 닫으시겠어요?",
+        "imageUploadFailed":"이미지 업로드에 실패했어요.",
+        "imageAlreadyIncluded": "이미 포함된 이미지가 있어요.",
+        "upload": "업로드",
+        "dragAndDropOr": "드래그 & 드랍 또는",
+        "cancel": "취소",
+        "apply": "적용"
+      },
+      "PollAddDialog": {
+        "createPollSuccess": "투표가 생성되었어요!",
+        "createPollFailed": "투표 생성에 실패했어요.",
+        "cancelPoll": "투표 생성 취소",
+        "cancelPollMsg": "작성중인 내용을 지우고 투표 생성을 취소하시겠어요?"
+      },
+      "buttons": {
+        "LinkIB": {
+          "invalidUrl": "올바른 형식의 url 이 아닙니다.",
+          "selectText": "링크할 텍스트를 선택해주세요.",
+          "typeLinkMsg": "링크를 입력해주세요.."
+        },
+        "LinkAddIB": {
+          "checkHttp": "올바른 형식의 url 이 아닙니다. http:// 또는 https:// 로 시작하는 도메인을 입력해주세요.",
+          "invalidUrl": "올바른 형식의 url 이 아닙니다.",
+          "text": "텍스트",
+          "preview": "프리뷰",
+          "typeLinkMsg":"링크를 입력해주세요.."
+        },
+        "TweetIB": {
+          "invalidTweet": "올바른 트위터 형식의 공유 링크가 아니에요.",
+          "tweetIdOrLink": "트윗 아이디 또는 공유 링크.."
+        },
+        "YoutubeIB": {
+          "invalidYoutube": "올바른 유튜브 링크 형식이 아니에요.",
+          "typeLinkMsg": "유튜브 링크를 입력해주세요.."
+        }
+      }
+    },
+    "Voter": {
+      "pleaseCheckNetwork": "네트워크 상태를 확인해주세요.",
+      "cantVoteMyPost": "내 글은 투표할 수 없어요.",
+      "cantVoteMyComment": "내 댓글은 투표할 수 없어요."
+    }
+  },
+  "ui": {
+    "tools": {
+      "ColorPicker": {
+        "moreColors": "색상 더보기"
+      },
+      "EditableAvatar": {
+        "ProfileEditButton": {
+          "changeImage": "프로필 변경",
+          "defaultAvatar":"기본 아바타"
+        }
+      },
+      "EditableTextField": {
+        "cancel": "취소",
+        "apply": "적용"
+      }
+    },
+    "ImageCropper": {
+      "zoom": "줌",
+      "rotate": "회전",
+      "cancel": "취소",
+      "apply": "적용"
+    },
+    "ImageModal": {
+      "thisPicture": "이 사진만",
+      "all": "모두"
+    }
+  },
+  "hooks": {
+    "dialogs": {
+      "BlockAuthorDialog": {
+        "editSuccess": "수정되었어요.",
+        "createSuccess": "이용제한 되었어요. '게시판 매니저 페이지 > 이용제한'에서 해제할 수 있어요.",
+        "duration":"제한 기간",
+        "1week": "일주일",
+        "1month": "한달",
+        "3month": "3달",
+        "1year": "1년",
+        "untilDate": "~ {until} 까지",
+        "boardRestriction": "게시판 이용 제한",
+        "boardRestrictionMsg": "해당 유저는 제한기간동안 게시판에 글/댓글을 작성할 수 없어요.",
+        "groupRestriction": "그룹 이용 제한",
+        "groupRestrictionMsg": "해당 유저는 제한기간동안 그룹에 모든 게시판에 글/댓글을 작성할 수 없어요.",
+        "reason": "제한 이유",
+        "cancel": "취소",
+        "submit": "제출"
+      },
+      "ConfirmDialog": {
+        "cancel": "취소",
+        "ok": "확인",
+        "groupMemberOnlyMsg": "해당 기능은 그룹에 가입된 멤버만 이용할 수 있어요.",
+        "loginOnlyMsg": "해당 기능은 로그인 후 이용할 수 있어요."
+      },
+      "LoginDialog": {
+        "loginWithEmail": "이메일로 로그인",
+
+        "GoogleLoginButton": {
+          "loginSuccess": "{email}로 로그인했어요 :)",
+          "loginFailed": "구글 로그인에 실패했어요.",
+          "loginWithGoogle": "구글로 로그인"
+        }
+      },
+      "PostDialog": {
+        "moveToPage": "페이지 이동"
+      },
+      "ReportDialog": {
+        "ruleViolation": "커뮤니티 수칙 위반",
+        "ruleViolationMsg": "자체적으로 규정된 커뮤니티 수칙을 위반했을 경우",
+        "spam": "상업적 광고",
+        "spamMsg": "광고성 내용이나 판매를 목적으로 하는 글을 게시한 경우",
+        "hate": "혐오/비하/욕설",
+        "hateMsg": "인종, 성별, 종교, 출신 국가 등을 비하하거나 혐오 발언을 한 경우",
+        "scam": "유출/사칭/사기",
+        "scamMsg": "사칭, 유출, 사기와 같은 부정한 행위를 시도했거나, 다른 사용자를 속이려고 시도한 경우",
+        "sexual": "음란물/불건전한 만남",
+        "sexualMsg": "성적 내용이나 불건전한 만남 등 성적인 내용을 다루는 경우",
+        "repeat": "도배/반복",
+        "repeatMsg": "동일한 내용을 반복적으로 게시하거나, 동일한 행동을 반복적으로 수행한 경우",
+        "threatening": "다른 사용자에게 위협을 가하거나, 폭력적인 언어나 행동을 사용한 경우",
+        "threateningMsg": "타인을 위협하거나 협박한 경우",
+        "copyrightViolation": "저작권 위반",
+        "copyRightViolationMsg": "저작권을 침해하는 내용을 게시한 경우",
+        "illegal": "불법적인 내용 및 활동",
+        "illegalMsg": "불법 복제물, 해킹, 사이버 범죄, 도박 등 불법적인 활동을 시도하거나 광고한 경우",
+        "reportSuccess": "신고가 접수되었어요.",
+        "reportFailed": "신고 접수에 실패했어요.",
+        "reportReason": "신고 사유",
+        "typeMoreReason": "(선택) 추가적으로 작성할 내용이 있다면 적어주세요.",
+        "moreReason": "추가 신고 사유",
+        "selectReportReason": "신고 사유 선택",
+        "prev": "이전",
+        "next": "다음",
+        "cancel": "취소",
+        "submit": "제출"
+      }
+    }
+  }
+}
