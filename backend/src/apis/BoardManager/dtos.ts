@@ -4,21 +4,21 @@ import { boardManagerFormSchema, listBoardManageOptionSchema, getBoardManagerOpt
 
 
 // create
-const createBoardManagerRqs = z.object({ form: boardManagerFormSchema });
-export class CreateBoardManagerDto extends createZodDto(createBoardManagerRqs) {}
+export class CreateBoardManagerDto extends createZodDto(z.object({
+  form: boardManagerFormSchema,
+})) {}
 
 // delete
 // no dto
 
 // get
-const getBoardManagerRqs = getBoardManagerOptionSchema;
-export class GetBoardManagerDto extends createZodDto(getBoardManagerRqs) {}
+export class GetBoardManagerDto extends createZodDto(getBoardManagerOptionSchema) {}
 
 // update
-const updateBoardManagerRqs = z.object({ form: boardManagerFormSchema.partial() });
-export class UpdateBoardManagerDto extends createZodDto(updateBoardManagerRqs) {}
+export class UpdateBoardManagerDto extends createZodDto( z.object({
+  form: boardManagerFormSchema.partial(),
+})) {}
 
 // list
-const listBoardManagerRqs = listBoardManageOptionSchema;
-export class ListBoardManagerDto extends createZodDto(listBoardManagerRqs) {}
+export class ListBoardManagerDto extends createZodDto(listBoardManageOptionSchema) {}
 

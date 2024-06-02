@@ -4,6 +4,5 @@ import { imageFormSchema } from "@/models/Image";
 
 
 // create
-const CreateImageRqs = z.object({ form: imageFormSchema });
-export class CreateImageDto extends createZodDto(CreateImageRqs) {}
+export class CreateImageDto extends createZodDto(z.object({ form: imageFormSchema })) {}
 

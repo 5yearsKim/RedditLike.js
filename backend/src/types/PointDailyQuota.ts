@@ -21,10 +21,8 @@ export type PointDailyQuotaT = {
 
 export type GetPointDailyQuotaOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
 }
 
 export type ListPointDailyQuotaOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
 }

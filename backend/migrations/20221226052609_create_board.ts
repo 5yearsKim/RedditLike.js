@@ -9,7 +9,6 @@ export async function up(knex: Knex): Promise<void> {
     t.dateTime("created_at").notNullable().defaultTo(knex.fn.now());
     t.dateTime("updated_at");
 
-    t.integer("group_id").unsigned().references("groups.id").notNullable().onUpdate("CASCADE");
     t.string("name", 32).notNullable();
     t.text("description");
     t.text("avatar_path");
@@ -37,7 +36,7 @@ export async function up(knex: Knex): Promise<void> {
     t.boolean("use_public_chat").notNullable().defaultTo(false);
     t.boolean("use_email_only").notNullable().defaultTo(false);
 
-    t.unique(["group_id", "name"]);
+    t.unique(["name"]);
   });
 }
 

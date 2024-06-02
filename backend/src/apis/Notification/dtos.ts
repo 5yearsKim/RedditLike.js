@@ -3,8 +3,7 @@ import { listNotificationOptionSchema } from "@/models/Notification";
 
 
 // list
-const listRqs = listNotificationOptionSchema;
-export class ListNotificationDto extends createZodDto(listRqs) {}
+export class ListNotificationDto extends createZodDto(listNotificationOptionSchema) {}
 
 
 // checkMe

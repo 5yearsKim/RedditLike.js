@@ -3,24 +3,29 @@ import { z } from "nestjs-zod/z";
 import { flairFormSchema } from "@/models/Flair";
 
 // create
-const createFlairRqs = z.object({ form: flairFormSchema });
-export class CreateFlairDto extends createZodDto(createFlairRqs) {}
+export class CreateFlairDto extends createZodDto(z.object({
+  form: flairFormSchema,
+})) {}
 
 // update
-const updateFlairRqs = z.object({ form: flairFormSchema.partial() });
-export class UpdateFlairDto extends createZodDto(updateFlairRqs) {}
+export class UpdateFlairDto extends createZodDto( z.object({
+  form: flairFormSchema.partial(),
+})) {}
 
 // delete
 // no dto
 
 
 // rerank
-const rerankFlairRqs = z.object({ boxId: z.number().int(), flairIds: z.array(z.number().int()) });
-export class RerankFlairDto extends createZodDto(rerankFlairRqs) {}
+export class RerankFlairDto extends createZodDto( z.object({
+  boxId: z.number().int(),
+  flairIds: z.array(z.number().int()),
+})) {}
 
 // create custom
-const createCustomFlairRqs = z.object({ form: flairFormSchema });
-export class CreateCustomFlairDto extends createZodDto(createCustomFlairRqs) {}
+export class CreateCustomFlairDto extends createZodDto( z.object({
+  form: flairFormSchema,
+})) {}
 
 // delete custom
 // no dto

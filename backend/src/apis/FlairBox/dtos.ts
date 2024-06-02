@@ -6,22 +6,22 @@ import {
 
 
 // create
-const createFlairBoxRqs = z.object({ form: flairBoxFormSchema });
-export class CreateFlairBoxDto extends createZodDto(createFlairBoxRqs) {}
+export class CreateFlairBoxDto extends createZodDto(z.object({
+  form: flairBoxFormSchema,
+})) {}
 
 // get
-const getFlairBoxRqs = getFlairBoxOptionSchema;
-export class GetFlairBoxDto extends createZodDto(getFlairBoxRqs) {}
+export class GetFlairBoxDto extends createZodDto(getFlairBoxOptionSchema) {}
 
 // update
-const updateFlairBoxRqs = z.object({ form: flairBoxFormSchema.partial() });
-export class UpdateFlairBoxDto extends createZodDto(updateFlairBoxRqs) {}
+export class UpdateFlairBoxDto extends createZodDto(z.object({
+  form: flairBoxFormSchema.partial(),
+})) {}
 
 // delete
 // no dto
 
 // list
-const listFlairBoxRqs = listFlairBoxOptionSchema;
-export class ListFlairBoxDto extends createZodDto(listFlairBoxRqs) {}
+export class ListFlairBoxDto extends createZodDto(listFlairBoxOptionSchema) {}
 
 

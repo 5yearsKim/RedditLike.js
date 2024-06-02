@@ -23,11 +23,9 @@ export type BoardRuleT = {
 
 export type GetBoardRuleOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }
 
 export type ListBoardRuleOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     boardId?: number | undefined;
 }

@@ -15,14 +15,12 @@ type _BoardUserBlockT = {
 
 export type GetBoardUserBlockOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $board?: boolean | undefined;
     $target?: boolean | undefined;
 }
 
 export type ListBoardUserBlockOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $board?: (boolean | undefined) | undefined;
     $target?: (boolean | undefined) | undefined;
 }

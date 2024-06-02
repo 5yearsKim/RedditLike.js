@@ -4,9 +4,12 @@ import { postPinFormSchema } from "@/models/PostPin";
 
 
 // create
-const CreatePostPinRqs = z.object({ form: postPinFormSchema });
-export class CreatePostPinDto extends createZodDto(CreatePostPinRqs) {}
+export class CreatePostPinDto extends createZodDto(z.object({
+  form: postPinFormSchema,
+})) {}
 
 // delete
-const DeletePostPinRqs = z.object({ boardId: z.number().int(), postId: z.number().int() });
-export class DeletePostPinDto extends createZodDto(DeletePostPinRqs) {}
+export class DeletePostPinDto extends createZodDto( z.object({
+  boardId: z.number().int(),
+  postId: z.number().int(),
+})) {}

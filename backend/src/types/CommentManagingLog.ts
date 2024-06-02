@@ -21,13 +21,11 @@ type _CommentManagingLogT = {
 
 export type GetCommentManagingLogOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $author?: boolean | undefined;
 }
 
 export type ListCommentManagingLogOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $author?: (boolean | undefined) | undefined;
     commentId?: number | undefined;
 }

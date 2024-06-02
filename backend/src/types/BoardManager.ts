@@ -33,13 +33,11 @@ type _BoardManagerT = {
 
 export type GetBoardManagerOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $author?: boolean | undefined;
 }
 
 export type ListBoardManagerOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $author?: (boolean | undefined) | undefined;
     boardId?: number | undefined;
 }

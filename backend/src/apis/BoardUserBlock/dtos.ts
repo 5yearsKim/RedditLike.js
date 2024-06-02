@@ -4,12 +4,12 @@ import { boardUserBlockFormSchema, listBoardUserBlockOptionSchema } from "@/mode
 
 
 // create
-const createBoardUserBlockRqs = z.object({ form: boardUserBlockFormSchema });
-export class CreateBoardUserBlockDto extends createZodDto(createBoardUserBlockRqs) {}
+export class CreateBoardUserBlockDto extends createZodDto(z.object({
+  form: boardUserBlockFormSchema,
+})) {}
 
 // list
-const listBoardUserBlockRqs = listBoardUserBlockOptionSchema;
-export class ListBoardUserBlockDto extends createZodDto(listBoardUserBlockRqs) {}
+export class ListBoardUserBlockDto extends createZodDto(listBoardUserBlockOptionSchema) {}
 
 // delete
 // no dto

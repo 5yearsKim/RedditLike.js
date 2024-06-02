@@ -57,14 +57,12 @@ type _BoardT = {
 
 export type GetBoardOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $user_defaults?: boolean | undefined;
     $posts?: ("recent") | undefined;
 }
 
 export type ListBoardOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $user_defaults?: (boolean | undefined) | undefined;
     $posts?: (("recent") | undefined) | undefined;
     sort?: ("hot" | "recent" | "old" | "follower" | "recently_followed") | undefined;

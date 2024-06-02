@@ -9,8 +9,7 @@ import { TG } from "@/utils/type_generator";
 export const boardSortEnum = z.enum([ "hot", "recent", "old", "follower", "recently_followed"]);
 
 
-// board
-const boardFormZ = {
+export const boardFormSchema = insertFormSchema.extend({
   group_id: z.number().int(),
   name: z.string().min(1).max(32),
   description: z.string().min(1),
@@ -43,12 +42,10 @@ const boardFormZ = {
   allow_post_manager_only: z.boolean().optional(),
   use_public_chat: z.boolean().optional(),
   use_email_only: z.boolean().optional(),
-};
-
-export const boardFormSchema = insertFormSchema.extend(boardFormZ);
+});
 
 export const boardSchema = baseModelSchema.extend({
-  ...boardFormZ,
+  ...boardFormSchema.shape,
   // aggrs
   hot_score: z.number().int(),
   num_follower: z.number().int(),

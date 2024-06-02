@@ -1,29 +1,29 @@
-import type { AccountSessionT } from "./Auth";
+import type { UserSessionT } from "./Auth";
 
 
 // (POST) /google-login
 export type GoogleLoginRqs = {
   googleAccessToken: string;
 };
-export type GoogleLoginRsp = AccountSessionT
+export type GoogleLoginRsp = UserSessionT
 
 // (POST) /email-login
 export type EmailLoginRqs = {
   email: string;
   code: string;
 };
-export type EmailLoginRsp = AccountSessionT
+export type EmailLoginRsp = UserSessionT
 
 // (POST) /fake-login
 export type FakeLoginRqs = {
   email: string;
 };
-export type FakeLoginRsp = AccountSessionT
+export type FakeLoginRsp = UserSessionT
 
 // (POST) /refresh
 export type RefreshRqs = null;
-export type RefreshRsp = AccountSessionT
+export type RefreshRsp = UserSessionT
 
-// (POST) /verify-account-token
-export type VerifyAccountTokenRqs = { accountToken: string };
-export type VerifyAccountTokenRsp = AccountSessionT
+// (POST) /verify-user-token
+export type VerifyUserTokenRqs = { userToken: string };
+export type VerifyUserTokenRsp = UserSessionT

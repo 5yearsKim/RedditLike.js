@@ -2,7 +2,6 @@ import Knex from "knex";
 import knexfile from "@/knexfile";
 import { types } from "pg";
 
-console.log("connected to " + knexfile.connection);
 
 export const knex = Knex(knexfile);
 export type QueryBuilder = Knex.Knex.QueryBuilder

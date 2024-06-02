@@ -19,13 +19,11 @@ type _PollT = {
 
 export type GetPollOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $cands?: boolean | undefined;
 }
 
 export type ListPollOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $cands?: boolean | undefined;
 }
 

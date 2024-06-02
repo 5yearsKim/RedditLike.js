@@ -3,13 +3,15 @@ import { z } from "nestjs-zod/z";
 import { boardUserFormSchema, listBoardUserOptionSchema } from "@/models/BoardUser";
 
 // create
-const createBoardUserRqs = z.object({ form: boardUserFormSchema });
-export class CreateBoardUserDto extends createZodDto(createBoardUserRqs) {}
+export class CreateBoardUserDto extends createZodDto(z.object({
+  form: boardUserFormSchema,
+})) {}
 
 // list
-const listBoardUserRqs = listBoardUserOptionSchema;
-export class ListBoardUserDto extends createZodDto(listBoardUserRqs) {}
+export class ListBoardUserDto extends createZodDto(listBoardUserOptionSchema) {}
 
 // getAvatarPresigendUrl
-const getAvatarPresignedUrlRqs = z.object({ boardId: z.number().int(), mimeType: z.string() });
-export class GetAvatarPresignedUrlDto extends createZodDto(getAvatarPresignedUrlRqs) {}
+export class GetAvatarPresignedUrlDto extends createZodDto(z.object({
+  boardId: z.number().int(),
+  mimeType: z.string(),
+})) {}

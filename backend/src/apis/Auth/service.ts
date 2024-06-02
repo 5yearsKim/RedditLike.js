@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { accountM } from "@/models/Account";
+import { userM } from "@/models/User";
 import { emailVerificationM } from "@/models/EmailVerification";
 import * as err from "@/errors";
 import { env } from "@/env";
@@ -7,22 +7,22 @@ import * as jwt from "jsonwebtoken";
 import { genUniqueId } from "@/utils/random";
 import { addDays } from "date-fns";
 import axios from "axios";
-import type { AccountFormT, AccountT, AccountSessionT } from "@/types";
+import type { UserFormT, UserT, UserSessionT } from "@/types";
 
 
 @Injectable()
 export class AuthService {
 
-  private async findOrCreateAccount(email: string): Promise<AccountT> {
-    const fetched = await accountM.findOne({ email });
+  private async findOrCreateUser(email: string): Promise<UserT> {
+    const fetched = await userM.findOne({ email });
     // if not exist, create account
     if (!fetched) {
       const sub = `user_${genUniqueId({ len: 8 })}`;
-      const form: AccountFormT = {
+      const form: UserFormT = {
         sub,
         email,
       };
-      const created = await accountM.create(form);
+      const created = await userM.create(form);
       if (!created) {
         throw new err.NotAppliedE("not created");
       }
@@ -34,28 +34,28 @@ export class AuthService {
     }
   }
 
-  private generateLoginSession(account: AccountT): AccountSessionT {
+  private generateLoginSession(user: UserT): UserSessionT{
     const expiresAt = addDays(new Date(), 90);
     const payload = {
       iat: new Date().getTime(),
       exp: expiresAt.getTime() / 1000,
       iss: "onioncontents",
-      account: {
-        id: account.id,
-        sub: account.sub,
-        email: account.email,
+      user: {
+        id: user.id,
+        sub: user.sub,
+        email: user.email,
       },
     };
-    const accessToken = jwt.sign(payload, env.ACCOUNT_SECRET);
-    const session: AccountSessionT = {
-      account,
-      accessToken,
-      accessTokenExpAt: expiresAt.getTime() / 1000,
+    const userToken = jwt.sign(payload, env.ACCOUNT_SECRET);
+    const session: UserSessionT = {
+      user,
+      token: userToken,
+      tokenExpAt: expiresAt.getTime() / 1000,
     };
     return session;
   }
 
-  async verifyGoogleLogin(token: string): Promise<AccountSessionT> {
+  async verifyGoogleLogin(token: string): Promise<UserSessionT> {
     try {
       const rsp: {
         sub: string,
@@ -66,7 +66,7 @@ export class AuthService {
         locale: string,
       } = (await axios.get(`https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`)).data;
 
-      const account = await this.findOrCreateAccount(rsp.email);
+      const account = await this.findOrCreateUser(rsp.email);
       const session = this.generateLoginSession(account);
 
       return session;
@@ -76,7 +76,7 @@ export class AuthService {
     }
   }
 
-  async verifyEmailLogin(email: string, code: string): Promise<AccountSessionT> {
+  async verifyEmailLogin(email: string, code: string): Promise<UserSessionT> {
     const fetched = await emailVerificationM.find({
       builder: (qb) => {
         qb.where({ email: email, is_verified: false }).orderBy("id", "desc").limit(1);
@@ -96,34 +96,34 @@ export class AuthService {
     await emailVerificationM.updateOne({ id: last.id }, { is_verified: true });
 
     // find or create account
-    const account = await this.findOrCreateAccount(email);
-    const session = this.generateLoginSession(account);
+    const user = await this.findOrCreateUser(email);
+    const session = this.generateLoginSession(user);
 
     return session;
   }
 
-  async verifyFakeLogin(email: string): Promise<AccountSessionT> {
+  async verifyFakeLogin(email: string): Promise<UserSessionT> {
     // find or create account
-    const account = await this.findOrCreateAccount(email);
-    const session = this.generateLoginSession(account);
+    const user = await this.findOrCreateUser(email);
+    const session = this.generateLoginSession(user);
 
     return session;
   }
 
-  async refresh(accountId: idT): Promise<AccountSessionT> {
-    const account = await accountM.findById(accountId);
-    if (!account) {
+  async refresh(user: UserT): Promise<UserSessionT> {
+    const found = await userM.findById(user.id);
+    if (!found) {
       throw new err.NotExistE("not exist");
     }
-    const session = this.generateLoginSession(account);
+    const session = this.generateLoginSession(found);
     return session;
   }
 
-  async verifyAccountToken(accountToken: string): Promise<AccountSessionT> {
-    const decoded = jwt.verify(accountToken, env.ACCOUNT_SECRET);
+  async verifyUserToken(userToken: string): Promise<UserSessionT> {
+    const decoded = jwt.verify(userToken, env.ACCOUNT_SECRET);
 
-    type DecodedT = {account: {id: idT, email: string, sub: string}};
-    const account = await accountM.findOne({ email: (decoded as DecodedT).account.email });
+    type DecodedT = {user: {id: idT, email: string, sub: string}};
+    const account = await userM.findOne({ email: (decoded as DecodedT).user.email });
     if (!account) {
       throw new err.NotExistE("not exist");
     }

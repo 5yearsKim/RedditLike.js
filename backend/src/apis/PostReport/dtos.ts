@@ -4,10 +4,10 @@ import { postReportFormSchema, listPostReportOptionSchema } from "@/models/PostR
 
 
 // create
-const createPostReportRqs = z.object({ form: postReportFormSchema });
-export class CreatePostReportDto extends createZodDto(createPostReportRqs) {}
+export class CreatePostReportDto extends createZodDto( z.object({
+  form: postReportFormSchema,
+})) {}
 
 // list
-const listPostReportRqs = listPostReportOptionSchema;
-export class ListPostReportDto extends createZodDto(listPostReportRqs) {}
+export class ListPostReportDto extends createZodDto(listPostReportOptionSchema) {}
 

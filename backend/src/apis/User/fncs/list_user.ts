@@ -1,6 +1,6 @@
 import { userM } from "@/models/User";
 import * as err from "@/errors";
-import { knex } from "@/global/db";
+// import { knex } from "@/global/db";
 import { encodeCursor, decodeCursor } from "@/utils/formatter";
 import { UserT, ListUserOptionT } from "@/types";
 
@@ -10,21 +10,12 @@ export async function listUser(opt: ListUserOptionT): Promise<ListData<UserT>> {
   let nextCursor: string|null = null;
   let getNextCursor: (item: UserT)=> string|null = () => null;
 
-  if (!opt.groupId) {
-    throw new err.InvalidDataE("groupId should be given to fetch users");
-  }
-
   const fetched = await userM.find({
-    builder: (qb, select) => {
+    builder: (qb ) => {
       qb.limit(limit);
       // lookup account by default
-      qb.leftJoin("accounts", `${table}.account_id`, "=", "accounts.id");
-      select.push(knex.raw("TO_JSON(accounts.*) AS account"));
 
       qb.whereNull(`${table}.deleted_at`);
-
-      // groupId
-      qb.whereRaw(`${table}.group_id = ${opt.groupId}`);
 
       // sort
       switch (opt.sort ?? "recent") {

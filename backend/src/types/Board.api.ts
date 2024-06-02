@@ -20,9 +20,9 @@ export type UpdateRsp = BoardT
 export type ListRqs = ListBoardOptionT
 export type ListRsp = ListData<BoardT>
 
-// (GET) /by-name/:name/group/:groupId
-export type ByNameAndGroupRqs = GetBoardOptionT
-export type ByNameAndGroupRsp = GetData<BoardT|null>
+// (GET) /by-name/:name
+export type GetByNameAndRqs = GetBoardOptionT
+export type GetByNameRsp = GetData<BoardT|null>
 
 // (PATCH) /:id/admin-trash
 export type AdminTrashRqs = null

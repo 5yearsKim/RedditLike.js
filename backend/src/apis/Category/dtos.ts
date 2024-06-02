@@ -4,24 +4,25 @@ import { categoryFormSchema, getCategoryOptionSchema, listCategoryOptionSchema }
 
 
 // get
-const getCategoryRqs = getCategoryOptionSchema;
-export class GetCategoryDto extends createZodDto(getCategoryRqs) {}
+export class GetCategoryDto extends createZodDto(getCategoryOptionSchema) {}
 
 // create
-const createCategoryRqs = z.object({ form: categoryFormSchema });
-export class CreateCategoryDto extends createZodDto(createCategoryRqs) {}
+export class CreateCategoryDto extends createZodDto( z.object({
+  form: categoryFormSchema,
+})) {}
 
 // update
-const updateCategoryRqs = z.object({ form: categoryFormSchema.partial() });
-export class UpdateCategoryDto extends createZodDto(updateCategoryRqs) {}
+export class UpdateCategoryDto extends createZodDto(z.object({
+  form: categoryFormSchema.partial(),
+})) {}
 
 // delete
 // no dto
 
 // list
-const listCategoryRqs = listCategoryOptionSchema;
-export class ListCategoryDto extends createZodDto(listCategoryRqs) {}
+export class ListCategoryDto extends createZodDto(listCategoryOptionSchema) {}
 
 // rerank
-const rerankCategoryRqs = z.object({ groupId: z.number().int(), categoryIds: z.number().int().array() });
-export class RerankCategoryDto extends createZodDto(rerankCategoryRqs) {}
+export class RerankCategoryDto extends createZodDto(z.object({
+  categoryIds: z.number().int().array(),
+})) {}

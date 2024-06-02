@@ -4,8 +4,7 @@ import { } from "@/models/XBoardUserFlair";
 
 // create
 
-const linkMeRqs = z.object({
+export class LinkMeDto extends createZodDto(z.object({
   boardId: z.number().int(),
   flairIds: z.array(z.number().int()),
-});
-export class LinkMeDto extends createZodDto(linkMeRqs) {}
+})) {}

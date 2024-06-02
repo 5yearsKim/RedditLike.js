@@ -5,41 +5,35 @@ import {
 } from "@/models/Comment";
 
 // create
-const createCommentRqs = z.object({ form: commentFormSchema });
-export class CreateCommentDto extends createZodDto(createCommentRqs) {}
+export class CreateCommentDto extends createZodDto(z.object({ form: commentFormSchema })) {}
 
 // get
-const getCommentRqs = getCommentOptionSchema ;
-export class GetCommentDto extends createZodDto(getCommentRqs) {}
+export class GetCommentDto extends createZodDto(getCommentOptionSchema) {}
 
 // update
-const updateCommentRqs = z.object({ form: commentFormSchema.partial() });
-export class UpdateCommentDto extends createZodDto(updateCommentRqs) {}
+export class UpdateCommentDto extends createZodDto( z.object({
+  form: commentFormSchema.partial(),
+})) {}
 
 // delete
 // no dto
 
 // list
-const listCommentRqs = listCommentOptionSchema;
-export class ListCommentDto extends createZodDto(listCommentRqs) {}
+export class ListCommentDto extends createZodDto(listCommentOptionSchema) {}
 
 // skim
-const skimCommentRqs = listCommentOptionSchema;
-export class SkimCommentDto extends createZodDto(skimCommentRqs) {}
+export class SkimCommentDto extends createZodDto(listCommentOptionSchema) {}
 
 // getWithChildren
-const getWithChildrenRqs = listCommentOptionSchema;
-export class GetWithChildrenDto extends createZodDto(getWithChildrenRqs) {}
+export class GetWithChildrenDto extends createZodDto(listCommentOptionSchema) {}
 
 
 // approve
 // no dto
 
 // trash
-const trashCommentRqs = z.object({ reason: z.string() });
-export class TrashCommentDto extends createZodDto(trashCommentRqs) {}
+export class TrashCommentDto extends createZodDto(z.object({ reason: z.string() })) {}
 
 
 // trashAdmin
-const trashAdminCommentRqs = z.object({ reason: z.string() });
-export class TrashAdminCommentDto extends createZodDto(trashAdminCommentRqs) {}
+export class TrashAdminCommentDto extends createZodDto( z.object({ reason: z.string() })) {}

@@ -216,7 +216,7 @@ export class CommentController {
     const { reason } = body satisfies R.AdminTrashRqs;
 
     const board = await this.service.getBoard(id);
-    await checkAdmin(user.id, board.group_id, { manage_censor: true });
+    await checkAdmin(user.id, { manage_censor: true });
 
     const updated = await this.service.update(id, {
       trashed_at: "NOW()" as any,

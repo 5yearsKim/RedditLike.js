@@ -107,22 +107,6 @@ export class PostController {
     return { data: fetched };
   }
 
-  @Get("/:id/group-check/:groupKey")
-  async getWithGroupCheck(
-    @User() user: UserT|null,
-    @Param("id", ParseIntPipe) id: idT,
-    @Param("groupKey") groupKey: string,
-    @Query() getOpt: GetPostDto
-  ): Promise<R.GetRsp> {
-
-    getOpt satisfies R.GetRqs;
-    if (user) {
-      getOpt.userId = user.id;
-    }
-    const fetched = await this.service.getWithGroupCheck(id, groupKey, getOpt);
-
-    return { data: fetched };
-  }
 
   @UseGuards(UserGuard)
   @Patch("/:id")
@@ -228,7 +212,7 @@ export class PostController {
     const { reason } = body satisfies R.AdminTrashRqs;
     const item = await this.service.get(id, { $board: true });
 
-    await checkAdmin(user.id, item.board!.group_id!, { manage_censor: true } );
+    await checkAdmin(user.id, { manage_censor: true } );
 
     const updated = await this.service.update(id, {
       trashed_at: "NOW()" as any,

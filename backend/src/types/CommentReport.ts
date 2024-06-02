@@ -21,12 +21,10 @@ type _CommentReportT = {
 
 export type GetCommentReportOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
 }
 
 export type ListCommentReportOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     limit?: number | undefined;
     cursor?: string | undefined;
     status?: ("all" | "resolved" | "ignored" | "unprocessed") | undefined;

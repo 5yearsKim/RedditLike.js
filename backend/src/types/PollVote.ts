@@ -13,10 +13,8 @@ export type PollVoteT = {
 
 export type GetPollVoteOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }
 
 export type ListPollVoteOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }

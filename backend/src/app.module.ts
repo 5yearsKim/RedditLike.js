@@ -6,7 +6,7 @@ import { ZodValidationPipe } from "nestjs-zod";
 import { APP_PIPE } from "@nestjs/core";
 
 // api modules
-import { AccountModule } from "./apis/Account/module";
+import { AdminModule } from "./apis/Admin/module";
 import { AuthModule } from "./apis/Auth/module";
 import { BoardModule } from "./apis/Board/module";
 import { BoardBlockModule } from "./apis/BoardBlock/module";
@@ -27,11 +27,8 @@ import { EmailVerificationModule } from "./apis/EmailVerification/module";
 import { FlagModule } from "./apis/Flag/module";
 import { FlairModule } from "./apis/Flair/module";
 import { FlairBoxModule } from "./apis/FlairBox/module";
-import { GroupModule } from "./apis/Group/module";
-import { GroupAdminModule } from "./apis/GroupAdmin/module";
-import { GroupInvitationModule } from "./apis/GroupInvitation/module";
-import { GroupMuterModule } from "./apis/GroupMuter/module";
 import { MediaModule } from "./apis/medias/module";
+import { MuterModule } from "./apis/Muter/module";
 import { NotificationModule } from "./apis/Notification/module";
 import { PollModule } from "./apis/Poll/module";
 import { PollCandModule } from "./apis/PollCand/module";
@@ -51,12 +48,11 @@ import { XBoardUserFlairModule } from "./apis/XBoardUserFlair/module";
 import { XUserCategoryModule } from "./apis/XUserCategory/module";
 
 // middlewares
-import { DecodeAccount } from "@/apis/$middlewares/decode_accunt";
 import { DecodeUser } from "@/apis/$middlewares/decode_user";
 
 @Module({
   imports: [
-    AccountModule,
+    AdminModule,
     AuthModule,
     BoardModule,
     BoardBlockModule,
@@ -77,11 +73,8 @@ import { DecodeUser } from "@/apis/$middlewares/decode_user";
     FlagModule,
     FlairModule,
     FlairBoxModule,
-    GroupModule,
-    GroupAdminModule,
-    GroupInvitationModule,
-    GroupMuterModule,
     MediaModule,
+    MuterModule,
     NotificationModule,
     PollModule,
     PollCandModule,
@@ -110,7 +103,7 @@ import { DecodeUser } from "@/apis/$middlewares/decode_user";
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(DecodeAccount, DecodeUser)
+    consumer.apply(DecodeUser)
       .forRoutes("*");
   }
 }

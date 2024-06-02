@@ -17,11 +17,6 @@ export async function listBoard(opt: ListBoardOptionT = {}): Promise<ListData<Bo
 
       qb.limit(limit);
 
-      // groupId
-      if (opt.groupId) {
-        qb.where("group_id", opt.groupId);
-      }
-
       // sort
       switch (opt.sort || "follower") {
       case "follower":

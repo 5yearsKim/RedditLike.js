@@ -42,7 +42,7 @@ export class CategoryController {
   ): Promise<R.CreateRsp> {
 
     const { form } = body satisfies R.CreateRqs;
-    await checkAdmin(user.id, form.group_id, { manage_category: true } );
+    await checkAdmin(user.id, { manage_category: true } );
     const created = await this.service.create(form);
     return created;
   }
@@ -54,9 +54,9 @@ export class CategoryController {
     @Body() body: RerankCategoryDto,
   ): Promise<R.RerankRsp> {
 
-    const { groupId, categoryIds } = body satisfies R.RerankRqs;
-    await checkAdmin(user.id, groupId, { manage_category: true } );
-    const reranked = await this.service.rerank(groupId, categoryIds);
+    const { categoryIds } = body satisfies R.RerankRqs;
+    await checkAdmin(user.id, { manage_category: true } );
+    const reranked = await this.service.rerank(categoryIds);
     return reranked;
   }
 
@@ -84,8 +84,7 @@ export class CategoryController {
   ): Promise<R.UpdateRsp> {
 
     const { form } = body satisfies R.UpdateRqs;
-    const category = await this.service.get(id);
-    await checkAdmin(user.id, category.group_id, { manage_category: true } );
+    await checkAdmin(user.id, { manage_category: true } );
     const updated = await this.service.update(id, form);
     return updated;
   }
@@ -97,8 +96,7 @@ export class CategoryController {
     @Param("id", ParseIntPipe) id: number,
   ): Promise<R.DeleteRsp> {
 
-    const category = await this.service.get(id);
-    await checkAdmin(user.id, category.group_id, { manage_category: true } );
+    await checkAdmin(user.id, { manage_category: true } );
     const deleted = await this.service.delete(id);
     return deleted;
   }

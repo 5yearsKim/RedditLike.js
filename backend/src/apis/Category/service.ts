@@ -50,11 +50,6 @@ export class CategoryService {
 
         qb.orderByRaw(`${categoryM.table}.rank ASC`);
 
-        // groupId
-        if (opt.groupId) {
-          qb.where("group_id", opt.groupId);
-        }
-
         // boardId
         if (opt.boardId) {
           qb.innerJoin("x_board_category AS xbc", function (this) {
@@ -77,13 +72,13 @@ export class CategoryService {
   }
 
 
-  async rerank(groupId: idT, categoriIds: idT[]): Promise<CategoryT[]> {
+  async rerank(categoriIds: idT[]): Promise<CategoryT[]> {
     const fetched = await categoryM.find({
       builder: (qb) => {
         qb.whereIn("id", categoriIds);
       }
     });
-    const categories = fetched.filter((item) => item.group_id === groupId);
+    const categories = fetched;
 
     for (const category of categories) {
       const rank = categoriIds.indexOf(category.id);

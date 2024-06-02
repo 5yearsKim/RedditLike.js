@@ -4,5 +4,4 @@ import { listChatMessageOptionSchema } from "@/models/ChatMessage/schema";
 import { } from "@/types";
 
 // list
-const listChatMessageRqs = listChatMessageOptionSchema;
-export class ListChatMessageDto extends createZodDto(listChatMessageRqs) {}
+export class ListChatMessageDto extends createZodDto(listChatMessageOptionSchema) {}

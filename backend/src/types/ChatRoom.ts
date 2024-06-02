@@ -15,7 +15,6 @@ type _ChatRoomT = {
 
 export type GetChatRoomOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $board?: boolean | undefined;
     $participants?: boolean | undefined;
     $last_message?: boolean | undefined;
@@ -25,7 +24,6 @@ export type GetChatRoomOptionT = {
 
 export type ListChatRoomOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $board?: (boolean | undefined) | undefined;
     $participants?: (boolean | undefined) | undefined;
     $last_message?: (boolean | undefined) | undefined;
