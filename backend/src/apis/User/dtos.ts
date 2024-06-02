@@ -22,4 +22,5 @@ export class UpdateUserMeDto extends createZodDto(z.object({
 
 // access
 export class AccessUserDto extends createZodDto( z.object({
+  token: z.string(),
 })) {}

@@ -26,9 +26,9 @@ export async function refresh(): Promise<R.RefreshRsp> {
   return rsp.data;
 }
 
-export async function verifyAccountToken(token: string): Promise<R.VerifyAccountTokenRsp> {
-  const body: R.VerifyAccountTokenRqs = { accountToken: token };
-  const rsp = await server.post(`${root}/verify-account-token`, body);
+export async function verifyAccountToken(token: string): Promise<R.VerifyUserTokenRsp> {
+  const body: R.VerifyUserTokenRqs = { userToken: token };
+  const rsp = await server.post(`${root}/verify-user-token`, body);
   return rsp.data;
 }
 

@@ -19,7 +19,6 @@ import { initFromStorage } from "@/utils/recoil";
 import type { BoardSortT, ListBoardOptionT } from "@/types/Board";
 import type { CategoryT } from "@/types/Category";
 import { useAllBoardsStore } from "@/stores/AllBoardsStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useMe, useMeAdmin } from "@/stores/UserStore";
 import { updateBoardEv } from "@/system/global_events";
 
@@ -69,14 +68,9 @@ export function BoardListPage(): JSX.Element {
   const [regenCnt, setRegenCnt] = useState<number>(0);
 
   const { data: boards$, actions: boardsAct } = useAllBoardsStore();
-  const group = useGroup();
   const searchParams = useSearchParams();
   const me = useMe();
   const admin = useMeAdmin();
-
-  if (!group) {
-    throw new Error("group should be defined");
-  }
 
   const { downSm } = useResponsive();
   const router = useRouter();
@@ -111,7 +105,6 @@ export function BoardListPage(): JSX.Element {
     $user_defaults: true,
     $posts: "recent",
     sort: sort,
-    groupId: group.id,
     following: following,
     block: "except",
     categoryId: categoryId ?? undefined,
@@ -168,7 +161,7 @@ export function BoardListPage(): JSX.Element {
           onFilterChange={handleFilterCategoryChange}
         />
         <Expand />
-        {me && (group.allow_create_board == true || admin != null) && (
+        {me && admin != null && (
           <Button
             size={downSm ? "small" : "medium"}
             startIcon={<AddIcon />}

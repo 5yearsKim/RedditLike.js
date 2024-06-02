@@ -30,12 +30,11 @@ export function useCategoriesStore() {
   });
 }
 
-export function getCategoriesListOpt(config: {userId?: idT, groupId: idT, boardId?: idT}): ListCategoryOptionT {
-  const { userId, boardId, groupId } = config;
+export function getCategoriesListOpt(config: {userId?: idT, boardId?: idT}): ListCategoryOptionT {
+  const { userId, boardId } = config;
   return {
     userId,
     boardId,
-    groupId,
     $my_like: true,
   };
 }

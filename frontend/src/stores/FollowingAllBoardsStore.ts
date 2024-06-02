@@ -28,10 +28,9 @@ export function useFollowingAllBoardsStore() {
   });
 }
 
-export const getFollowingAllBoardsListOpt = ({ userId, groupId }: { userId?: idT, groupId: idT }): ListBoardOptionT => {
+export const getFollowingAllBoardsListOpt = ({ userId }: { userId?: idT }): ListBoardOptionT => {
   return {
     userId,
-    groupId,
     $user_defaults: true,
     block: "except",
     censor: "exceptTrashed",

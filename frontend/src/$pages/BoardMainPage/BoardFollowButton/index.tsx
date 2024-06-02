@@ -10,7 +10,6 @@ import { BlockIcon } from "@/ui/icons";
 import { useHover } from "@/hooks/Hover";
 import * as BoardFollowerApi from "@/apis/board_followers";
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useFollowingBoardsStore, getFollowingBoardsListOpt } from "@/stores/FollowingBoardsStore";
 import { useSnackbar } from "@/hooks/Snackbar";
 import type { BoardT } from "@/types";
@@ -31,8 +30,7 @@ export function BoardFollowButton({
   const { enqueueSnackbar } = useSnackbar();
 
   const me = useMe();
-  const group = useGroup();
-  const followingListOpt = getFollowingBoardsListOpt({ userId: me?.id, groupId: group.id });
+  const followingListOpt = getFollowingBoardsListOpt({ userId: me?.id });
   const { actions: followingBoardsAct } = useFollowingBoardsStore();
 
   const [isFollow, setIsFollow] = useState<boolean>(Boolean(board.follower));

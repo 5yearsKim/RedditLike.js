@@ -1,47 +1,34 @@
 "use client";
 import { useEffect, ReactNode } from "react";
-import { useRouter } from "next/navigation";
-import { useGroup$ } from "@/stores/GroupStore";
+import { usePathname } from "next/navigation";
+import { userTH } from "@/system/token_holders";
 import { useUserActions } from "@/stores/UserStore";
-import { useAccount$ } from "@/stores/AccountStore";
-import { useUser$ } from "@/stores/UserStore";
 
 type MeProviderProps = {
   children: ReactNode
 }
 
-export function MeProvider({ children }: MeProviderProps) {
-  const account$ = useAccount$();
-  const group$ = useGroup$();
-  const user$ = useUser$();
+export function MeProvider({ children }: MeProviderProps): ReactNode {
   const userAct = useUserActions();
-  const router = useRouter();
 
-  const group = group$.data!.group;
-
-  useEffect(() => {
-    // if account is not logged in, reset user
-    if (account$.status !== "loggedIn" || group$.status !== "loaded") {
-      userAct.reset();
-    } else if (user$.status != "loaded" ) {
-      userAct.access(group.id);
-    } else if (user$.data.me?.group_id !== group.id) { // if change group detected -> refresh user
-      userAct.reset();
-      userAct.access(group.id);
-    }
-  }, [account$.data?.account.id, group.id]);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (user$.status == "loaded") {
-      const me = user$.data.me;
-      if (me) {
-        userAct.loadMuter(me.group_id);
-        userAct.loadAdmin(me.group_id);
-      } else { // me is null
-        router.replace("/join-group");
-      }
+    if (pathname === "/configure-account") {
+      return;
     }
-  }, [user$.status, user$.data?.me?.id]);
+
+    const tokenInfo = userTH.get();
+
+    if (!tokenInfo) {
+      userAct.set({ status: "loaded", data: { me: null, muter: null, admin: null } });
+      userTH.reset();
+    } else {
+      // TODO:
+      userAct.refresh();
+    }
+
+  }, []);
 
 
   return children;

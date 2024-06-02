@@ -10,7 +10,6 @@ import { ListView } from "@/ui/tools/ListView";
 import { LoadingIndicator, ErrorButton } from "@/components/$statusTools";
 
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useRecentBoards, useRecentBoardsActions } from "@/stores/RecentBoardsStore";
 import { useFollowingBoardsStore, getFollowingBoardsListOpt } from "@/stores/FollowingBoardsStore";
 import { useHotBoardsStore, getHotBoardsListOpt } from "@/stores/HotBoardsStore";
@@ -55,9 +54,8 @@ function BoardButtonItem({
 export function HotBoardList(): JSX.Element {
   const { data: hotBoards$, actions: hotBoardsAct } = useHotBoardsStore();
   const me = useMe();
-  const group = useGroup();
 
-  const listOpt = getHotBoardsListOpt({ userId: me?.id, groupId: group.id });
+  const listOpt = getHotBoardsListOpt({ userId: me?.id });
 
   useEffect(() => {
     hotBoardsAct.load(listOpt);
@@ -104,10 +102,9 @@ export function HotBoardList(): JSX.Element {
 export function FollowingBoardList(): JSX.Element {
   const t = useTranslations("pages.FeedPage.BoardSidebar");
   const me = useMe();
-  const group = useGroup();
   const { data: followingBoards$, actions: followingBoardsAct } = useFollowingBoardsStore();
 
-  const listOpt = getFollowingBoardsListOpt({ userId: me?.id, groupId: group.id });
+  const listOpt = getFollowingBoardsListOpt({ userId: me?.id });
 
   useEffect(() => {
     followingBoardsAct.load(listOpt);

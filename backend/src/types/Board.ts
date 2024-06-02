@@ -1,5 +1,4 @@
 export type BoardFormT = {
-    group_id: number;
     name: string;
     description: string;
     avatar_path?: (string | null) | undefined;
@@ -29,7 +28,6 @@ type _BoardT = {
     id: number;
     created_at: Date;
     updated_at?: Date | undefined;
-    group_id: number;
     name: string;
     description: string;
     avatar_path?: (string | null) | undefined;

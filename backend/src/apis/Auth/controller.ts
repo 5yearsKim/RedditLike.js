@@ -42,19 +42,19 @@ export class AuthController {
     return session;
   }
 
-  @UseGuards(UserGuard)
-  @Post("/refresh")
-  async refresh(@User() user: UserT): Promise<R.RefreshRsp> {
-    const session = await this.service.refresh(user);
-    return session;
-  }
-
   @Post("/verify-user-token")
   async verifyUserToken(
     @Body() body: VerifyUserTokenDto
   ): Promise<R.VerifyUserTokenRsp> {
     const { userToken } = body satisfies R.VerifyUserTokenRqs;
     const session = await this.service.verifyUserToken(userToken);
+    return session;
+  }
+
+  @UseGuards(UserGuard)
+  @Post("/refresh")
+  async refresh(@User() user: UserT): Promise<R.RefreshRsp> {
+    const session = await this.service.refresh(user);
     return session;
   }
 

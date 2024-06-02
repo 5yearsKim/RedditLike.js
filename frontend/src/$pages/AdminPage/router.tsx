@@ -7,25 +7,18 @@ import { Txt } from "@/ui/texts";
 import { Center } from "@/ui/layouts";
 
 import { CategoryTab } from "./tabs/CategoryTab";
-import { IntroTab } from "./tabs/IntroTab";
 import { AdminTab } from "./tabs/AdminTab";
 import { PostTab } from "./tabs/PostTab";
 import { MemberTab } from "./tabs/MemberTab";
 import { MuterTab } from "./tabs/MuterTab";
 import { CensorTab } from "./tabs/CensorTab";
-import type { GroupAdminT } from "@/types";
+import type { AdminT } from "@/types";
 
 export function AdminRouter(): JSX.Element {
   const { tab } = useParams();
 
 
   switch (tab) {
-  case "intro":
-    return (
-      <AccessCheckProvider access='manage_intro'>
-        <IntroTab />
-      </AccessCheckProvider>
-    );
   case "category":
     return (
       <AccessCheckProvider access='manage_category'>
@@ -77,7 +70,7 @@ export function AdminRouter(): JSX.Element {
 }
 
 type AccessCheckProviderProps = {
-  access: keyof GroupAdminT;
+  access: keyof AdminT;
   children: ReactNode;
 };
 

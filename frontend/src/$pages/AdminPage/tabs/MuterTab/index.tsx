@@ -6,24 +6,21 @@ import { CloseIcon } from "@/ui/icons";
 import { Divider } from "@mui/material";
 import { ListView } from "@/ui/tools/ListView";
 import { InitBox, LoadingBox, ErrorBox } from "@/components/$statusTools";
-import { GroupMuterItem } from "./GroupMuterItem";
+import { MuterItem } from "./MuterItem";
 // logic
 import { useListData } from "@/hooks/ListData";
-import { useGroup } from "@/stores/GroupStore";
-import * as GroupMuterApi from "@/apis/group_muters";
-import type { ListGroupMuterOptionT, GroupMuterT } from "@/types";
+import * as MuterApi from "@/apis/muters";
+import type { ListMuterOptionT, MuterT } from "@/types";
 
 
 export function MuterTab(): JSX.Element {
   const t = useTranslations("pages.AdminPage.MuterTab");
 
-  const group = useGroup();
   const { data: groupMuters$, actions: groupMutersAct } = useListData({
-    listFn: GroupMuterApi.list,
+    listFn: MuterApi.list,
   });
 
-  const listOpt: ListGroupMuterOptionT = {
-    groupId: group.id,
+  const listOpt: ListMuterOptionT = {
   };
 
   useEffect(() => {
@@ -38,7 +35,7 @@ export function MuterTab(): JSX.Element {
     groupMutersAct.load(listOpt, { force: true });
   }
 
-  function handleMuterDeleted(muter: GroupMuterT): void {
+  function handleMuterDeleted(muter: MuterT): void {
     groupMutersAct.filterItems((item) => item.id != muter.id);
   }
 
@@ -78,7 +75,7 @@ export function MuterTab(): JSX.Element {
           renderItem={(groupMuter) => {
             return (
               <Fragment key = {groupMuter.id}>
-                <GroupMuterItem
+                <MuterItem
                   muter={groupMuter}
                   onDeleted={handleMuterDeleted}
                 />

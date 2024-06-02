@@ -1,13 +1,19 @@
-export type AccountSessionT = {
-    account: {
+export type UserSessionT = {
+    user: {
         id: number;
         created_at: Date;
         updated_at?: Date | undefined;
-        /** provided by firebase */
-        sub: string;
         email: string;
+        sub: string;
         deleted_at?: (Date | null) | undefined;
+        last_login_at?: (Date | null) | undefined;
+        points: number;
+        notify_comment_on_comment: boolean;
+        notify_comment_on_post: boolean;
+        notify_trash_post: boolean;
+        notify_trash_comment: boolean;
+        allow_chat_push: boolean;
     };
-    accessToken: string;
-    accessTokenExpAt: number;
+    token: string;
+    tokenExpAt: number;
 }

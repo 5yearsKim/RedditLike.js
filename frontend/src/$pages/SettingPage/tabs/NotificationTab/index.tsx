@@ -1,12 +1,10 @@
 "use client";
-import React, { ChangeEvent } from "react";
+import React, { } from "react";
 import { useTranslations } from "next-intl";
-import { Row, Expand, Gap } from "@/ui/layouts";
+import { Gap } from "@/ui/layouts";
 import { Txt } from "@/ui/texts";
-import { Divider, Switch } from "@mui/material";
-import { HelperTooltip } from "@/ui/tools/HelperTooltip";
+import { Divider } from "@mui/material";
 import { LoadingBox, ErrorBox } from "@/components/$statusTools";
-import { PushNotiSection } from "./PushNotiSection";
 import { NotiSwitch } from "./NotiSwitch";
 // logic
 import * as UserApi from "@/apis/users";

@@ -3,7 +3,6 @@ import React, { ReactNode } from "react";
 import { PostList } from "@/components/PostList";
 import { useResponsive } from "@/hooks/Responsive";
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import type { ListPostOptionT } from "@/types";
 
 type HotPostListProps = {
@@ -12,7 +11,6 @@ type HotPostListProps = {
 
 export function HotPostList({ fromAt }: HotPostListProps): ReactNode {
   const me = useMe();
-  const group = useGroup();
   const { downSm } = useResponsive();
 
   const listOption: ListPostOptionT = {
@@ -24,7 +22,6 @@ export function HotPostList({ fromAt }: HotPostListProps): ReactNode {
     block: "except",
     censor: "exceptTrashed",
     userId: me?.id,
-    groupId: group.id,
   };
 
   return (

@@ -10,7 +10,6 @@ export const boardSortEnum = z.enum([ "hot", "recent", "old", "follower", "recen
 
 
 export const boardFormSchema = insertFormSchema.extend({
-  group_id: z.number().int(),
   name: z.string().min(1).max(32),
   description: z.string().min(1),
   avatar_path: z.string().nullish(),

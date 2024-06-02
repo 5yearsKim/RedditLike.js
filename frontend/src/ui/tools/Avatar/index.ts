@@ -1,2 +1,2 @@
 export { Avatar } from "./view";
-export { GroupAvatar, BoardAvatar, AuthorAvatar } from "./variation";
+export { BoardAvatar, AuthorAvatar } from "./variation";

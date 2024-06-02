@@ -17,13 +17,11 @@ type _BoardMuterT = {
 
 export type GetBoardMuterOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
     $author?: boolean;
 }
 
 export type ListBoardMuterOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
     $author?: boolean;
     boardId: number;
 }

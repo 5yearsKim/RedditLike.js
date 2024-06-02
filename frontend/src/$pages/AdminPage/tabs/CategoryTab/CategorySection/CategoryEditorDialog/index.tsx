@@ -4,7 +4,6 @@ import { Dialog, TextField, Button, Box } from "@mui/material";
 import { Row, Gap } from "@/ui/layouts";
 // logic
 import { useState, useEffect, MouseEvent, ChangeEvent } from "react";
-import { useGroup } from "@/stores/GroupStore";
 import type { CategoryT, CategoryFormT } from "@/types";
 
 
@@ -24,7 +23,6 @@ export function CategoryEditorDialog({
 }: CategoryEditorDialogProps): JSX.Element {
   const t = useTranslations("pages.AdminPage.CategoryTab.CategorySection.CategoryEditorDialog");
   const [label, setLabel] = useState<string>("");
-  const group = useGroup();
 
   useEffect(() => {
     if (open) {
@@ -35,7 +33,6 @@ export function CategoryEditorDialog({
   }, [open]);
 
   const form: CategoryFormT = {
-    group_id: group.id,
     label: label,
   };
 

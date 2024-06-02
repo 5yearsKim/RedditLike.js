@@ -7,14 +7,12 @@ import { Container, Gap, Row, Col } from "@/ui/layouts";
 import { CloseIcon } from "@/ui/icons";
 import { Txt } from "@/ui/texts";
 import { useMeMuter, useMeAdmin } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { CreateBoardForm } from "./CreateBoardForm";
 
 export function CreateBoardPage(): JSX.Element {
   const t = useTranslations("pages.CreateBoardPage");
   const muter = useMeMuter();
   const admin = useMeAdmin();
-  const group = useGroup();
 
   function renderForm(): JSX.Element {
     if (muter) {
@@ -34,7 +32,7 @@ export function CreateBoardPage(): JSX.Element {
         </Col>
       );
     }
-    if (group.allow_create_board == false && !admin) {
+    if (false && !admin) {
       return (
         <Col alignItems='center'>
           <Row>

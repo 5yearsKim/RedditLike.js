@@ -2,7 +2,6 @@ import React from "react";
 import { useResponsive } from "@/hooks/Responsive";
 import { PostList } from "@/components/PostList";
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { PostSortT, ListPostOptionT } from "@/types";
 
 export type FeedListProps = {
@@ -20,14 +19,12 @@ export function FeedList({
 }: FeedListProps): JSX.Element {
 
   const me = useMe();
-  const group = useGroup();
   const { downSm } = useResponsive();
 
   const listOpt: ListPostOptionT = {
     $defaults: true,
     $user_defaults: true,
     $board: true,
-    groupId: group.id,
     userId: me?.id,
     sort: sort,
     fromAt: fromAt,

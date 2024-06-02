@@ -17,13 +17,11 @@ type _ChatUserT = {
 
 export type GetChatUserOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $author?: boolean | undefined;
 }
 
 export type ListChatUserOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $author?: boolean | undefined;
 }
 

@@ -1,13 +1,9 @@
 export const VERSION = "1.2.4";
 
-export const GROUP_KEY = 'test'
-
 
 // const fromLocal = false;
 const fromLocal = (process.env.NEXT_PUBLIC_FROM_LOCAL ?? "false") == "true";
 export const STAGE: string = process.env.NEXT_PUBLIC_STAGE ?? "dev";
-export const FRONT_URL = "https://app.v-milo.com";
-export const FRONT_URL_SUFFIX = "v-milo.com";
 
 export const [API_URL, SOCKET_URL] = ((): [string, string] => {
   if ((STAGE as any) == "prod") {

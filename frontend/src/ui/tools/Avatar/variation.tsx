@@ -2,32 +2,8 @@ import React from "react";
 import { Avatar as MuiAvatar } from "@mui/material";
 import { buildImgUrl } from "@/utils/media";
 import { Avatar } from "./view";
-import type { GroupT, GroupFormT, AuthorT, BoardT, BoardFormT } from "@/types";
+import type { AuthorT, BoardT, BoardFormT } from "@/types";
 
-
-type GroupAvatarProps = {
-  group: GroupT|GroupFormT;
-  size?: number | string;
-}
-
-export function GroupAvatar({
-  group,
-  size,
-}: GroupAvatarProps): JSX.Element {
-  return (
-    <Avatar
-      src={group.avatar_path ? buildImgUrl(null, group.avatar_path, { size: "xs" } ) : undefined}
-      alt={"group-" + group.name}
-      letter={group.name.slice(0, 1)}
-      rseed={ "id" in group ? group.id : 0}
-      size={size}
-      variant='rounded'
-      sx={{
-        boxShadow: group.avatar_path ? "0 0 1px 1px rgba(0, 0, 0, 0.2)" : undefined,
-      }}
-    />
-  );
-}
 
 type BoardAvatarProps = {
   board: BoardT|BoardFormT;

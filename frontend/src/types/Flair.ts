@@ -23,10 +23,8 @@ export type FlairT = {
 
 export type GetFlairOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }
 
 export type ListFlairOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }

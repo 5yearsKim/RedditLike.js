@@ -55,24 +55,6 @@ export class UserService {
     return await listUser(listOpt);
   }
 
-  // async access(accountId: idT, groupId: idT): Promise<UserSessionT|null> {
-  //   const group = await groupM.findById(groupId);
-  //   if (!group) {
-  //     throw new err.NotExistE("group not exist");
-  //   }
-  //   const fetched = await userM.findOne({
-  //     account_id: accountId,
-  //     group_id: groupId,
-  //     deleted_at: null,
-  //   });
-
-  //   if (!fetched) {
-  //     return null;
-  //   }
-  //   return this.generateUserSession(fetched);
-  // }
-
-
   async deleteMe(idT: idT): Promise<UserT> {
     const deleted = await userM.deleteOne({ id: idT });
     if (!deleted) {

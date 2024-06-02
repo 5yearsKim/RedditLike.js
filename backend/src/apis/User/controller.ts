@@ -52,18 +52,6 @@ export class UserController {
   }
 
 
-  // @Post("/access")
-  // async access(
-  //   @AccountId() accountId: idT,
-  //   @Body() body: AccessUserDto,
-  // ): Promise<R.AccessRsp> {
-
-  //   const { groupId } = body satisfies R.AccessRqs;
-  //   const session = await this.service.access(accountId, groupId);
-
-  //   return { session: session };
-  // }
-
   @UseGuards(UserGuard)
   @Get("/me")
   async getMe(

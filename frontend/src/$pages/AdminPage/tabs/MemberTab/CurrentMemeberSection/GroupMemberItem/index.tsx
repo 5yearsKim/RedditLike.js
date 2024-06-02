@@ -16,7 +16,7 @@ export function GroupMemberItem({
       <Avatar size="20px"/>
       <Gap x={1}/>
       <Box minWidth={300}>
-        <Txt variant="body2">{user.account?.email ?? "(UNKNOWN)"}</Txt>
+        <Txt variant="body2">{user.email ?? "(UNKNOWN)"}</Txt>
       </Box>
     </Row>
   );

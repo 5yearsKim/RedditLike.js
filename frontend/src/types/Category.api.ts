@@ -23,5 +23,5 @@ export type DeleteRqs = null
 export type DeleteRsp = CategoryT
 
 // (PUT) /rerank
-export type RerankRqs = {groupId: idT, categoryIds: idT[]}
+export type RerankRqs = {categoryIds: idT[]}
 export type RerankRsp = CategoryT[]

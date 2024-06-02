@@ -41,7 +41,7 @@ export function Clickable({
       justifyContent='center'
       alignItems='center'
       position='relative'
-      overflow={"overflow"}
+      overflow={overflow}
       {...boxProps}
       sx={{
         cursor: "pointer",

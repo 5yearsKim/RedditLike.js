@@ -15,7 +15,6 @@ import { useState, useRef, useMemo, useEffect, MouseEvent, ChangeEvent } from "r
 import { useUrlState } from "@/hooks/UrlState";
 import { useBoardSearch } from "@/hooks/BoardSearch";
 import { useBoardMainActions } from "@/stores/BoardMainStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useFollowingAllBoardsStore, getFollowingAllBoardsListOpt } from "@/stores/FollowingAllBoardsStore";
 import type { UserT, BoardT } from "@/types";
 
@@ -27,7 +26,6 @@ type CreatePostSelectorProps = {
 export function CreatePostSelector({ me }: CreatePostSelectorProps): JSX.Element {
   const t = useTranslations("pages.FeedPage.CreatePostSelector");
   const router = useRouter();
-  const group = useGroup();
   const boxRef = useRef<HTMLDivElement | null>(null);
   const [boardSelectorEl, setBoardSelectorEl] = useState<HTMLDivElement | null>(null);
   const [boardSelectorOpen, setBoardSelectorOpen] = useUrlState<boolean>({
@@ -53,9 +51,9 @@ export function CreatePostSelector({ me }: CreatePostSelectorProps): JSX.Element
   }, [query, boardSearchStatus, followingBoards$.status]);
 
   useEffect(() => {
-    const listOpt = getFollowingAllBoardsListOpt({ userId: me?.id, groupId: group.id });
+    const listOpt = getFollowingAllBoardsListOpt({ userId: me?.id });
     followingBoardsAct.load(listOpt);
-  }, [me?.id, group.id]);
+  }, [me?.id]);
 
   function handleAvatarClick(): void {
     router.push("/activities/post");

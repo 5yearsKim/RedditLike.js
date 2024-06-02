@@ -28,10 +28,9 @@ export function useHotBoardsStore() {
   });
 }
 
-export const getHotBoardsListOpt = ({ userId, groupId }: { userId?: idT, groupId: idT }): ListBoardOptionT => {
+export const getHotBoardsListOpt = ({ userId }: { userId?: idT }): ListBoardOptionT => {
   return {
     userId,
-    groupId,
     block: "except",
     censor: "exceptTrashed",
     sort: "hot",

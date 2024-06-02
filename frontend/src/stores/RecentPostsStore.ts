@@ -3,7 +3,6 @@
 import { atom , useRecoilState } from "recoil";
 import { useEffect } from "react";
 import { useRecentVisitActions, type RecentVisitStateT } from "./molds/recent_visit";
-import { useGroup } from "@/stores/GroupStore";
 import type { PostT } from "@/types/Post";
 
 
@@ -17,9 +16,7 @@ const recentPostsState = atom<RecentVisitStateT<PostT>>({
 });
 
 export function useRecentPosts(): RecentVisitStateT<PostT> {
-
-  const group = useGroup();
-  const storageKey = "recentPosts_" + group.key;
+  const storageKey = "recentPosts";
 
   const [recentPosts$, set ] = useRecoilState(recentPostsState);
 
@@ -27,21 +24,18 @@ export function useRecentPosts(): RecentVisitStateT<PostT> {
     if (recentPosts$.status == "init") {
       initFromStorage();
     }
-    if (recentPosts$.meta.groupId !== group.id) {
-      initFromStorage();
-    }
-  }, [group.id]);
+  }, []);
 
   function initFromStorage() {
     const recentPosts = localStorage.getItem(storageKey);
     if (!recentPosts) {
-      set({ data: [], status: "loaded", meta: { groupId: group.id } });
+      set({ data: [], status: "loaded", meta: { } });
       return;
     }
     try {
       const parsed = JSON.parse(recentPosts);
       if (Array.isArray(parsed)) {
-        set({ data: parsed, status: "loaded", meta: { groupId: group.id } });
+        set({ data: parsed, status: "loaded", meta: { } });
       } else {
         throw new Error("invalid recentPosts with " + parsed);
       }
@@ -56,8 +50,7 @@ export function useRecentPosts(): RecentVisitStateT<PostT> {
 }
 
 export function useRecentPostsActions() {
-  const group = useGroup();
-  const storageKey = "recentPosts_" + group.key;
+  const storageKey = "recentPosts";
   return useRecentVisitActions({
     recoilState: recentPostsState,
     maxItems: 5,

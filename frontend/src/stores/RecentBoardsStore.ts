@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { atom , useRecoilState } from "recoil";
 import { useRecentVisitActions, type RecentVisitStateT } from "./molds/recent_visit";
-import { useGroup } from "@/stores/GroupStore";
 import type { BoardT } from "@/types/Board";
 
 
@@ -18,8 +17,7 @@ const recentBoardsState = atom<RecentVisitStateT<BoardT>>({
 
 
 export function useRecentBoards(): RecentVisitStateT<BoardT> {
-  const group = useGroup();
-  const storageKey = "recentBoards_" + group.key;
+  const storageKey = "recentBoards";
 
   const [recentBoards$, set ] = useRecoilState(recentBoardsState);
 
@@ -27,21 +25,18 @@ export function useRecentBoards(): RecentVisitStateT<BoardT> {
     if (recentBoards$.status == "init") {
       initFromStorage();
     }
-    if (recentBoards$.meta.groupId !== group.id) {
-      initFromStorage();
-    }
-  }, [group.id]);
+  }, []);
 
   function initFromStorage() {
     const recentBoards = localStorage.getItem(storageKey);
     if (!recentBoards) {
-      set({ data: [], status: "loaded", meta: { groupId: group.id } });
+      set({ data: [], status: "loaded", meta: { } });
       return;
     }
     try {
       const parsed = JSON.parse(recentBoards);
       if (Array.isArray(parsed)) {
-        set({ data: parsed, status: "loaded", meta: { groupId: group.id } });
+        set({ data: parsed, status: "loaded", meta: { } });
       } else {
         throw new Error("invalid recentBoards with " + parsed);
       }
@@ -56,8 +51,7 @@ export function useRecentBoards(): RecentVisitStateT<BoardT> {
 }
 
 export function useRecentBoardsActions() {
-  const group = useGroup();
-  const storageKey = "recentBoards_" + group.key;
+  const storageKey = "recentBoards";
 
   return useRecentVisitActions({
     recoilState: recentBoardsState,

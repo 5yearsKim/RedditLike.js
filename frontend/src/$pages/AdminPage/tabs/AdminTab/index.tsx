@@ -8,36 +8,32 @@ import { Divider, Button } from "@mui/material";
 import { ErrorBox, InitBox, LoadingBox } from "@/components/$statusTools";
 // logic
 import { useEffect } from "react";
-import * as GroupAdminApi from "@/apis/group_admins";
+import * as AdminApi from "@/apis/admins";
 import { useListData } from "@/hooks/ListData";
 import { useSnackbar } from "@/hooks/Snackbar";
-import { useGroup } from "@/stores/GroupStore";
 import { emailValidator } from "@/utils/validator";
-import { GroupAdminItem } from "./GroupAdminItem";
-import type { GroupAdminT, ListGroupAdminOptionT } from "@/types";
+import { AdminItem } from "./AdminItem";
+import type { AdminT, ListAdminOptionT } from "@/types";
 
 export function AdminTab(): JSX.Element {
   const t = useTranslations("pages.AdminPage.AdminTab");
   const { enqueueSnackbar } = useSnackbar();
 
-  const group = useGroup();
 
-  const listOpt: ListGroupAdminOptionT = {
-    groupId: group.id,
+  const listOpt: ListAdminOptionT = {
     $user: true,
-    $account: true,
   };
 
-  const { data: groupAdmins$, actions: groupAdminsAct } = useListData({
-    listFn: GroupAdminApi.list,
+  const { data: admins$, actions: adminsAct } = useListData({
+    listFn: AdminApi.list,
   });
 
   useEffect(() => {
-    groupAdminsAct.load(listOpt);
+    adminsAct.load(listOpt);
   }, []);
 
   function handleErrorRetry(): void {
-    groupAdminsAct.load(listOpt, { force: true });
+    adminsAct.load(listOpt, { force: true });
   }
 
 
@@ -52,8 +48,8 @@ export function AdminTab(): JSX.Element {
       return;
     }
     try {
-      await GroupAdminApi.createByEmail(email, group.id);
-      await groupAdminsAct.load(listOpt, { force: true, skipLoading: true });
+      await AdminApi.createByEmail(email);
+      await adminsAct.load(listOpt, { force: true, skipLoading: true });
       enqueueSnackbar(t("addAdminSuccess"), { variant: "success" });
     } catch (e: any) {
       const code = e.response?.data?.code;
@@ -69,12 +65,12 @@ export function AdminTab(): JSX.Element {
   }
 
 
-  function handleAdminDeleted(deleted: GroupAdminT): void {
-    groupAdminsAct.filterItems((item) => item.id != deleted.id);
+  function handleAdminDeleted(deleted: AdminT): void {
+    adminsAct.filterItems((item) => item.id != deleted.id);
   }
 
-  function handleAdminUpdated(updated: GroupAdminT): void {
-    groupAdminsAct.replaceItem(updated);
+  function handleAdminUpdated(updated: AdminT): void {
+    adminsAct.replaceItem(updated);
   }
 
 
@@ -87,19 +83,19 @@ export function AdminTab(): JSX.Element {
 
       <Gap y={2}/>
 
-      {groupAdmins$.status == "init" && (
+      {admins$.status == "init" && (
         <InitBox/>
       )}
 
-      {groupAdmins$.status == "loading" && (
+      {admins$.status == "loading" && (
         <LoadingBox/>
       )}
 
-      {groupAdmins$.status == "error" && (
+      {admins$.status == "error" && (
         <ErrorBox onRetry={handleErrorRetry}/>
       )}
 
-      {groupAdmins$.status == "loaded" && (
+      {admins$.status == "loaded" && (
         <>
           <Row width='100%' justifyContent='flex-end'>
             <Button
@@ -110,10 +106,10 @@ export function AdminTab(): JSX.Element {
               {t("addAdmin")}
             </Button>
           </Row>
-          {groupAdmins$.data.map((admin) => {
+          {admins$.data.map((admin) => {
             return (
               <Fragment key={admin.id}>
-                <GroupAdminItem
+                <AdminItem
                   admin={admin}
                   onDeleted={handleAdminDeleted}
                   onUpdated={handleAdminUpdated}

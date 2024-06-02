@@ -16,12 +16,6 @@ export async function list(listOpt: ListUserOptionT): Promise<R.ListRsp> {
   return rsp.data;
 }
 
-export async function access(groupId: idT): Promise<R.AccessRsp> {
-  const body: R.AccessRqs = { groupId };
-  const rsp = await server.post(`${root}/access`, body);
-  return rsp.data;
-}
-
 export async function getMe(getOpt: GetUserOptionT = {}): Promise<R.GetMeRsp> {
   const params: R.GetMeRqs = getOpt;
   const rsp = await server.get(`${root}/me`, { params });
@@ -39,16 +33,3 @@ export async function removeMe(): Promise<R.DeleteMeRsp> {
   return rsp.data;
 
 }
-
-export async function requestJoin(groupId: idT): Promise<R.RequestJoinRsp> {
-  const body: R.RequestJoinRqs = { groupId };
-  const rsp = await server.post(`${root}/request-join`, body);
-  return rsp.data;
-}
-
-
-// export async function checkStatus(groupId: idT): Promise<R.CheckStatusRsp> {
-//   const body: R.CheckStatusRqs = { groupId };
-//   const rsp = await server.post(`${root}/check-status`, body);
-//   return rsp.data;
-// }

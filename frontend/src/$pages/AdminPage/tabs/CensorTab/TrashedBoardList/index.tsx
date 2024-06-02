@@ -12,13 +12,11 @@ import { useSnackbar } from "@/hooks/Snackbar";
 import { useAlertDialog } from "@/hooks/dialogs/ConfirmDialog";
 import { InitBox, LoadingBox, ErrorBox } from "@/components/$statusTools";
 import { BoardSearchItem } from "@/components/BoardSearchItem";
-import { useGroup } from "@/stores/GroupStore";
 import type { ListBoardOptionT, BoardT } from "@/types";
 
 export function TrashedBoardList() {
   const t = useTranslations("pages.AdminPage.CensorTab.TrashedBoardList");
 
-  const group = useGroup();
   const { enqueueSnackbar } = useSnackbar();
   const { showAlertDialog } = useAlertDialog();
 
@@ -27,7 +25,6 @@ export function TrashedBoardList() {
   });
 
   const listOpt: ListBoardOptionT = {
-    groupId: group.id,
     censor: "trashed",
   };
 

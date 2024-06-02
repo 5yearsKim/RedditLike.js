@@ -12,7 +12,6 @@ import * as BoardRuleApi from "@/apis/board_rules";
 import { toId } from "@/utils/formatter";
 import { buildImgUrl } from "@/utils/media";
 import { BoardMainPage } from "@/$pages/BoardMainPage";
-import { FRONT_URL } from "@/config";
 
 import { LRUCache } from "lru-cache";
 import type { GetBoardOptionT, BoardT } from "@/types/Board";
@@ -45,7 +44,6 @@ export async function generateMetadata(
   try {
     const board = await getBoard(parseInt(params.boardId));
     return {
-      metadataBase: new URL(FRONT_URL),
       title: board.name,
       description: board.description,
       openGraph: {
