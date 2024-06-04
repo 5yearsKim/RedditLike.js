@@ -1109,6 +1109,9 @@
         "SearchBar": {}
       },
       "NavbarMenuButton": {},
+      "NavbarLogo": {
+        "adminPage": "Admin Page"
+      },
       "SearchBar": {
         "loading": "Loading",
         "board": "Board",

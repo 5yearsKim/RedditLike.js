@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, ReactNode } from "react";
 import { userTH } from "@/system/token_holders";
-import { useUserActions } from "@/stores/UserStore";
+import { useMe, useUserActions } from "@/stores/UserStore";
 
 type MeProviderProps = {
   children: ReactNode
 }
 
 export function MeProvider({ children }: MeProviderProps): ReactNode {
+  const me = useMe();
   const userAct = useUserActions();
 
   useEffect(() => {
@@ -22,6 +23,14 @@ export function MeProvider({ children }: MeProviderProps): ReactNode {
     }
 
   }, []);
+
+  // check if i'm muter or admin
+  useEffect(() => {
+    if (me?.id) {
+      userAct.loadAdmin();
+      userAct.loadMuter();
+    }
+  }, [me?.id]);
 
 
   return children;
