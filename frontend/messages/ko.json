@@ -1109,6 +1109,9 @@
         "SearchBar": {}
       },
       "NavbarMenuButton": {},
+      "NavbarLogo": {
+        "adminPage": "관리자 페이지"
+      },
       "SearchBar": {
         "loading": "로딩중",
         "board": "게시판",
