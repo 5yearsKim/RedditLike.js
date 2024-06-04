@@ -23,7 +23,3 @@ export type FakeLoginRsp = UserSessionT
 // (POST) /refresh
 export type RefreshRqs = null;
 export type RefreshRsp = UserSessionT
-
-// (POST) /verify-user-token
-export type VerifyUserTokenRqs = { userToken: string };
-export type VerifyUserTokenRsp = UserSessionT

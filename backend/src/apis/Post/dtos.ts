@@ -19,8 +19,6 @@ export class CreatePostDto extends createZodDto(z.object({
 // get
 export class GetPostDto extends createZodDto(getPostOptionSchema) {}
 
-// getWithGroupCheck
-// same as get
 
 // update
 export class UpdatePostDto extends createZodDto(z.object({

@@ -79,7 +79,7 @@ export function UserButton({
       useOk: true,
     });
     if (!isOk) return;
-    userAct.logout();
+    userAct.reset();
     enqueueSnackbar(t("logoutSucess"), { variant: "success" });
   }
 

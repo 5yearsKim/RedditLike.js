@@ -20,13 +20,3 @@ export class FakeLoginDto extends createZodDto(z.object({
   email: z.string().email()
 })) {}
 
-
-// // refresh
-// const refreshRsp = accountSessionSchema;
-// export type RefreshRsp = z.infer<typeof refreshRsp>
-
-// verify-user-token
-export class VerifyUserTokenDto extends createZodDto(z.object({
-  userToken: z.string()
-})) {}
-

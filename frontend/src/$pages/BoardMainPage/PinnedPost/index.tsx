@@ -9,7 +9,7 @@ import { PinnedPostItem } from "./PinnedPostItem";
 
 // logic
 import { atom } from "recoil";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useListDataStore, type ListDataT } from "@/stores/molds/list_data";
 import { usePostDialog } from "@/hooks/dialogs/PostDialog";
 import * as PostApi from "@/apis/posts";

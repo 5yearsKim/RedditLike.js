@@ -19,9 +19,6 @@ export type CreateRsp = PostT
 export type GetRqs = GetPostOptionT
 export type GetRsp = GetData<PostT>
 
-// (GET) /:id/group-check/:groupKey
-export type GetWithGroupCheckRqs = GetPostOptionT
-export type GetWithGroupCheckRsp = GetData<PostT>
 
 // (PATCH) /:id
 export type UpdateRqs = {

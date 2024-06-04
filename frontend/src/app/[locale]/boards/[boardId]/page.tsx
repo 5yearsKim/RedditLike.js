@@ -96,7 +96,7 @@ export default async function BoardMain({ params }: BoardMainProps): Promise<JSX
       { data: rules },
     ] = await userTH.serverFetchWithCookie(cookies, async () => {
       return await Promise.all([
-        BoardApi.getWithGroupCheck(boardId, params.groupKey, getOpt),
+        BoardApi.get(boardId, getOpt),
         BoardManagerApi.getMe(boardId),
         BoardUserApi.getAuthor(boardId),
         FlagApi.list({ boardId }),
@@ -121,9 +121,8 @@ export default async function BoardMain({ params }: BoardMainProps): Promise<JSX
     const errData = e?.response?.data;
     let message: string|undefined = undefined;
 
-    if (errData.code == "WRONG_GROUP") {
-      message = t("wrongGroup");
-    }
+    console.log('err:, ', errData)
+
     return (
       <ErrorBox
         height='60vh'
@@ -132,107 +131,4 @@ export default async function BoardMain({ params }: BoardMainProps): Promise<JSX
       />
     );
   }
-
-
 }
-
-// type ServerSideProps = {
-//   data: BoardMainPageSsrProps;
-// };
-
-// export const getServerSideProps: GetServerSideProps<ServerSideProps, { boardId: string }> = async ({
-//   params,
-//   req,
-//   res,
-// }) => {
-//   const { boardId: _bid } = params!;
-//   const boardId = toId(_bid);
-//   if (!boardId) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-
-//   const getOpt: GetBoardOptionT = {
-//     $user_defaults: true,
-//     $aggr: true,
-//   };
-
-//   userTH.initFromCookie(userTH.option.key ,{ req, res });
-
-//   try {
-//     const [
-//       { data: board },
-//       { data: manager },
-//       { data: author },
-//       { data: flags },
-//       { data: rules },
-//     ] = await Promise.all([
-//       BoardApi.get(boardId, getOpt),
-//       BoardManagerApi.getMe(boardId),
-//       BoardUserApi.getAuthor(boardId),
-//       FlagApi.list({ boardId }),
-//       BoardRuleApi.list({ boardId: boardId }),
-//     ]);
-
-//     return {
-//       props: {
-//         data: {
-//           board,
-//           author ,
-//           manager,
-//           flags,
-//           rules,
-//         },
-//       },
-//     };
-
-
-//   } catch (e) {
-//     console.warn(e);
-//     return {
-//       notFound: true,
-//     };
-//   }
-// };
-
-// type PageProps = InferGetServerSidePropsType<typeof getServerSideProps>;
-
-// export default function BoardMain(props: PageProps): JSX.Element {
-//   const { data: ssrProps } = props;
-
-//   const { board } = ssrProps;
-//   return (
-//     <>
-//       <Head>
-//         <title>{board.name}</title>
-//         <meta
-//           name='description'
-//           content={board.description}
-//         />
-//         {/* og */}
-//         <meta
-//           property='og:url'
-//           content={`https://nucostory.com/boards/${board.id}`}
-//         />
-//         <meta
-//           property='og:type'
-//           content='website'
-//         />
-//         <meta
-//           property='og:title'
-//           content={board.name}
-//         />
-//         <meta
-//           property='og:description'
-//           content={board.description}
-//         />
-//         <meta
-//           property='og:image'
-//           content={board.avatar_path ? buildImgUrl(null, board.avatar_path) : "https://nucostory.com/nuco_og.png"}
-//         />
-//       </Head>
-//       <BoardMainPage {...ssrProps} />
-//     </>
-//   );
-// }

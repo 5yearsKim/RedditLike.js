@@ -312,11 +312,6 @@
         }
       }
     },
-    "ConfigureAccountPage": {
-      "loadingFailed": "Failed to load user information.",
-      "loadingComplete": "Loading complete for {email}!",
-      "loadingAccount": "Loading account..."
-    },
     "CreateBoardPage": {
       "restricted": "You are restricted from creating a board.",
       "checkRestriction": "View restriction details",
@@ -728,7 +723,6 @@
       "notification": "Notification",
       "noNotification": "No notifications."
     },
-    "PointPage": {},
     "PostPage": {
       "PostItem": {
         "deletePost": "Delete Post",
@@ -871,7 +865,7 @@
     },
     "AuthorFingerprint": {
       "me": "Me",
-      "author": "Author",
+      "author": "OP",
       "boardManager": "Board Manager"
     },
     "AuthorSelector": {
@@ -1420,7 +1414,6 @@
       "ConfirmDialog": {
         "cancel": "Cancel",
         "ok": "OK",
-        "groupMemberOnlyMsg": "This feature is only available to group members.",
         "loginOnlyMsg": "This feature is available after login."
       },
       "LoginDialog": {

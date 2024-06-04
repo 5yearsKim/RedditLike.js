@@ -161,7 +161,7 @@ export function BoardListPage(): JSX.Element {
           onFilterChange={handleFilterCategoryChange}
         />
         <Expand />
-        {me && admin != null && (
+        {me && (
           <Button
             size={downSm ? "small" : "medium"}
             startIcon={<AddIcon />}

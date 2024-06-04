@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, ReactNode } from "react";
-import { usePathname } from "next/navigation";
 import { userTH } from "@/system/token_holders";
 import { useUserActions } from "@/stores/UserStore";
 
@@ -11,13 +10,7 @@ type MeProviderProps = {
 export function MeProvider({ children }: MeProviderProps): ReactNode {
   const userAct = useUserActions();
 
-  const pathname = usePathname();
-
   useEffect(() => {
-    if (pathname === "/configure-account") {
-      return;
-    }
-
     const tokenInfo = userTH.get();
 
     if (!tokenInfo) {

@@ -28,19 +28,7 @@ function detectLang(pathname: string): string|null {
 
 
 export function middleware(request: NextRequest) {
-  const { pathname, searchParams } = request.nextUrl;
-
-  const locale = detectLang(pathname);
-
-  const accountToken = searchParams.get("accountToken");
-  const isPathConfigureAccount = pathname.includes("/configure-account");
-  if (accountToken && locale && !isPathConfigureAccount) {
-    const redirect = isPathConfigureAccount ? "/" : pathname;
-    return NextResponse.redirect(
-      new URL(`/${locale}/configure-account?redirect=${redirect}&accountToken=${accountToken}`, request.url)
-    );
-  }
-
+  const { pathname } = request.nextUrl;
 
   // redirects
   const managingPattern = /^\/(.+)\/boards\/([^\/]+)\/managings$/;

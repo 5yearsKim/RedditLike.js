@@ -312,11 +312,6 @@
         }
       }
     },
-    "ConfigureAccountPage": {
-      "loadingFailed": "유저 정보를 불러오는데 실패했어요.",
-      "loadingComplete": "{email} 로딩 완료!",
-      "loadingAccount": "계정 로딩 중.."
-    },
     "CreateBoardPage": {
       "restricted": "이용 제한되어 게시판을 만들 수 없어요.",
       "checkRestriction": "제한 내역 보기",
@@ -728,7 +723,6 @@
       "notification": "알림",
       "noNotification": "알림이 없어요."
     },
-    "PointPage": {},
     "PostPage": {
       "PostItem": {
         "deletePost": "게시글 삭제",
@@ -1420,7 +1414,6 @@
       "ConfirmDialog": {
         "cancel": "취소",
         "ok": "확인",
-        "groupMemberOnlyMsg": "해당 기능은 그룹에 가입된 멤버만 이용할 수 있어요.",
         "loginOnlyMsg": "해당 기능은 로그인 후 이용할 수 있어요."
       },
       "LoginDialog": {

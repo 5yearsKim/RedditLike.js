@@ -75,7 +75,7 @@ export function MainDrawerLayout(): ReactNode {
             </ListItemText>
           </ListItemButton>
 
-          {me && (admin != null) && (
+          {me && (
             <ListItemButton onClick={(): void => handleNavigateTo("/boards/create")}>
               <ListItemIcon>
                 <AddIcon

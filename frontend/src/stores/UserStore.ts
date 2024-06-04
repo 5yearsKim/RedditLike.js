@@ -79,12 +79,14 @@ export function useUserActions() {
 
   function loadFromSession(session: UserSessionT): void {
     const { token, tokenExpAt, user } = session;
+    set({ status: "loaded", data: { me: user, admin: null, muter: null } });
     userTH.set({
       token: token,
       expiresAt: tokenExpAt,
       meta: { me: user },
     });
   }
+
 
   async function refresh(): Promise<void> {
     try {
@@ -128,10 +130,6 @@ export function useUserActions() {
 
   }
 
-  function logout(): void {
-    userTH.reset();
-    reset();
-  }
 
   return {
     set,
@@ -142,6 +140,5 @@ export function useUserActions() {
     loadFromSession,
     loadMuter,
     loadAdmin,
-    logout,
   };
 }

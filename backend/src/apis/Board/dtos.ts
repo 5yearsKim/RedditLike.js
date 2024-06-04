@@ -14,9 +14,6 @@ export class CreateBoardDto extends createZodDto(z.object({
 // get
 export class GetBoardDto extends createZodDto(getBoardOptionSchema) {}
 
-// getWithGroupCheck
-// same as get
-
 
 // update
 export class UpdateBoardDto extends createZodDto(z.object({

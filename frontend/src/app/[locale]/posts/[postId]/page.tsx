@@ -88,7 +88,7 @@ export default async function PostMain({ params }: PostMainProps): Promise<JSX.E
       $pin: true,
     };
     const { data: post } = await userTH.serverFetchWithCookie(cookies, async () => {
-      return await PostApi.getWithGroupCheck(postId, params.groupKey, getOpt);
+      return await PostApi.get(postId, getOpt);
     });
 
     // const stop = Date.now();

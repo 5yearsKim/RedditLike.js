@@ -6,7 +6,7 @@ import { Txt } from "@/ui/texts";
 import Link from "next/link";
 // logic
 import * as AuthApi from "@/apis/auth";
-import { useAccountActions } from "@/stores/AccountStore";
+import { useUserActions } from "@/stores/UserStore";
 import { useSnackbar } from "@/hooks/Snackbar";
 
 type VerificationStepProps = {
@@ -20,7 +20,7 @@ export function VerificationStep({
 }: VerificationStepProps): JSX.Element {
   const t = useTranslations("pages.EmailLoginPage.VerificationStep");
 
-  const accountAct = useAccountActions();
+  const userAct = useUserActions();
   const { enqueueSnackbar } = useSnackbar();
 
   const [code, setCode] = useState<string>("");
@@ -46,7 +46,7 @@ export function VerificationStep({
     try {
       setIsSubmitting(true);
       const session = await AuthApi.emailLogin(email, code);
-      accountAct.loadFromSession(session);
+      userAct.loadFromSession(session);
       enqueueSnackbar(t("loginSuccess", { email }), { variant: "success" });
       onVerified();
 

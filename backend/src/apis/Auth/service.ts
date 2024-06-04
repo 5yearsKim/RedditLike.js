@@ -46,7 +46,7 @@ export class AuthService {
         email: user.email,
       },
     };
-    const userToken = jwt.sign(payload, env.ACCOUNT_SECRET);
+    const userToken = jwt.sign(payload, env.USER_SECRET);
     const session: UserSessionT = {
       user,
       token: userToken,
@@ -116,18 +116,6 @@ export class AuthService {
       throw new err.NotExistE("not exist");
     }
     const session = this.generateLoginSession(found);
-    return session;
-  }
-
-  async verifyUserToken(userToken: string): Promise<UserSessionT> {
-    const decoded = jwt.verify(userToken, env.ACCOUNT_SECRET);
-
-    type DecodedT = {user: {id: idT, email: string, sub: string}};
-    const account = await userM.findOne({ email: (decoded as DecodedT).user.email });
-    if (!account) {
-      throw new err.NotExistE("not exist");
-    }
-    const session = this.generateLoginSession(account);
     return session;
   }
 

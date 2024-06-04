@@ -22,12 +22,6 @@ export async function get(id: idT, getOpt: GetPostOptionT): Promise<R.GetRsp> {
   return rsp.data;
 }
 
-export async function getWithGroupCheck(id: idT, groupKey: string, getOpt: GetPostOptionT): Promise<R.GetRsp> {
-  const params: R.GetRqs = getOpt;
-  const rsp = await server.get(`${root}/${id}/group-check/${groupKey}`, { params } );
-  return rsp.data;
-}
-
 export async function update(
   id: idT,
   form: PostFormT,

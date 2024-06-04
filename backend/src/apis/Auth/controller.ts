@@ -6,7 +6,6 @@ import {
   GoogleLoginDto,
   EmailLoginDto,
   FakeLoginDto,
-  VerifyUserTokenDto,
 } from "./dtos";
 import { env } from "@/env";
 import * as err from "@/errors";
@@ -42,14 +41,6 @@ export class AuthController {
     return session;
   }
 
-  @Post("/verify-user-token")
-  async verifyUserToken(
-    @Body() body: VerifyUserTokenDto
-  ): Promise<R.VerifyUserTokenRsp> {
-    const { userToken } = body satisfies R.VerifyUserTokenRqs;
-    const session = await this.service.verifyUserToken(userToken);
-    return session;
-  }
 
   @UseGuards(UserGuard)
   @Post("/refresh")
