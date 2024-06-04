@@ -1,5 +1,4 @@
 export type BoardFormT = {
-    group_id: number;
     name: string;
     description: string;
     avatar_path?: (string | null) | undefined;
@@ -29,7 +28,6 @@ type _BoardT = {
     id: number;
     created_at: Date;
     updated_at?: Date | undefined;
-    group_id: number;
     name: string;
     description: string;
     avatar_path?: (string | null) | undefined;
@@ -57,14 +55,12 @@ type _BoardT = {
 
 export type GetBoardOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $user_defaults?: boolean | undefined;
     $posts?: ("recent") | undefined;
 }
 
 export type ListBoardOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $user_defaults?: (boolean | undefined) | undefined;
     $posts?: (("recent") | undefined) | undefined;
     sort?: ("hot" | "recent" | "old" | "follower" | "recently_followed") | undefined;

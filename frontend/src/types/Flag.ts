@@ -21,11 +21,9 @@ export type FlagT = {
 
 export type GetFlagOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }
 
 export type ListFlagOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     boardId?: number | undefined;
 }

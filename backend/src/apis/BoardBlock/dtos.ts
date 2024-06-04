@@ -3,8 +3,9 @@ import { z } from "nestjs-zod/z";
 import { boardBlockFormSchema } from "@/models/BoardBlock";
 
 // create
-const CreateRqs = z.object({ form: boardBlockFormSchema });
-export class CreateDto extends createZodDto(CreateRqs) {}
+export class CreateDto extends createZodDto(z.object({
+  form: boardBlockFormSchema,
+})) {}
 
 // delete
 // no dto

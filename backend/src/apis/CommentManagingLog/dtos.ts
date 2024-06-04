@@ -3,5 +3,4 @@ import { listCommentManagingLogOptionSchema } from "@/models/CommentManagingLog"
 
 
 // list
-const listCommentManagingLogRqs = listCommentManagingLogOptionSchema;
-export class ListCommentManagingLogDto extends createZodDto(listCommentManagingLogRqs) {}
+export class ListCommentManagingLogDto extends createZodDto(listCommentManagingLogOptionSchema) {}

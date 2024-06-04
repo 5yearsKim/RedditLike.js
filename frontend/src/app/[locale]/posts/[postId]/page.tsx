@@ -9,7 +9,6 @@ import { extractText } from "@/utils/html";
 import { buildImgUrl } from "@/utils/media";
 import * as PostApi from "@/apis/posts";
 import { PostPage } from "@/$pages/PostPage";
-import { FRONT_URL } from "@/config";
 import type { GetPostOptionT } from "@/types";
 
 type MetadataProps = {
@@ -39,7 +38,6 @@ export async function generateMetadata(
 
 
     return {
-      metadataBase: new URL(FRONT_URL),
       title: post.title,
       description: description,
       openGraph: {
@@ -90,7 +88,7 @@ export default async function PostMain({ params }: PostMainProps): Promise<JSX.E
       $pin: true,
     };
     const { data: post } = await userTH.serverFetchWithCookie(cookies, async () => {
-      return await PostApi.getWithGroupCheck(postId, params.groupKey, getOpt);
+      return await PostApi.get(postId, getOpt);
     });
 
     // const stop = Date.now();

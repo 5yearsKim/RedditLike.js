@@ -8,9 +8,6 @@ export type CreateRsp = BoardT
 export type GetRqs = GetBoardOptionT
 export type GetRsp = GetData<BoardT>
 
-// (GET) /:id/group-check/:groupKey
-export type GetWithGroupCheckRqs = GetBoardOptionT
-export type GetWithGroupCheckRsp = GetData<BoardT>
 
 // (PATCH) /:id
 export type UpdateRqs = {form: Partial<BoardFormT> }
@@ -20,9 +17,9 @@ export type UpdateRsp = BoardT
 export type ListRqs = ListBoardOptionT
 export type ListRsp = ListData<BoardT>
 
-// (GET) /by-name/:name/group/:groupId
-export type ByNameAndGroupRqs = GetBoardOptionT
-export type ByNameAndGroupRsp = GetData<BoardT|null>
+// (GET) /by-name/:name
+export type GetByNameAndRqs = GetBoardOptionT
+export type GetByNameRsp = GetData<BoardT|null>
 
 // (PATCH) /:id/admin-trash
 export type AdminTrashRqs = null

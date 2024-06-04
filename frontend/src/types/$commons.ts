@@ -8,7 +8,6 @@ export type BaseModelT = {
 
 export type GetOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }
 
 export type CensorFilterT = "approved" | "trashed" | "exceptTrashed" | "exceptProcessed"

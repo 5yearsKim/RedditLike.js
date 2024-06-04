@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { useConfirmDialog } from "./hook";
 import { DialogTitle, DialogContent, DialogContentText } from "@mui/material";
-import { useAccount$ } from "@/stores/AccountStore";
 
 export interface AlertDialogT {
   title?: string;
@@ -48,13 +47,9 @@ export function useLoginAlertDialog({ themeDisabled }: LoginAlertDialogT = {}) {
   const t = useTranslations("hooks.dialogs.ConfirmDialog");
   const { showAlertDialog } = useAlertDialog();
 
-  const account$ = useAccount$();
-
   async function showLoginAlertDialog(): Promise<void> {
     await showAlertDialog({
-      body: account$.status == "loggedIn" ?
-        t("groupMemberOnlyMsg") :
-        t("loginOnlyMsg"),
+      body: t("loginOnlyMsg"),
       useOk: true,
       themeDisabled,
     });

@@ -2,15 +2,13 @@ import { z } from "zod";
 import { baseModelSchema, insertFormSchema, getOptionSchema } from "../$commons/schema";
 import { TG } from "@/utils/type_generator";
 
-const categoryFormZ = {
-  group_id: z.number().int(),
+
+export const categoryFormSchema = insertFormSchema.extend({
   label: z.string().min(1).max(32),
   parent_id: z.number().int().nullish(),
   rank: z.number().int().nullish(),
-};
-
-export const categoryFormSchema = insertFormSchema.extend(categoryFormZ);
-export const categorySchema = baseModelSchema.extend(categoryFormZ);
+});
+export const categorySchema = baseModelSchema.extend(categoryFormSchema.shape);
 
 export const getCategoryOptionSchema = getOptionSchema.extend({
   $my_like: z.coerce.boolean(),

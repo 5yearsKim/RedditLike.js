@@ -37,8 +37,8 @@ export async function list(listOpt: ListCategoryOptionT): Promise<R.ListRsp> {
   return rsp.data;
 }
 
-export async function rerank(groupId: idT, categoryIds: idT[]): Promise<R.RerankRsp> {
-  const body: R.RerankRqs = { groupId, categoryIds };
+export async function rerank(categoryIds: idT[]): Promise<R.RerankRsp> {
+  const body: R.RerankRqs = { categoryIds };
   const rsp = await server.put(`${root}/rerank`, body);
   return rsp.data;
 }

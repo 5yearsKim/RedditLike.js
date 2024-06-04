@@ -1,15 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import * as BoardApi from "@/apis/boards";
 import { debounce } from "@mui/material/utils";
-import { useGroup } from "@/stores/GroupStore";
 import type { BoardT, ListBoardOptionT } from "@/types";
 
 export function useBoardSearch({ query }: { query: string }) {
   const [status, setStatus] = useState<ProcessStatusT>("init");
   const [boardCand, setBoardCand] = useState<BoardT[]>([]);
-
-  const group = useGroup();
-
 
   useEffect(() => {
     if (query.length == 0) {
@@ -25,7 +21,6 @@ export function useBoardSearch({ query }: { query: string }) {
     debounce(async (q: string) => {
 
       const listOpt: ListBoardOptionT = {
-        groupId: group.id,
         censor: "exceptTrashed",
         search: q,
       };

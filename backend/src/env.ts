@@ -13,7 +13,6 @@ const envSchema = z.object({
   STAGE: z.enum(["dev", "prod"]),
   MAIN_PORT: z.coerce.number(),
   SOCKET_PORT: z.coerce.number(),
-  ACCOUNT_SECRET: z.string(),
   USER_SECRET: z.string(),
   ADMIN_SECRET: z.string(),
   SYSTEM_SECRET: z.string(),

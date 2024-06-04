@@ -20,11 +20,10 @@ import { addDays, addMonths, addYears } from "date-fns";
 import { SelectChangeEvent } from "@mui/material";
 import { useSnackbar } from "@/hooks/Snackbar";
 import { useBoardMain$ } from "@/stores/BoardMainStore";
-import { useGroup } from "@/stores/GroupStore";
 import * as BoardMuterApi from "@/apis/board_muters";
-import * as GroupMuterApi from "@/apis/group_muters";
+import * as MuterApi from "@/apis/muters";
 import { blockAuthorDialogState, useBlockAuthorDialog } from "./hook";
-import type { BoardMuterFormT, GroupMuterFormT } from "@/types";
+import type { BoardMuterFormT, MuterFormT } from "@/types";
 
 export type DurationCandT = "7d" | "1m" | "3m" | "1y";
 
@@ -38,7 +37,6 @@ export function BlockAuthorDialogShared(): ReactNode {
   const { isOpen, author, type, until: initUntil, reason: initReason } = useRecoilValue(blockAuthorDialogState);
 
 
-  const group = useGroup();
   const boardMain$ = useBoardMain$();
   const [duration, setDuration] = useState<DurationCandT | undefined>();
   const [until, setUntil] = useState<Date | undefined>();
@@ -109,13 +107,12 @@ export function BlockAuthorDialogShared(): ReactNode {
           enqueueSnackbar(t("createSuccess"), { variant: "success" });
         }
       } else if (type == "group") {
-        const form: GroupMuterFormT = {
-          group_id: group.id,
+        const form: MuterFormT = {
           user_id: author.id,
           reason: reason,
           until: until ?? null,
         };
-        await GroupMuterApi.create(form);
+        await MuterApi.create(form);
         enqueueSnackbar(t("createSuccess"), { variant: "success" });
       } else {
         throw new Error("invalid type" + type);

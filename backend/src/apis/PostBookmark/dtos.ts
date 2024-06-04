@@ -4,8 +4,9 @@ import { postBookmarkFormSchema } from "@/models/PostBookmark";
 
 
 // create
-const CreatePostBookmarkRqs = z.object({ form: postBookmarkFormSchema });
-export class CreatePostBookmarkDto extends createZodDto(CreatePostBookmarkRqs) {}
+export class CreatePostBookmarkDto extends createZodDto(z.object({
+  form: postBookmarkFormSchema,
+})) {}
 
 // delete
 // no dto

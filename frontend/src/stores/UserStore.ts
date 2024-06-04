@@ -2,15 +2,15 @@
 
 import { atom, useRecoilValue, useSetRecoilState } from "recoil";
 import { userTH } from "@/system/token_holders";
-import * as UserApi from "@/apis/users";
-import * as GroupMuterApi from "@/apis/group_muters";
-import * as GroupAdminApi from "@/apis/group_admins";
-import { UserT, UserSessionT, GroupMuterT, GroupAdminT } from "@/types";
+import * as AuthApi from "@/apis/auth";
+import * as MuterApi from "@/apis/muters";
+import * as AdminApi from "@/apis/admins";
+import { UserT, UserSessionT, MuterT, AdminT } from "@/types";
 
 type UserDataT = {
   me: UserT|null
-  muter: GroupMuterT|null
-  admin: GroupAdminT|null
+  muter: MuterT|null
+  admin: AdminT|null
 }
 
 type UserStateT = {
@@ -43,12 +43,12 @@ export function useMe(): UserT|null {
   return user$.data?.me ?? null;
 }
 
-export function useMeAdmin(): GroupAdminT|null {
+export function useMeAdmin(): AdminT|null {
   const user$ = useRecoilValue(userState);
   return user$.data?.admin ?? null;
 }
 
-export function useMeMuter(): GroupMuterT|null {
+export function useMeMuter(): MuterT|null {
   const user$ = useRecoilValue(userState);
   return user$.data?.muter ?? null;
 }
@@ -79,6 +79,7 @@ export function useUserActions() {
 
   function loadFromSession(session: UserSessionT): void {
     const { token, tokenExpAt, user } = session;
+    set({ status: "loaded", data: { me: user, admin: null, muter: null } });
     userTH.set({
       token: token,
       expiresAt: tokenExpAt,
@@ -86,16 +87,17 @@ export function useUserActions() {
     });
   }
 
-  async function access(groupId: idT): Promise<void> {
+
+  async function refresh(): Promise<void> {
     try {
       patch({ status: "loading" });
-      const { session } = await UserApi.access(groupId);
-      if (session == null) {
-        set({ status: "loaded", data: { me: null, muter: null, admin: null } });
-        userTH.reset();
-        return;
-      }
-      const { user, token, tokenExpAt } = session;
+      const { user, token, tokenExpAt } = await AuthApi.refresh();
+      // if (session == null) {
+      //   set({ status: "loaded", data: { me: null, muter: null, admin: null } });
+      //   userTH.reset();
+      //   return;
+      // }
+      // const { user, token, tokenExpAt } = session;
       userTH.set({
         token: token,
         expiresAt: tokenExpAt,
@@ -109,18 +111,18 @@ export function useUserActions() {
     }
   }
 
-  async function loadMuter(groupId: idT): Promise<void> {
+  async function loadMuter(): Promise<void> {
     try {
-      const { data: muter } = await GroupMuterApi.getMe(groupId);
+      const { data: muter } = await MuterApi.getMe();
       patchData({ muter });
     } catch (e) {
       console.warn(e);
     }
   }
 
-  async function loadAdmin(groupId: idT): Promise<void> {
+  async function loadAdmin(): Promise<void> {
     try {
-      const { data: admin } = await GroupAdminApi.getMe(groupId);
+      const { data: admin } = await AdminApi.getMe();
       patchData({ admin });
     } catch (e) {
       console.warn(e);
@@ -134,7 +136,7 @@ export function useUserActions() {
     patch,
     patchData,
     reset,
-    access,
+    refresh,
     loadFromSession,
     loadMuter,
     loadAdmin,

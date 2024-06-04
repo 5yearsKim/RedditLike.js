@@ -18,18 +18,6 @@ export class SystemGuard implements CanActivate {
 
 
 @Injectable()
-export class AccountGuard implements CanActivate {
-  canActivate(context: ExecutionContext): boolean {
-    const request = context.switchToHttp().getRequest();
-    if (!request.accountId) {
-      throw new err.UnauthorizedE("user need to have account id");
-    }
-    return true;
-  }
-}
-
-
-@Injectable()
 export class UserGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();

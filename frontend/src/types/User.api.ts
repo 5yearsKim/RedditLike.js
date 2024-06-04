@@ -1,4 +1,5 @@
-import type { UserT, UserFormT, UserSessionT, ListUserOptionT, GetUserOptionT } from "./User";
+import type { UserT, UserFormT, ListUserOptionT, GetUserOptionT } from "./User";
+import type { UserSessionT } from "./Auth";
 
 
 // (POST) /
@@ -22,10 +23,5 @@ export type DeleteMeRqs = null
 export type DeleteMeRsp = UserT
 
 // (POST) /access
-export type AccessRqs = {groupId: number}
+export type AccessRqs = {token: string}
 export type AccessRsp = {session: UserSessionT|null}
-
-// (POST) /request-join
-export type RequestJoinRqs = {groupId: number}
-export type RequestJoinRsp = UserT
-

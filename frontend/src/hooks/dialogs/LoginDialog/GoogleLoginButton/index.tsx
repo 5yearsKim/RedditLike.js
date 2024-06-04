@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Button } from "@mui/material";
 import * as AuthApi from "@/apis/auth";
-import { useAccountActions } from "@/stores/AccountStore";
+import { useUserActions } from "@/stores/UserStore";
 import { useSnackbar } from "@/hooks/Snackbar";
 
 type GoogleLoginButtonProps = {
@@ -16,17 +16,17 @@ export function GoogleLoginButton({
 }: GoogleLoginButtonProps) {
   const t = useTranslations("hooks.dialogs.LoginDialog.GoogleLoginButton");
 
-  const accountAct = useAccountActions();
+  const userAct = useUserActions();
   const { enqueueSnackbar } = useSnackbar();
 
   const handleGoogleClick = useGoogleLogin({
     onSuccess: async (res) => {
       try {
         const session = await AuthApi.googleLogin(res.access_token);
-        accountAct.loadFromSession(session);
+        userAct.loadFromSession(session);
         onSuccess();
         // enqueueSnackbar(`${session.account.email} 로 로그인 했어요 :)`, { variant: "success" });
-        enqueueSnackbar(t("loginSuccess", { email: session.account.email }), { variant: "success" });
+        enqueueSnackbar(t("loginSuccess", { email: session.user.email }), { variant: "success" });
       } catch (e) {
         console.warn(e);
         enqueueSnackbar(t("loginFailed"), { variant: "error" });

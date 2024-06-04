@@ -3,9 +3,7 @@ import { z } from "nestjs-zod/z";
 import { commentReportFormSchema, listCommentReportOptionSchema } from "@/models/CommentReport";
 
 // create
-const createCommentReportRqs = z.object({ form: commentReportFormSchema });
-export class CreateCommentReportDto extends createZodDto(createCommentReportRqs) {}
+export class CreateCommentReportDto extends createZodDto(z.object({ form: commentReportFormSchema })) {}
 
 // list
-const listCommentReportRqs = listCommentReportOptionSchema;
-export class ListCommentReportDto extends createZodDto(listCommentReportRqs) {}
+export class ListCommentReportDto extends createZodDto(listCommentReportOptionSchema) {}

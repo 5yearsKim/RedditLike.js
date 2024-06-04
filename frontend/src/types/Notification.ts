@@ -23,13 +23,11 @@ type _NotificationT = {
 
 export type GetNotificationOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $board?: boolean | undefined;
 }
 
 export type ListNotificationOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $board?: (boolean | undefined) | undefined;
     limit?: number | undefined;
     cursor?: string | undefined;

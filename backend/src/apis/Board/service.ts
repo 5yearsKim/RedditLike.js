@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
 import { boardM, BoardSqls } from "@/models/Board";
-import { groupM } from "@/models/Group";
 import { listBoard } from "./fncs/list_board";
 import { type QueryBuilder } from "@/global/db";
 import { createSignedUrl, addDevOnKey } from "@/utils/s3";
@@ -59,21 +58,9 @@ export class BoardService {
     return fetched;
   }
 
-  async getWithGroupCheck(id: idT, groupKey: string, opt: GetBoardOptionT = {}): Promise<BoardT> {
-    const group = await groupM.findOne({ key: groupKey });
-    if (!group) {
-      throw new err.WrongGroupE("group not found");
-    }
-    const fetched = await this.get(id, opt);
-    if (fetched.group_id !== group.id) {
-      throw new err.WrongGroupE();
-    }
-    return fetched;
-  }
 
-
-  async getByNameAndGroup(name: string, groupId: idT, opt: GetBoardOptionT = {}): Promise<BoardT> {
-    const fetched = await boardM.findOne({ name, group_id: groupId }, {
+  async getByName(name: string, opt: GetBoardOptionT = {}): Promise<BoardT> {
+    const fetched = await boardM.findOne({ name }, {
       builder: (qb, select) => {
         this.builder(qb, select, opt);
       }

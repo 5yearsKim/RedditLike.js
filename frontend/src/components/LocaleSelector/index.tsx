@@ -48,6 +48,8 @@ export function LocaleSelector(): JSX.Element {
     segments[1] = selected;
     const newPath = segments.join("/");
     router.replace(newPath);
+
+    // router.replace(pathname, { locale: selected });
     setSelectorOpen(false);
   }
 

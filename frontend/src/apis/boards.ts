@@ -11,12 +11,6 @@ export async function get(id: idT, option: GetBoardOptionT = {}): Promise<R.GetR
 }
 
 
-export async function getWithGroupCheck(id: idT, groupKey: string, option: GetBoardOptionT = {}): Promise<R.GetWithGroupCheckRsp> {
-  const params: R.GetWithGroupCheckRqs = option;
-  const rsp = await server.get(`${root}/${id}/group-check/${groupKey}`, { params });
-  return rsp.data;
-}
-
 export async function list(option: ListBoardOptionT): Promise<R.ListRsp> {
   const params: R.ListRqs = option;
   const rsp = await server.get(`${root}`, { params });
@@ -45,9 +39,8 @@ export async function adminRestore(id: idT): Promise<R.AdminRestoreRsp> {
   return rsp.data;
 }
 
-export async function getByNameAndGroup(name: string, groupId: idT, option: GetBoardOptionT = {}): Promise<R.ByNameAndGroupRsp> {
-  const params: R.ByNameAndGroupRqs = option;
-  const rsp = await server.get(`${root}/by-name/${name}/group/${groupId}`, { params });
+export async function getByName(name: string, option: GetBoardOptionT = {}): Promise<R.GetByNameRsp> {
+  const rsp = await server.get(`${root}/by-name/${name}`, { params: option });
   return rsp.data;
 }
 

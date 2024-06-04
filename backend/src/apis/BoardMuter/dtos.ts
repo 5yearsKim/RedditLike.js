@@ -4,21 +4,21 @@ import { boardMuterFormSchema, getBoardMuterOptionSchema, listBoardMuterOptionSc
 
 
 // create
-const createBoardMuterRqs = z.object({ form: boardMuterFormSchema });
-export class CreateBoardMuterDto extends createZodDto(createBoardMuterRqs) {}
+export class CreateBoardMuterDto extends createZodDto(z.object({
+  form: boardMuterFormSchema,
+})) {}
 
 // delete
 // no dto
 
 // list
-const listBoardMuterRqs = listBoardMuterOptionSchema;
-export class ListBoardMuterDto extends createZodDto(listBoardMuterRqs) {}
+export class ListBoardMuterDto extends createZodDto(listBoardMuterOptionSchema) {}
 
 // get
-const getBoardMuterRqs = getBoardMuterOptionSchema;
-export class GetBoardMuterDto extends createZodDto(getBoardMuterRqs) {}
+export class GetBoardMuterDto extends createZodDto(getBoardMuterOptionSchema) {}
 
 // update
-const updateBoardMuterRqs = z.object({ form: boardMuterFormSchema.partial() });
-export class UpdateBoardMuterDto extends createZodDto(updateBoardMuterRqs) {}
+export class UpdateBoardMuterDto extends createZodDto(z.object({
+  form: boardMuterFormSchema.partial(),
+})) {}
 

@@ -4,6 +4,7 @@ import { z } from "nestjs-zod/z";
 
 
 // inspect
-const inspectUrlRqs = z.object({ url: z.string() });
-export class InspectUrlDto extends createZodDto(inspectUrlRqs) {}
+export class InspectUrlDto extends createZodDto( z.object({
+  url: z.string(),
+})) {}
 

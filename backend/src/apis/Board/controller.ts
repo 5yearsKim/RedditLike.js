@@ -57,13 +57,12 @@ export class BoardController {
     return fetched;
   }
 
-  @Get("/by-name/:name/group/:groupId")
+  @Get("/by-name/:name")
   async nameUnique(
     @Param("name") name: string,
-    @Param("groupId", ParseIntPipe) groupId: idT,
-  ): Promise<R.ByNameAndGroupRsp> {
+  ): Promise<R.GetByNameRsp> {
 
-    const fetched = await this.service.getByNameAndGroup(name, groupId);
+    const fetched = await this.service.getByName(name);
 
     return { data: fetched };
   }
@@ -128,24 +127,6 @@ export class BoardController {
   }
 
 
-  @Get("/:id/group-check/:groupKey")
-  async getWithGroupCheck(
-    @User() user: UserT|null,
-    @Param("id", ParseIntPipe) id: idT,
-    @Param("groupKey") groupKey: string,
-    @Query() getOpt: GetBoardDto
-  ): Promise<R.GetRsp> {
-
-    getOpt satisfies R.GetRqs;
-    if (user) {
-      getOpt.userId = user.id;
-    }
-    const fetched = await this.service.getWithGroupCheck(id, groupKey, getOpt);
-
-    return { data: fetched };
-  }
-
-
   @UseGuards(UserGuard)
   @Patch("/:id")
   async update(
@@ -188,8 +169,7 @@ export class BoardController {
     @Param("id", ParseIntPipe) id: idT,
   ): Promise<R.AdminTrashRsp> {
 
-    const board = await this.service.get(id, {});
-    await checkAdmin(user.id, board.group_id, { manage_censor: true });
+    await checkAdmin(user.id, { manage_censor: true });
     const updated = await this.service.update(id, {
       trashed_at: new Date(),
       trashed_by: "admin",
@@ -205,8 +185,7 @@ export class BoardController {
     @Param("id", ParseIntPipe) id: idT,
   ): Promise<R.AdminRestoreRsp> {
 
-    const board = await this.service.get(id, {});
-    await checkAdmin(user.id, board.group_id, { manage_censor: true });
+    await checkAdmin(user.id, { manage_censor: true });
     const updated = await this.service.update(id, {
       trashed_at: null,
       trashed_by: null,

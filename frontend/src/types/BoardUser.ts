@@ -17,13 +17,11 @@ type _BoardUserT = {
 
 export type GetBoardUserOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $author?: boolean | undefined;
 }
 
 export type ListBoardUserOptionT = {
     userId?: number | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $author?: (boolean | undefined) | undefined;
     boardId?: number | undefined;
     nickname?: string | undefined;

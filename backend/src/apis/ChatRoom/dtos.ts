@@ -4,21 +4,23 @@ import { chatRoomFormSchema, getChatRoomOptionSchema, listChatRoomOptionSchema }
 
 
 // get
-const getChatRoomRqs = getChatRoomOptionSchema;
-export class GetChatRoomDto extends createZodDto(getChatRoomRqs) {}
+export class GetChatRoomDto extends createZodDto(getChatRoomOptionSchema) {}
 
 // create
-const createChatRoomRqs = z.object({ form: chatRoomFormSchema });
-export class CreateChatRoomDto extends createZodDto(createChatRoomRqs) {}
+export class CreateChatRoomDto extends createZodDto(z.object({
+  form: chatRoomFormSchema,
+})) {}
 
 // list
-const listChatRoomRqs = listChatRoomOptionSchema;
-export class ListChatRoomDto extends createZodDto(listChatRoomRqs) {}
+export class ListChatRoomDto extends createZodDto(listChatRoomOptionSchema) {}
 
 // init
-const initChatRoomRqs = z.object({ boardId: z.number().int(), opponentId: z.number().int() });
-export class InitChatRoomDto extends createZodDto(initChatRoomRqs) {}
+export class InitChatRoomDto extends createZodDto( z.object({
+  boardId: z.number().int(),
+  opponentId: z.number().int(),
+})) {}
 
 // init-board
-const initBoardChatRoomRqs = z.object({ boardId: z.number().int() });
-export class InitBoardChatRoomDto extends createZodDto(initBoardChatRoomRqs) {}
+export class InitBoardChatRoomDto extends createZodDto( z.object({
+  boardId: z.number().int(),
+})) {}

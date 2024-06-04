@@ -8,12 +8,11 @@ export async function up(knex: Knex): Promise<void> {
     t.dateTime("created_at").notNullable().defaultTo(knex.fn.now());
     t.dateTime("updated_at");
 
-    t.integer("group_id").notNullable().references("groups.id").onDelete("CASCADE").onUpdate("CASCADE");
     t.string("label", 32).notNullable();
     t.integer("parent_id").references(`${table}.id`).onUpdate("CASCADE").onDelete("CASCADE");
     t.integer("rank");
 
-    t.unique(["group_id", "label"]);
+    t.unique(["label"]);
   });
 }
 

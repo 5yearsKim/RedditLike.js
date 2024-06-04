@@ -4,25 +4,23 @@ import { userFormSchema, listUserOptionSchema , getUserOptionSchema } from "@/mo
 
 
 // create
-const createUserRqs = z.object({ form: userFormSchema });
-export class CreateUserDto extends createZodDto(createUserRqs) {}
+export class CreateUserDto extends createZodDto(z.object({
+  form: userFormSchema,
+})) {}
 
 // list
-const lisUserRqs = listUserOptionSchema;
-export class ListUserDto extends createZodDto(lisUserRqs) {}
+export class ListUserDto extends createZodDto(listUserOptionSchema) {}
 
 
 // getMe
 export class GetMeDto extends createZodDto(getUserOptionSchema) {}
 
 // updateMe
-const updateUserMeRqs = z.object({ form: userFormSchema.partial() });
-export class UpdateUserMeDto extends createZodDto(updateUserMeRqs) {}
+export class UpdateUserMeDto extends createZodDto(z.object({
+  form: userFormSchema.partial(),
+})) {}
 
 // access
-const accessUserRqs = z.object({ groupId: z.number().int() });
-export class AccessUserDto extends createZodDto(accessUserRqs) {}
-
-// requestJoin
-const requestJoinRqs = z.object({ groupId: z.number().int() });
-export class RequestJoinDto extends createZodDto(requestJoinRqs) {}
+export class AccessUserDto extends createZodDto( z.object({
+  token: z.string(),
+})) {}

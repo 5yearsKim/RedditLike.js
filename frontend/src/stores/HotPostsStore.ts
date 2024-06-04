@@ -29,12 +29,11 @@ export function useHotPostsStore() {
   });
 }
 
-export const getHotPostsListOpt = ({ userId, groupId }: { userId?: idT, groupId: idT }): ListPostOptionT => {
+export const getHotPostsListOpt = ({ userId }: { userId?: idT }): ListPostOptionT => {
 
   const yesterday = startOfHour(subDays(new Date(), 1));
   return {
     userId,
-    groupId,
     limit: 10,
     sort: "vote",
     fromAt: yesterday,

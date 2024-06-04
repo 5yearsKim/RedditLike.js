@@ -4,5 +4,6 @@ import { videoFormSchema } from "@/models/Video";
 
 
 // create
-const CreateVideoRqs = z.object({ form: videoFormSchema });
-export class CreateVideoDto extends createZodDto(CreateVideoRqs) {}
+export class CreateVideoDto extends createZodDto(z.object({
+  form: videoFormSchema,
+})) {}

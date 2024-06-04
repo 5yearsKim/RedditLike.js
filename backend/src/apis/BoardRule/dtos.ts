@@ -4,20 +4,23 @@ import { boardRuleFormSchema, listBoardRuleOptionSchema } from "@/models/BoardRu
 
 
 // create
-const createBoardRuleRqs = z.object({ form: boardRuleFormSchema });
-export class CreateBoardRuleDto extends createZodDto(createBoardRuleRqs) {}
+export class CreateBoardRuleDto extends createZodDto(z.object({
+  form: boardRuleFormSchema,
+})) {}
 
 // update
-const updateBoardRuleRqs = z.object({ form: boardRuleFormSchema.partial() });
-export class UpdateBoardRuleDto extends createZodDto(updateBoardRuleRqs) {}
+export class UpdateBoardRuleDto extends createZodDto(z.object({
+  form: boardRuleFormSchema.partial(),
+})) {}
 
 // delete
 // no dto
 
 // list
-const listBoardRuleRsp = listBoardRuleOptionSchema;
-export class ListBoardRuleDto extends createZodDto(listBoardRuleRsp) {}
+export class ListBoardRuleDto extends createZodDto(listBoardRuleOptionSchema) {}
 
 // rerank
-const rerankBoardRuleRqs = z.object({ boardId: z.number().int(), ruleIds: z.array(z.number().int()) });
-export class RerankBoardRuleDto extends createZodDto(rerankBoardRuleRqs) {}
+export class RerankBoardRuleDto extends createZodDto(z.object({
+  boardId: z.number().int(),
+  ruleIds: z.array(z.number().int()),
+})) {}

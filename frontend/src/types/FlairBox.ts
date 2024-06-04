@@ -21,14 +21,12 @@ type _FlairBoxT = {
 
 export type GetFlairBoxOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $flairs?: boolean | undefined;
     $custom_flairs?: boolean | undefined;
 }
 
 export type ListFlairBoxOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $flairs?: (boolean | undefined) | undefined;
     $custom_flairs?: (boolean | undefined) | undefined;
     boardId?: number | undefined;

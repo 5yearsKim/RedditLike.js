@@ -13,10 +13,8 @@ export type PostBookmarkT = {
 
 export type GetPostBookmarkOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }
 
 export type ListPostBookmarkOptionT = {
     userId?: number | undefined;
-    groupId?: number | undefined;
 }

@@ -3,13 +3,6 @@ import type { UserT } from "@/types/User";
 import * as err from "@/errors";
 
 
-export const AccountId = createParamDecorator(
-  (option: unknown, ctx: ExecutionContext): idT|null => {
-    const request = ctx.switchToHttp().getRequest();
-    return request.accountId ?? null; // extract token from request
-  },
-);
-
 type UserOptionT = {
   force?: boolean;
 }

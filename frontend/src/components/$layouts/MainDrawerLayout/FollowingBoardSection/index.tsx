@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { BoardSection } from "../style";
 import { BoardSectionList } from "../BoardSectionList";
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useFollowingBoardsStore, getFollowingBoardsListOpt } from "@/stores/FollowingBoardsStore";
 import type { BoardT } from "@/types";
 
@@ -17,10 +16,9 @@ export function FollowingBoardSection({
 }: FollowingBoardSectionProps): JSX.Element {
 
   const me = useMe();
-  const group = useGroup();
   const { data: followingBoards$, actions: followingBoardsAct } = useFollowingBoardsStore();
 
-  const listOpt = getFollowingBoardsListOpt({ userId: me?.id, groupId: group.id });
+  const listOpt = getFollowingBoardsListOpt({ userId: me?.id });
 
   useEffect(() => {
     followingBoardsAct.load(listOpt);

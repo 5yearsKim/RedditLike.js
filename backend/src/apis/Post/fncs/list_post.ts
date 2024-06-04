@@ -22,11 +22,6 @@ export async function listPost(opt: ListPostOptionT = {}): Promise<ListData<Post
       // join board by default
       qb.join("boards", "boards.id", "=", `${table}.board_id`);
 
-      // groupId
-      if (opt.groupId) {
-        qb.where("boards.group_id", opt.groupId);
-      }
-
       // published
       switch (opt.published ?? "only") {
       case "only":

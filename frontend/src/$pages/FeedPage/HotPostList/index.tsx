@@ -13,16 +13,14 @@ import { Clickable } from "@/ui/tools/Clickable";
 import { useEffect, MouseEvent } from "react";
 import { useHotPostsStore, getHotPostsListOpt } from "@/stores/HotPostsStore";
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import type { PostT } from "@/types";
 
 export function HotPostList(): ReactNode {
   const t = useTranslations("pages.FeedPage.HotPostList");
   const router = useRouter();
   const me = useMe();
-  const group = useGroup();
 
-  const listOpt = getHotPostsListOpt({ userId: me?.id, groupId: group.id });
+  const listOpt = getHotPostsListOpt({ userId: me?.id });
 
   const { data: hotPosts$, actions: hotPostsAct } = useHotPostsStore();
 

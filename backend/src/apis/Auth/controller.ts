@@ -1,16 +1,16 @@
 import { Controller, UseGuards, Post, Body } from "@nestjs/common";
 import { AuthService } from "./service";
-import { AccountId } from "@/apis/$decorators";
-import { AccountGuard, SystemGuard } from "@/apis/$guards";
+import { SystemGuard, UserGuard } from "@/apis/$guards";
+import { User } from "@/apis/$decorators";
 import {
   GoogleLoginDto,
   EmailLoginDto,
   FakeLoginDto,
-  VerifyAccountTokenDto,
 } from "./dtos";
 import { env } from "@/env";
 import * as err from "@/errors";
 import type * as R from "@/types/Auth.api";
+import type { UserT } from "@/types";
 
 @Controller("auth")
 export class AuthController {
@@ -41,19 +41,11 @@ export class AuthController {
     return session;
   }
 
-  @UseGuards(AccountGuard)
-  @Post("/refresh")
-  async refresh(@AccountId() accountId: idT): Promise<R.RefreshRsp> {
-    const session = await this.service.refresh(accountId);
-    return session;
-  }
 
-  @Post("/verify-account-token")
-  async verifyAccountToken(
-    @Body() body: VerifyAccountTokenDto
-  ): Promise<R.VerifyAccountTokenRsp> {
-    const { accountToken } = body satisfies R.VerifyAccountTokenRqs;
-    const session = await this.service.verifyAccountToken(accountToken);
+  @UseGuards(UserGuard)
+  @Post("/refresh")
+  async refresh(@User() user: UserT): Promise<R.RefreshRsp> {
+    const session = await this.service.refresh(user);
     return session;
   }
 

@@ -47,9 +47,6 @@
     "Notification": {
       "title": "Notifications"
     },
-    "Point": {
-      "title": "Points"
-    },
     "PostMain": {
       "title": "Post",
       "invalidPostId": "{postId} is an invalid post format.",
@@ -183,55 +180,6 @@
           "noTrashedBoards": "No hidden boards."
         }
       },
-      "IntroTab": {
-        "nameUpdateSuccess": "Name updated successfully!",
-        "nameUpdateFailed": "Failed to update the name.",
-        "logoUpdateSuccess": "Logo updated successfully!",
-        "logoUpdateFailed": "Failed to update the logo.",
-        "shortNameUpdateSuccess": "Short name updated successfully!",
-        "shortNameUpdateFailed": "Failed to update the short name.",
-        "descriptionUpdateSuccess": "Description updated successfully!",
-        "descriptionUpdateFailed": "Failed to update the description.",
-        "domainUpdateSuccess": "Domain updated successfully!",
-        "domainUpdateFailed": "Failed to update the domain.",
-        "domainAlreadyExist": "This domain already exists.",
-        "themeColorUpdateSuccess": "Theme color updated successfully!",
-        "themeColorUpdateFailed": "Failed to update the theme color.",
-        "protectionUpdateSuccess": "Group visibility range updated successfully!",
-        "protectionUpdateFailed": "Failed to update the group visibility range.",
-        "allowedUserCreateBoard": "User board creation allowed!",
-        "disallowedUserCreateBoard": "User board creation not allowed.",
-        "userCreateBoardUpdateFailed": "Failed to update board creation permission.",
-        "groupSetting": "Group Settings",
-        "groupLogo": "Group Logo",
-        "groupName": "Group Name",
-        "groupShortName": "Group Short Name",
-        "groupShortNameHelper": "The short group name is displayed instead of the logo. If left blank, it will be replaced with the group name.",
-        "groupDescription": "Group Description",
-        "noDescription": "No Description",
-        "domain": "Domain",
-        "themeColor": "Theme Color",
-        "groupProtection": "Group Visibility",
-        "allowUserCreateBoard": "Allow User to Create Board",
-        "allowUserCreateBoardHelper": "Users can freely create boards. If turned off, only administrators can create boards.",
-      
-        "EditableThemeColor": {
-          "editThemeColor": "Edit Theme Color",
-          "prevColor": "Previous Color",
-          "newColor": "New Color",
-          "themeColor": "Theme Color",
-          "cancel": "Cancel",
-          "apply": "Apply"
-        },
-        "GroupKeyCheckDialog": {
-          "validateMinLen": "Please enter more than {n} characters.",
-          "validateMaxLen": "Please enter less than {n} characters.",
-          "validateAllowedChars": "Only letters, numbers, and special characters are allowed.",
-          "validateNotUsable": "This group name is not usable.",
-          "cancel": "Cancel",
-          "apply": "Apply"
-        }
-      },
       "MemberTab": {
         "manageMember": "Member Management",
         "groupMember": "Group Member",
@@ -242,29 +190,6 @@
           "publicDesc": "*Public: All users can join the group",
           "protectedDesc": "*Protected: Only invited users can join the group",
           "privateDesc": "*Private: Only invited users can join the group"
-        },
-        "InvitationSection": {
-          "invitedUser": "Invited User",
-          "noInvitedUser": "No members have been invited.",
-      
-          "InvitationItem": {
-            "cancelInvitation": "Cancel Invitation",
-            "cancelInvitationPublicMsg": "Do you want to cancel the invitation?",
-            "cancelInvitationPrivateMsg": "Do you want to cancel the invitation? Users not invited cannot join the group.",
-            "cancelInvitationSuccess": "Invitation successfully cancelled.",
-            "cancelInvitationFailed": "Failed to cancel the invitation."
-          },
-          "InviteButton": {
-            "alreadyRegistered": "Already a registered member of the group.",
-            "alreadyDeclined": "Member has already declined the invitation.",
-            "inviteSuccess": "Invitation email sent. You can check the invitation list.",
-            "inviteFailed": "Failed to send invitation email.",
-            "invite": "Invite",
-            "email": "Email",
-            "groupInvitation": "Group Member Invitation",
-            "cancel": "Cancel",
-            "apply": "Apply"
-          }
         }
       },
       "MuterTab": {
@@ -386,11 +311,6 @@
           "sending": "Sending..."
         }
       }
-    },
-    "ConfigureAccountPage": {
-      "loadingFailed": "Failed to load user information.",
-      "loadingComplete": "Loading complete for {email}!",
-      "loadingAccount": "Loading account..."
     },
     "CreateBoardPage": {
       "restricted": "You are restricted from creating a board.",
@@ -803,7 +723,6 @@
       "notification": "Notification",
       "noNotification": "No notifications."
     },
-    "PointPage": {},
     "PostPage": {
       "PostItem": {
         "deletePost": "Delete Post",
@@ -938,15 +857,6 @@
         "managing": "Managing"
       }
     },
-    "$providers": {
-      "GroupProvider": {
-        "loadSuccess": "Entered group \"{groupName}\" :)",
-        "loadFail": "Unable to find the group.",
-        "loadingGroup": "Loading Group...",
-        "groupFindFailed": "Failed to find group {groupDomain}.",
-        "retry": "Retry"
-      }
-    },
     "$statusTools": {
       "loadFailed": "Unable to load data.",
       "toHome": "Go to Home",
@@ -955,7 +865,7 @@
     },
     "AuthorFingerprint": {
       "me": "Me",
-      "author": "Author",
+      "author": "OP",
       "boardManager": "Board Manager"
     },
     "AuthorSelector": {
@@ -1117,24 +1027,6 @@
       "all": "All",
       "notFollowing": "Not Subscribed"
     },
-    "GroupInfoDialog": {
-      "copiedToClipboard": "Copied to clipboard.",
-      "noDescription": "No description",
-      "adminGroup": "Group Management",
-      "accessInfo": "Access Information",
-      "close": "Close"
-    },
-    "GroupProtectionSelector": {
-      "public": "Public",
-      "publicHelper": "Anyone can see this group and join",
-      "protected": "Protected",
-      "protectedHelper": "Anyone can see this group, but only invited members can join",
-      "private": "Private",
-      "privateHelper": "Only invited members can see and join this group",
-      "groupProtectionRange": "Group Visibility Range",
-      "cancel": "Cancel",
-      "apply": "Apply"
-    },
     "LocaleSelector": {
       "selectLanguage": "Select Language",
       "cancel": "Cancel",
@@ -1215,10 +1107,6 @@
           "restriction": "Restriction Details"
         },
         "SearchBar": {}
-      },
-      "NavbarLogo": {
-        "switchGroupSuccess": "Entered group \"{groupName}\" :)",
-        "adminPage": "Admin Page"
       },
       "NavbarMenuButton": {},
       "SearchBar": {
@@ -1526,7 +1414,6 @@
       "ConfirmDialog": {
         "cancel": "Cancel",
         "ok": "OK",
-        "groupMemberOnlyMsg": "This feature is only available to group members.",
         "loginOnlyMsg": "This feature is available after login."
       },
       "LoginDialog": {

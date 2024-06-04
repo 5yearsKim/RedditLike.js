@@ -55,7 +55,6 @@ export type PostSortT = "recent" | "hot" | "vote" | "discussed"
 
 export type GetPostOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $defaults?: boolean | undefined;
     $user_defaults?: boolean | undefined;
     $manager_defaults?: boolean | undefined;
@@ -65,7 +64,6 @@ export type GetPostOptionT = {
 
 export type ListPostOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $defaults?: (boolean | undefined) | undefined;
     $user_defaults?: (boolean | undefined) | undefined;
     $manager_defaults?: (boolean | undefined) | undefined;

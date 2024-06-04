@@ -7,48 +7,40 @@ import { videoSchema } from "@/models/Video";
 
 
 // create
-const CreatePostRqs = z.object({
+export class CreatePostDto extends createZodDto(z.object({
   form: postFormSchema,
   relations: z.object({
     flags: flagSchema.array().optional(),
     images: imageSchema.array().optional(),
     videos: videoSchema.array().optional(),
-  }).optional(),
-});
-export class CreatePostDto extends createZodDto(CreatePostRqs) {}
+  }).optional()
+})) {}
 
 // get
 export class GetPostDto extends createZodDto(getPostOptionSchema) {}
 
-// getWithGroupCheck
-// same as get
 
 // update
-const UpdatePostRqs = z.object({
+export class UpdatePostDto extends createZodDto(z.object({
   form: postFormSchema.partial(),
   relations: z.object({
     flags: flagSchema.array().optional(),
     images: imageSchema.array().optional(),
     videos: videoSchema.array().optional(),
   }).optional(),
-});
-export class UpdatePostDto extends createZodDto(UpdatePostRqs) {}
+})) {}
 
 // list
-const ListPostRqs = listPostOptionSchema;
-export class ListPostDto extends createZodDto(ListPostRqs) {}
+export class ListPostDto extends createZodDto(listPostOptionSchema) {}
 
 // delete
 
 // trash
-const trashPostRqs = z.object({ reason: z.string() });
-export class TrashPostDto extends createZodDto(trashPostRqs) {}
+export class TrashPostDto extends createZodDto(z.object({ reason: z.string() })) {}
 
 // getImagePresigendUrl
-const GetImagePresignedUrlRqs = z.object({ mimeType: z.string() });
-export class GetImagePresignedUrlDto extends createZodDto(GetImagePresignedUrlRqs) {}
+export class GetImagePresignedUrlDto extends createZodDto(z.object({ mimeType: z.string() })) {}
 
 
 // getVideoPresigendUrl
-const GetVideoPresignedUrlRqs = z.object({ mimeType: z.string() });
-export class GetVideoPresignedUrlDto extends createZodDto(GetVideoPresignedUrlRqs) {}
+export class GetVideoPresignedUrlDto extends createZodDto(z.object({ mimeType: z.string() })) {}

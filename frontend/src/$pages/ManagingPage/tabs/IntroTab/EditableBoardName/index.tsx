@@ -10,7 +10,6 @@ import { Txt } from "@/ui/texts";
 import { useEffect, useState, useCallback, MouseEvent, ChangeEvent } from "react";
 import { debounce } from "@mui/material/utils";
 import { useTextForm } from "@/hooks/TextForm";
-import { useGroup } from "@/stores/GroupStore";
 import { noEmptyValidator, maxLenValidator } from "@/utils/validator";
 import * as BoardApi from "@/apis/boards";
 
@@ -27,7 +26,6 @@ export function EditableBoardName({
 
   const [uniqueChecked, setUniqueChecked] = useState<undefined | boolean>();
   const [editorOpen, setEditorOpen] = useState<boolean>(false);
-  const group = useGroup();
 
   let {
     // eslint-disable-next-line
@@ -68,7 +66,7 @@ export function EditableBoardName({
     debounce(async (name: string): Promise<void> => {
       name = name.trim();
       try {
-        const { data: found } = await BoardApi.getByNameAndGroup(name, group.id);
+        const { data: found } = await BoardApi.getByName(name);
         const isUnique = !found;
         setUniqueChecked(isUnique);
       } catch (e) {

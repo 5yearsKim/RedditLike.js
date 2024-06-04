@@ -21,13 +21,11 @@ type _PostManagingLogT = {
 
 export type GetPostManagingLogOptionT = {
     userId?: (number | undefined) | undefined;
-    groupId?: (number | undefined) | undefined;
     $author?: boolean | undefined;
 }
 
 export type ListPostManagingLogOptionT = {
     userId?: ((number | undefined) | undefined) | undefined;
-    groupId?: ((number | undefined) | undefined) | undefined;
     $author?: (boolean | undefined) | undefined;
     postId?: number | undefined;
 }

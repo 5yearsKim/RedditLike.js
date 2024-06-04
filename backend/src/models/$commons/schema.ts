@@ -16,7 +16,6 @@ TG.add(tgKey, "BaseModelT", baseModelSchema);
 
 export const getOptionSchema = z.object({
   userId: z.coerce.number().int(),
-  groupId: z.coerce.number().int(),
 }).partial();
 TG.add(tgKey, "GetOptionT", getOptionSchema);
 

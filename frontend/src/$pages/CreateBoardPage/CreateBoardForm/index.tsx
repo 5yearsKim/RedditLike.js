@@ -8,7 +8,6 @@ import { Txt } from "@/ui/texts";
 
 // logic
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useManagingBoardsStore, getManagingBoardsListOpt } from "@/stores/ManagingBoardsStore";
 import { useAlertDialog } from "@/hooks/dialogs/ConfirmDialog";
 import { useSnackbar } from "@/hooks/Snackbar";
@@ -22,10 +21,6 @@ export function CreateBoardForm(): JSX.Element {
   const router = useRouter();
 
   const me = useMe();
-  const group = useGroup();
-  if (!group) {
-    throw new Error("group shold be valid");
-  }
 
   const { actions: managingBoardsAct } = useManagingBoardsStore();
   const { showAlertDialog } = useAlertDialog();
@@ -69,7 +64,6 @@ export function CreateBoardForm(): JSX.Element {
 
   async function handleSubmit(): Promise<void> {
     const form: BoardFormT = {
-      group_id: group!.id,
       name: boardName,
       description: description,
     };

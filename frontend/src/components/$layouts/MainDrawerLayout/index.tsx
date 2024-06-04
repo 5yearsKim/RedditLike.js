@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
-  Drawer, Box, Divider,
+  Drawer, Box,
   List, ListItemButton, ListItemIcon, ListItemText,
 } from "@mui/material";
 import { useResponsive } from "@/hooks/Responsive";
@@ -11,8 +11,6 @@ import { DRAWER_WIDTH, NAV_HEIGHT } from "@/ui/global";
 import { Row, Col, Gap, Expand } from "@/ui/layouts";
 import { HomeIcon, DashboardIcon, HotIcon, AddIcon } from "@/ui/icons";
 import { Txt } from "@/ui/texts";
-import { GroupAvatar } from "@/ui/tools/Avatar";
-import { GroupInfoDialog } from "@/components/GroupInfoDIalog";
 import { DarkModeSelector } from "@/components/DarkModeSelector";
 import { LocaleSelector } from "@/components/LocaleSelector";
 import { RecentBoardSection } from "./RecentBoardSection";
@@ -21,19 +19,15 @@ import { ManagingBoardSection } from "./ManagingBoardSection";
 // logic
 import { useNavbarDrawer } from "@/hooks/NavbarDrawer";
 import { useMe, useMeAdmin } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
-import { FRONT_URL_SUFFIX } from "@/config";
 import type { BoardT } from "@/types";
 
 export function MainDrawerLayout(): ReactNode {
   const t = useTranslations("components.$layouts.MainDrawerLayout");
   const me = useMe();
   const admin = useMeAdmin();
-  const group = useGroup();
   // const router = useRouter();
   const router = useRouter();
   const { mainOpen, closeDrawer } = useNavbarDrawer();
-  const [groupDialogOpen, setGroupDialogOpen] = useState<boolean>(false);
 
   function handleClose(): void {
     closeDrawer();
@@ -56,36 +50,6 @@ export function MainDrawerLayout(): ReactNode {
     <MDrawer isOpen={mainOpen} onClose={handleClose}>
       <Col minHeight={`calc(100vh - ${NAV_HEIGHT + 15}px)`}>
         <List>
-          {downSm && (
-            <>
-              <ListItemButton onClick={() => setGroupDialogOpen(true)} >
-                <Row>
-                  <GroupAvatar group={group} size={34}/>
-                  <Gap x={1}/>
-                  <Col>
-                    <Txt fontWeight={700}>{group.short_name ?? group.name}</Txt>
-                    <Txt variant="body3">{group.key}.{FRONT_URL_SUFFIX}</Txt>
-                  </Col>
-                </Row>
-              </ListItemButton>
-              {/* <Button
-              fullWidth
-              size='small'
-              startIcon={<SettingIcon/>}
-            >
-              그룹 관리
-            </Button> */}
-
-              <GroupInfoDialog
-                group={group}
-                open={groupDialogOpen}
-                onClose={() => setGroupDialogOpen(false)}
-              />
-
-              <Divider sx={{ my: 1 }}/>
-            </>
-          )}
-
           <ListItemButton onClick={(): void => handleNavigateTo("/")}>
             <ListItemIcon>
               <HomeIcon color='primary' />
@@ -111,7 +75,7 @@ export function MainDrawerLayout(): ReactNode {
             </ListItemText>
           </ListItemButton>
 
-          {me && (group.allow_create_board == true || admin != null) && (
+          {me && (
             <ListItemButton onClick={(): void => handleNavigateTo("/boards/create")}>
               <ListItemIcon>
                 <AddIcon

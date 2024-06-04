@@ -5,7 +5,6 @@ import type {
   XPostFlagFormT, XPostImageFormT, XPostVideoFormT,
 } from "@/types";
 import { postM, PostSqls } from "@/models/Post";
-import { groupM } from "@/models/Group";
 import { xPostFlagM } from "@/models/XPostFlag";
 import { xPostImageM } from "@/models/XPostImage";
 import { xPostVideoM } from "@/models/XPostVideo";
@@ -113,18 +112,6 @@ export class PostService {
     });
     if (!fetched) {
       throw new err.NotExistE();
-    }
-    return fetched;
-  }
-
-  async getWithGroupCheck(id: idT, groupKey: string, opt: GetPostOptionT = {}): Promise<PostT> {
-    const group = await groupM.findOne({ key: groupKey });
-    if (!group) {
-      throw new err.WrongGroupE("group not found");
-    }
-    const fetched = await this.get(id, { ...opt, $board: true });
-    if (fetched.board!.group_id !== group.id) {
-      throw new err.WrongGroupE();
     }
     return fetched;
   }

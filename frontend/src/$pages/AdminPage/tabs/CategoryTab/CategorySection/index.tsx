@@ -11,7 +11,6 @@ import { AddCategoryButton } from "./AddCategoryButton";
 import { CategoryEditorDialog } from "./CategoryEditorDialog";
 // logic
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import { useCategoriesStore, getCategoriesListOpt } from "@/stores/CategoriesStore";
 import { useAlertDialog } from "@/hooks/dialogs/ConfirmDialog";
 import { useSnackbar } from "@/hooks/Snackbar";
@@ -30,14 +29,13 @@ export function CategorySection() {
   const [reorderedCategories, setReorderedCategories] = useState<CategoryT[]>([]);
 
   const me = useMe();
-  const group = useGroup();
   const { showAlertDialog } = useAlertDialog();
   const { enqueueSnackbar } = useSnackbar();
   const { downSm } = useResponsive();
 
   const { data: categories$, actions: categoriesAct } = useCategoriesStore();
 
-  const listOpt = getCategoriesListOpt({ userId: me?.id, groupId: group.id } );
+  const listOpt = getCategoriesListOpt({ userId: me?.id } );
   useEffect(() => {
     categoriesAct.load(listOpt);
   }, [me?.id]);
@@ -71,7 +69,7 @@ export function CategorySection() {
 
   async function handleReorderApply(): Promise<void> {
     try {
-      const newCategories = await CategoryApi.rerank(group.id, reorderedCategories.map((item) => item.id));
+      const newCategories = await CategoryApi.rerank(reorderedCategories.map((item) => item.id));
       categoriesAct.patch({ data: newCategories });
       setIsReorderMode(false);
       enqueueSnackbar(t("reorderSuccess"), { variant: "success" });

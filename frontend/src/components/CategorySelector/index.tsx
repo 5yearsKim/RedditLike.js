@@ -10,7 +10,6 @@ import { CloseIcon } from "@/ui/icons";
 // logic
 import { useCategoriesStore, getCategoriesListOpt } from "@/stores/CategoriesStore";
 import { useMe } from "@/stores/UserStore";
-import { useGroup } from "@/stores/GroupStore";
 import * as CategoryApi from "@/apis/categories";
 import * as XUserCategoryApi from "@/apis/x_user_category";
 import { CategoryT } from "@/types/Category";
@@ -34,9 +33,8 @@ export function CategorySelector({
 
   const { status, data: categories } = categories$;
   const me = useMe();
-  const group = useGroup();
 
-  const listOpt = getCategoriesListOpt({ userId: me?.id, groupId: group.id });
+  const listOpt = getCategoriesListOpt({ userId: me?.id });
 
   useEffect(() => {
     categoriesAct.load(listOpt);

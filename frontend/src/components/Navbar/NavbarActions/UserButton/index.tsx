@@ -11,25 +11,19 @@ import { Box, Row } from "@/ui/layouts";
 import { Txt } from "@/ui/texts";
 import { AccountIcon, HistoryIcon, SettingIcon, LogoutIcon, BlockIcon } from "@/ui/icons";
 import { Clickable } from "@/ui/tools/Clickable";
-import { PointImage } from "@/ui/images";
 import { useUrlState } from "@/hooks/UrlState";
-import { useGroup } from "@/stores/GroupStore";
 import { useAlertDialog } from "@/hooks/dialogs/ConfirmDialog";
 import { useSnackbar } from "@/hooks/Snackbar";
-import { useAccountActions } from "@/stores/AccountStore";
-import { PointEventProvider } from "./event_provider";
-import { PointBadge } from "./PointBadge";
-import { UserT, AccountT, GroupMuterT } from "@/types";
+import { useUserActions } from "@/stores/UserStore";
+import { UserT, MuterT } from "@/types";
 
 
 type UserButtonProps = {
-  account: AccountT,
   me: UserT
-  muter: GroupMuterT|null
+  muter: MuterT|null
 }
 
 export function UserButton({
-  account,
   me,
   muter,
 }: UserButtonProps) {
@@ -38,8 +32,7 @@ export function UserButton({
   // const router = useRouter();
   const router = useRouter();
 
-  const group = useGroup();
-  const accountAct = useAccountActions();
+  const userAct = useUserActions();
   const [menuEl, setMenuEl] = useState<HTMLElement | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useUrlState<boolean>({
     key: "userMenuBox",
@@ -78,10 +71,6 @@ export function UserButton({
     router.replace("/restrictions");
   }
 
-  function handlePointClick(): void {
-    router.push("/points/report");
-  }
-
   async function handleLogout() {
     const isOk = await showAlertDialog({
       title: t("logout"),
@@ -90,42 +79,40 @@ export function UserButton({
       useOk: true,
     });
     if (!isOk) return;
-    accountAct.logout();
+    userAct.reset();
     enqueueSnackbar(t("logoutSucess"), { variant: "success" });
   }
 
 
   return (
     <>
-      <PointEventProvider>
-        {downSm ? (
-          <IconButton
-            aria-label='account-icon'
-            size='small'
-            onClick={handleMenuOpen}
-            sx={{ position: "relative" }}
-          >
+      {downSm ? (
+        <IconButton
+          aria-label='account-icon'
+          size='small'
+          onClick={handleMenuOpen}
+          sx={{ position: "relative" }}
+        >
+          <AccountIcon sx={{ color: "vague.light" }} />
+        </IconButton>
+      ) : (
+        <Clickable
+          onClick={handleMenuOpen}
+          borderRadius={1}
+          px={1}
+          py={1}
+        >
+          <Row justifyContent='center' position='relative'>
             <AccountIcon sx={{ color: "vague.light" }} />
-          </IconButton>
-        ) : (
-          <Clickable
-            onClick={handleMenuOpen}
-            borderRadius={1}
-            px={1}
-            py={1}
-          >
-            <Row justifyContent='center' position='relative'>
-              <AccountIcon sx={{ color: "vague.light" }} />
 
-              {me && (
-                <Box ml={1} mb={0.5}>
-                  <Txt color='vague.main' variant='body3'>{account.email}</Txt>
-                </Box>
-              )}
-            </Row>
-          </Clickable>
-        )}
-      </PointEventProvider>
+            {me && (
+              <Box ml={1} mb={0.5}>
+                <Txt color='vague.main' variant='body3'>{me.email}</Txt>
+              </Box>
+            )}
+          </Row>
+        </Clickable>
+      )}
       <Menu
         open={isMenuOpen}
         anchorEl={menuEl}
@@ -146,27 +133,10 @@ export function UserButton({
             display='flex'
             justifyContent='center'
           >
-            <Txt color='vague.main' variant='body3'>{account.email}</Txt>
+            <Txt color='vague.main' variant='body3'>{me.email}</Txt>
           </Box>
         )}
 
-        {group.use_point && (
-          <MenuItem onClick={handlePointClick}>
-            <ListItemIcon style={{ padding: 2, position: "relative" }}>
-              <Box
-                position='absolute'
-                top={-5}
-                right={5}
-              >
-                <PointBadge />
-              </Box>
-              <PointImage fontSize={20} />
-            </ListItemIcon>
-            <ListItemText>
-              {(me.points ?? 0).toLocaleString()} <span style={{ fontSize: 14 }}>{t("point")}</span>
-            </ListItemText>
-          </MenuItem>
-        )}
 
         <MenuItem onClick={handleActivityClick}>
           <ListItemIcon>
