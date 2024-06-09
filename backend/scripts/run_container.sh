@@ -5,6 +5,6 @@ docker run --env-file ./.env \
   -p 5000:5000 \
   -p 5100:5100 \
   -p 5500:5500 \
-  --name nonimos-back \
+  --name redditlike-back \
   --add-host=host.docker.internal:host-gateway \
-  onionkim/nonimos-back
+  onionkim/redditlike-back

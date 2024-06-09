@@ -28,10 +28,10 @@ async function bootstrap() {
   patchNestJsSwagger();
 
   const config = new DocumentBuilder()
-    .setTitle("Nonimos api docs")
-    .setDescription("Nonimos API description")
+    .setTitle("RedditLike.js api docs")
+    .setDescription("RedditLike.js API description")
     .setVersion("1.0")
-    .addTag("Nonimos")
+    .addTag("RedditLike.js")
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup("api", app, document);

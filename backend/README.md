@@ -1,3 +1,3 @@
-# nonimos back
+# RedditLike.js backend
 
-backend server for nonimos project
+backend server for RedditLike.js project
