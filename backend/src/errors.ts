@@ -83,9 +83,3 @@ export class InvalidActionE extends HandledError {
     super(message, "INVALID_ACTION");
   }
 }
-
-export class GiftishowE extends HandledError{
-  constructor(message = "error from giftishow") {
-    super(message, "GIFTISHOW");
-  }
-}

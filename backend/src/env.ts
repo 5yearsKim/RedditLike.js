@@ -30,14 +30,6 @@ const envSchema = z.object({
   // nodemailer
   GMAIL_MAIL: z.string(),
   GMAIL_PASS: z.string(),
-  // giftishow config (only needed for Korean user using point system)
-  GIFTISHOW_CODE: z.string(),
-  GIFTISHOW_TOKEN: z.string(),
-  GIFTISHOW_BANNER: z.string(),
-  GIFTISHOW_CARD: z.string(),
-  GIFTISHOW_USER_ID: z.string(),
-  GIFTISHOW_SENDER_PHONE: z.string(),
-  GIFTISHOW_RECEIVER_PHONE: z.string(),
 });
 
 
