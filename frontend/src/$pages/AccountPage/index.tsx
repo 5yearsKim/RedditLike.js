@@ -45,7 +45,7 @@ export function AccountPage(): JSX.Element {
     try {
       setIsWithdrawing(true);
       await UserApi.removeMe();
-      userAct.reset();
+      userAct.logout();
       router.push("/withdraw-complete");
     } catch (e) {
       console.warn(e);

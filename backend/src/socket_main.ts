@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 // import { initializeApp, applicationDefault } from "firebase-admin/app";
-import { env } from "@/env";
+import { env, SOCKET_PORT } from "@/env";
 // import * as err from '@/errors';
 import { io, server, app } from "@/sockets/global";
 import { toRoomId } from "@/sockets/utils";
@@ -78,8 +78,8 @@ io.on("connection", (socket) => {
   runChatSocket(socket);
 });
 
-server.listen(env.SOCKET_PORT, () => {
-  console.log("socket listening on " + env.SOCKET_PORT);
+server.listen(SOCKET_PORT, () => {
+  console.log("socket listening on " + SOCKET_PORT);
 });
 
 

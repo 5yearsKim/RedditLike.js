@@ -5,6 +5,7 @@ import { Txt } from "@/ui/texts";
 import { CloseIcon } from "@/ui/icons";
 import { Divider } from "@mui/material";
 import { ListView } from "@/ui/tools/ListView";
+import { HelperTooltip } from "@/ui/tools/HelperTooltip";
 import { InitBox, LoadingBox, ErrorBox } from "@/components/$statusTools";
 import { MuterItem } from "./MuterItem";
 // logic
@@ -41,7 +42,11 @@ export function MuterTab(): JSX.Element {
 
   return (
     <Container rtlP>
-      <Txt variant="h6">{t("restriction")}</Txt>
+      <Row>
+        <Txt variant="h6">{t("restriction")}</Txt>
+        <Gap x={1}/>
+        <HelperTooltip tip={t("muterAddTip")}/>
+      </Row>
       <Gap y={1}/>
 
       <Divider/>

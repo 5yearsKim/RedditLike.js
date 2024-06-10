@@ -63,7 +63,7 @@ export function AdminRouter(): JSX.Element {
         width='100%'
         minHeight='60vh'
       >
-        <Txt color='vague.main'>please select tab</Txt>
+        <Txt color='vague.main'>Please select tab on the left pane</Txt>
       </Center>
     );
   }

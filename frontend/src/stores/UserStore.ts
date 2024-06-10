@@ -9,8 +9,8 @@ import { UserT, UserSessionT, MuterT, AdminT } from "@/types";
 
 type UserDataT = {
   me: UserT|null
-  muter: MuterT|null
-  admin: AdminT|null
+  muter?: MuterT|null
+  admin?: AdminT|null
 }
 
 type UserStateT = {
@@ -25,8 +25,8 @@ export const userState = atom<UserStateT>({
     status: "init",
     data: {
       me: null,
-      muter: null,
-      admin: null,
+      muter: undefined,
+      admin: undefined,
     },
   },
 });
@@ -43,14 +43,14 @@ export function useMe(): UserT|null {
   return user$.data?.me ?? null;
 }
 
-export function useMeAdmin(): AdminT|null {
+export function useMeAdmin(): AdminT|null|undefined {
   const user$ = useRecoilValue(userState);
-  return user$.data?.admin ?? null;
+  return user$.data?.admin;
 }
 
-export function useMeMuter(): MuterT|null {
+export function useMeMuter(): MuterT|null|undefined {
   const user$ = useRecoilValue(userState);
-  return user$.data?.muter ?? null;
+  return user$.data?.muter;
 }
 
 export function useUserActions() {
@@ -64,10 +64,10 @@ export function useUserActions() {
     set((prev) => ({ ...prev, data: { ...prev.data, ...val } }));
   }
 
-  function reset() {
+  function logout() {
     userTH.reset();
     set({
-      status: "init",
+      status: "loaded",
       data: {
         me: null,
         muter: null,
@@ -135,7 +135,7 @@ export function useUserActions() {
     set,
     patch,
     patchData,
-    reset,
+    logout,
     refresh,
     loadFromSession,
     loadMuter,

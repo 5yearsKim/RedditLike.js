@@ -8,9 +8,5 @@ module.exports = {
       "name": "socket",
       "script": "dist/socket_main.js",
     },
-    {
-      "name": "redirect",
-      "script": "dist/redirect_main.js",
-    }
   ]
 };
