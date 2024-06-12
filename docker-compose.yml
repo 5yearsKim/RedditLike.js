@@ -1,0 +1,44 @@
+
+
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: "redditlike-db"
+    env_file:
+      - ./envs/.env.db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+
+  backend:
+    depends_on:
+      - db
+    image: onionkim/redditlike-back
+    container_name: redditlike-back
+    ports:
+      - "3030:3030"
+      - "3031:3031"
+    env_file:
+      - ./envs/.env.backend
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+  frontend:
+    depends_on:
+      - backend
+    image: onionkim/redditlike-front
+    container_name: redditlike-front
+    ports:
+      - "3010:3010"
+    env_file:
+      - ./envs/.env.backend
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  db_data:
+
+

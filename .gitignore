@@ -1,0 +1,4 @@
+
+
+envs/.env*
+!envs/.env*.sample

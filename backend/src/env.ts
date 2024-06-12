@@ -1,10 +1,16 @@
 import dotenv from "dotenv";
 import { z } from "zod";
 
-if (process.cwd().endsWith("/src")) {
+const cwd = process.cwd();
+
+if (cwd.endsWith("/src")) {
   // process running from src folder
   dotenv.config({ path: "../.env" });
-} else {
+}
+else if (cwd.endsWith("/dist")) {
+  //
+}
+else {
   dotenv.config();
 }
 
