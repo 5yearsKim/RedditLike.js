@@ -182,11 +182,11 @@
       },
       "MemberTab": {
         "manageMember": "멤버 관리",
-        "groupMember": "그룹 멤버",
+        "groupMember": "멤버",
         "inviteGroup": "그룹 초대",
 
         "CurrentMemberSection": {
-          "groupMember": "그룹 멤버",
+          "groupMember": "멤버",
           "publicDesc": "*그룹 모두 공개: 모든 유저가 그룹에 가입할 수 있음",
           "protectedDesc": "*그룹 제한 공개: 초대된 유저만 그룹에 가입할 수 있음",
           "privateDesc": "*그룹 비공개: 초대된 유저만 그룹에 가입할 수 있음"
@@ -195,6 +195,7 @@
       "MuterTab": {
         "restriction": "이용 제한",
         "noRestrictedUser": "이용 제한된 유저가 없어요.",
+        "muterAddTip": "게시글이나 댓글에서 사용자의 닉네임을 클릭해서 이용제한 할 수 있어요.",
 
         "GroupMuterItem": {
           "deleteRestriction": "이용 제한 해제",
@@ -904,7 +905,7 @@
       "managerFeature": "게시판 매니저 기능",
       "muteBoard": "게시판 이용 제한",
       "adminFeature": "관리자 기능",
-      "muteGroup": "그룹 이용 제한"
+      "muteGroup": "전체 이용 제한"
     },
     "BoardList": {
       "noBoard": "해당하는 게시판이 없어요."
@@ -1057,7 +1058,7 @@
       "ManagingLogItem": {
         "approve": "승인",
         "trash": "삭제",
-        "groupAdmin": "그룹 관리자",
+        "groupAdmin": "전체 관리자",
         "reason": "이유"
       }
     },
@@ -1408,8 +1409,8 @@
         "untilDate": "~ {until} 까지",
         "boardRestriction": "게시판 이용 제한",
         "boardRestrictionMsg": "해당 유저는 제한기간동안 게시판에 글/댓글을 작성할 수 없어요.",
-        "groupRestriction": "그룹 이용 제한",
-        "groupRestrictionMsg": "해당 유저는 제한기간동안 그룹에 모든 게시판에 글/댓글을 작성할 수 없어요.",
+        "groupRestriction": "전체 이용 제한",
+        "groupRestrictionMsg": "해당 유저는 제한기간동안 모든 게시판에 글/댓글을 작성할 수 없어요.",
         "reason": "제한 이유",
         "cancel": "취소",
         "submit": "제출"

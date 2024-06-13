@@ -5,7 +5,6 @@ import { SocketProvider } from "@/components/$providers/SocketProvider";
 
 import { RecoilProvider } from "@/components/$providers/RecoilProvider";
 import { MuiProvider } from "@/ui/systems/MuiProvider";
-import { notoSansKr } from "@/ui/systems/fonts";
 import { SnackbarProvider } from "@/hooks/Snackbar";
 import { MainDrawerLayout } from "@/components/$layouts/MainDrawerLayout";
 
@@ -21,7 +20,6 @@ import { MeProvider } from "@/components/$providers/MeProvider";
 import { NavbarLayout } from "@/components/$layouts/NavbarLayout";
 
 import { STAGE } from "@/config";
-
 
 import "react-toastify/dist/ReactToastify.css";
 import "@/ui/globals.scss";
@@ -42,7 +40,12 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html lang={locale} className={notoSansKr.className}>
+    <html lang={locale}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"/>
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <RecoilProvider>

@@ -1,7 +1,6 @@
 import { PaletteMode } from "@mui/material";
 import { createTheme, ThemeOptions, responsiveFontSizes, Theme } from "@mui/material/styles";
 import { yellow, green, red, teal, amber, grey } from "@mui/material/colors";
-import { notoSansKr } from "@/ui/systems/fonts";
 // import { darkScrollbar } from '@mui/material';
 
 
@@ -64,7 +63,7 @@ const getDesign = (mode: PaletteMode): ThemeOptions => ({
   },
   typography: {
     fontFamily: [
-      notoSansKr.style.fontFamily,
+      "Noto Sans KR",
       "-apple-system",
       "BlinkMacSystemFont",
       "\"Segoe UI\"",

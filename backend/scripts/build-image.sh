@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --platform=linux/amd64 -t onionkim/redditlike-back .
+docker build -t onionkim/redditlike-back .

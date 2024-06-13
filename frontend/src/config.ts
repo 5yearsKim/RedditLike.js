@@ -11,7 +11,7 @@ export const [API_URL, SOCKET_URL] = ((): [string, string] => {
   } else {
     // dev
     if (fromLocal) {
-      return ["http://localhost:5000", "http://localhost:5500"];
+      return ["http://localhost:3030", "http://localhost:3031"];
     } else {
       return ["wrong-url", "wrong-url"];
     }

@@ -6,7 +6,7 @@ import { patchNestJsSwagger } from "nestjs-zod";
 
 import { AppModule } from "./app.module";
 import { AllExceptionsFilter } from "./apis/$tools/exception_filter";
-import { env } from "@/env";
+import { MAIN_PORT } from "@/env";
 
 
 async function bootstrap() {
@@ -37,8 +37,8 @@ async function bootstrap() {
   SwaggerModule.setup("api", app, document);
 
 
-  await app.listen(env.MAIN_PORT, () => {
-    console.log(`Server is running on http://localhost:${env.MAIN_PORT}`);
+  await app.listen(MAIN_PORT, () => {
+    console.log(`Server is running on http://localhost:${MAIN_PORT}`);
   });
 }
 

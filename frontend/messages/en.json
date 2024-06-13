@@ -182,11 +182,11 @@
       },
       "MemberTab": {
         "manageMember": "Member Management",
-        "groupMember": "Group Member",
+        "groupMember": "Member",
         "inviteGroup": "Invite to Group",
       
         "CurrentMemberSection": {
-          "groupMember": "Group Member",
+          "groupMember": "Member",
           "publicDesc": "*Public: All users can join the group",
           "protectedDesc": "*Protected: Only invited users can join the group",
           "privateDesc": "*Private: Only invited users can join the group"
@@ -195,6 +195,7 @@
       "MuterTab": {
         "restriction": "Usage Restriction",
         "noRestrictedUser": "No restricted users.",
+        "muterAddTip": "Restricted user can be added by clicking nickname on comment or post.",
       
         "GroupMuterItem": {
           "deleteRestriction": "Remove Usage Restriction",
@@ -904,7 +905,7 @@
       "managerFeature": "Board Manager Feature",
       "muteBoard": "Restrict Board Usage",
       "adminFeature": "Admin Feature",
-      "muteGroup": "Restrict Group Usage"
+      "muteGroup": "Restrict All Usage"
     },
     "BoardList": {
       "noBoard": "No boards found."
@@ -1057,7 +1058,7 @@
       "ManagingLogItem": {
         "approve": "Approve",
         "trash": "Delete",
-        "groupAdmin": "Group Admin",
+        "groupAdmin": "Admin",
         "reason": "Reason"
       }
     },
@@ -1408,8 +1409,8 @@
         "untilDate": "Until {until}",
         "boardRestriction": "Board Usage Restriction",
         "boardRestrictionMsg": "The user will not be able to post or comment on the board during the restriction period.",
-        "groupRestriction": "Group Usage Restriction",
-        "groupRestrictionMsg": "The user will not be able to post or comment in any board within the group during the restriction period.",
+        "groupRestriction": "Usage Restriction",
+        "groupRestrictionMsg": "The user will not be able to post or comment in any board during the restriction period.",
         "reason": "Reason for Restriction",
         "cancel": "Cancel",
         "submit": "Submit"

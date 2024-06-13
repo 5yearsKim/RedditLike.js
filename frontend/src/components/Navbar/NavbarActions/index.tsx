@@ -70,7 +70,7 @@ export function NavbarActions(): ReactNode {
 
       <UserButton
         me={user$.data.me!}
-        muter={user$.data.muter}
+        muter={user$.data.muter ?? null}
       />
     </Row>
   );
