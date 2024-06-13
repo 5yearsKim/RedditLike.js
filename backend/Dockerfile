@@ -5,7 +5,6 @@ WORKDIR /app
 COPY . .
 RUN npm install -g pnpm && pnpm install --frozen-lockfile
 RUN pnpm build
-RUN pnpm tsc migrations/*.ts --outdir migrations_js
 
 
 # Production image, copy all the files and run next
@@ -23,7 +22,7 @@ ENV NODE_ENV production
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
 
-COPY --from=builder /app/migrations_js ./migrations
+COPY --from=builder /app/migrations ./migrations
 COPY --from=builder /app/scripts/ecosystem.config.js ./scripts/ecosystem.config.js
 
 

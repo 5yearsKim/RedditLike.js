@@ -22,8 +22,6 @@ services:
       - "3031:3031"
     env_file:
       - ./envs/.env.backend
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
 
   frontend:
@@ -34,9 +32,7 @@ services:
     ports:
       - "3010:3010"
     env_file:
-      - ./envs/.env.backend
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - ./envs/.env.frontend
 
 volumes:
   db_data:
