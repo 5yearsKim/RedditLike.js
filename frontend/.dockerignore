@@ -9,5 +9,5 @@ README.md
 
 
 _scripts
-.env
-.env.local
+# .env
+# .env.local

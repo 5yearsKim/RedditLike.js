@@ -19,7 +19,7 @@ import { ReportDialogShared } from "@/hooks/dialogs/ReportDialog";
 import { MeProvider } from "@/components/$providers/MeProvider";
 import { NavbarLayout } from "@/components/$layouts/NavbarLayout";
 
-import { STAGE } from "@/config";
+import { env } from "@/env";
 
 import "react-toastify/dist/ReactToastify.css";
 import "@/ui/globals.scss";
@@ -75,7 +75,7 @@ export default function RootLayout({
             </SocketProvider>
           </RecoilProvider>
 
-          {STAGE !== "prod" && (
+          {env.STAGE !== "prod" && (
             <div
               style={{
                 position: "fixed",
@@ -86,7 +86,7 @@ export default function RootLayout({
                 fontSize: "1.5rem",
               }}
             >
-              {STAGE}
+              {env.STAGE}
             </div>
           )}
         </NextIntlClientProvider>

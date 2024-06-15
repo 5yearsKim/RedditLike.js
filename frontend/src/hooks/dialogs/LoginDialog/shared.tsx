@@ -11,7 +11,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 // import { getAnalytics, logEvent } from "firebase/analytics";
 import { EmailIcon } from "@/ui/icons";
 import { GoogleLoginButton } from "./GoogleLoginButton";
-import { OAUTH_GOOGLE_ID } from "@/config";
+import { env } from "@/env";
 import { useLoginDialog, useLoginDialogValue } from "./hook";
 
 
@@ -53,7 +53,7 @@ export function LoginDialogShared(): ReactNode {
           spacing={1}
           alignItems='center'
         >
-          <GoogleOAuthProvider clientId={OAUTH_GOOGLE_ID}>
+          <GoogleOAuthProvider clientId={env.OAUTH_GOOGLE_ID}>
             <GoogleLoginButton onSuccess={handleGoogleLoginSuccess}/>
           </GoogleOAuthProvider>
 

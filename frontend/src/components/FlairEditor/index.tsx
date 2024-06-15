@@ -14,7 +14,7 @@ import { Deactivate } from "@/ui/tools/Deactivate";
 import { useState, ChangeEvent } from "react";
 import { noEmptyValidator, maxLenValidator, charRemainingHelper } from "@/utils/validator";
 import { useTextForm } from "@/hooks/TextForm";
-import { MAX_FLAIR_LABEL_CNT } from "@/config";
+import { MAX_FLAIR_LABEL_CNT } from "@/env";
 import type { FlairT, FlairFormT } from "@/types";
 
 

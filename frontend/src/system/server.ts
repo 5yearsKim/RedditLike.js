@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "@/config";
+import { env } from "@/env";
 import { userTH } from "@/system/token_holders";
 
 export type AxiosOptions = {
@@ -7,7 +7,7 @@ export type AxiosOptions = {
 };
 
 const server = axios.create({
-  baseURL: API_URL,
+  baseURL: env.API_URL,
   timeout: 10000,
 });
 

@@ -16,7 +16,7 @@ import { useAlertDialog } from "@/hooks/dialogs/ConfirmDialog";
 import { useSnackbar } from "@/hooks/Snackbar";
 import * as PostApi from "@/apis/posts";
 import { uploadToS3, buildImgUrl } from "@/utils/media";
-import { RESOURCE_URL } from "@/config";
+import { env } from "@/env";
 
 type ThumbnailSelectorProps = {
   editorRef: RefObject<RichEditor2T>;
@@ -93,7 +93,7 @@ export function ThumbnailSelector({
     if (!thumbnail) {
       return;
     }
-    if (new URL(thumbnail).host !== new URL(RESOURCE_URL).host) {
+    if (new URL(thumbnail).host !== new URL(env.RESOURCE_URL).host) {
       enqueueSnackbar(t("cannotCropExternal", { externalUrl: (new URL(thumbnail)).host }), { variant: "error" });
       return;
     }

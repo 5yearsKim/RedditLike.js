@@ -23,17 +23,6 @@ services:
     env_file:
       - ./envs/.env.backend
 
-
-  frontend:
-    depends_on:
-      - backend
-    image: onionkim/redditlike-front
-    container_name: redditlike-front
-    ports:
-      - "3010:3010"
-    env_file:
-      - ./envs/.env.frontend
-
 volumes:
   db_data:
 

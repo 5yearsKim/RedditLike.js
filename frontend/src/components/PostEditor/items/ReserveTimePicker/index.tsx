@@ -44,7 +44,7 @@ export function ReserveTimePicker({
       <Row>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DateTimePicker
-            label={t('reservedAt')}
+            label={t("reservedAt")}
             value={reservedAt ?? null}
             slotProps={{
               textField: { variant: "standard" },

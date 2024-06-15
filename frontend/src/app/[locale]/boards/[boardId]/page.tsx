@@ -119,9 +119,9 @@ export default async function BoardMain({ params }: BoardMainProps): Promise<JSX
   } catch (e: any) {
     console.warn(e);
     const errData = e?.response?.data;
-    let message: string|undefined = undefined;
+    const message: string|undefined = undefined;
 
-    console.log('err:, ', errData)
+    console.log("err:, ", errData);
 
     return (
       <ErrorBox
