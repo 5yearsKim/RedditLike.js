@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import type { Metadata } from "next";
 import { SocketProvider } from "@/components/$providers/SocketProvider";
 
 import { RecoilProvider } from "@/components/$providers/RecoilProvider";
@@ -24,6 +25,21 @@ import { env } from "@/env";
 import "react-toastify/dist/ReactToastify.css";
 import "@/ui/globals.scss";
 import "@/components/RichEditor2/style.scss";
+
+export const metadata: Metadata = {
+  title: "RedditLike.js",
+  description: "Reddit like community built with JS",
+  icons: {
+    icon: "./icons/redditlike/favicon.ico",
+    shortcut: "./icons/redditlike/favicon.ico",
+    apple: "./icons/redditlike/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "RedditLike.js",
+    description: "Reddit like community built with JS",
+    type: "website",
+  },
+};
 
 
 export default function RootLayout({

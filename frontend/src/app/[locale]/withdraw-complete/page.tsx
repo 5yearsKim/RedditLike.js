@@ -8,7 +8,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("app.WithdrawComplete");
   return {
     title: t("title"),
-    icons: "/icons/nonimos/favicon.ico",
   };
 }
 

@@ -1,28 +1,16 @@
 {
-  "name": "v-milo",
-  "short_name": "v-milo",
-  "description": "v-milo, 나만의 익명 커뮤니티",
+  "name": "redditlike.js",
+  "short_name": "redditlike.js",
+  "description": "RedditLike.js, Community like Reddit built with JS",
   "icons": [
     {
-      "src": "/icons/android-chrome-192x192.png",
+      "src": "/icons/redditlike/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icons/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icons/favicon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/favicon.png",
+      "src": "/icons/redditlike/android-chrome-192x192.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
