@@ -22,21 +22,6 @@ services:
       - "3031:3031"
     env_file:
       - ./envs/.env.backend
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-
-  frontend:
-    depends_on:
-      - backend
-    image: onionkim/redditlike-front
-    container_name: redditlike-front
-    ports:
-      - "3010:3010"
-    env_file:
-      - ./envs/.env.backend
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
 volumes:
   db_data:

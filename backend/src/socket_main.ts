@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 // import { initializeApp, applicationDefault } from "firebase-admin/app";
-import { env, SOCKET_PORT } from "@/env";
+import { env, SOCKET_PORT, USER_SECRET } from "@/env";
 // import * as err from '@/errors';
 import { io, server, app } from "@/sockets/global";
 import { toRoomId } from "@/sockets/utils";
@@ -55,7 +55,7 @@ io.use(function(socket , next){
       return next();
     }
     if (query && query.authToken){
-      const decoded = jwt.verify(query.authToken.toString(), env.USER_SECRET ?? "");
+      const decoded = jwt.verify(query.authToken.toString(), USER_SECRET);
       socket.userId = (decoded as any).user.id;
       return next();
     }

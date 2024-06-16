@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { userM } from "@/models/User";
 import { emailVerificationM } from "@/models/EmailVerification";
 import * as err from "@/errors";
-import { env } from "@/env";
+import { USER_SECRET } from "@/env";
 import * as jwt from "jsonwebtoken";
 import { genUniqueId } from "@/utils/random";
 import { addDays } from "date-fns";
@@ -46,7 +46,7 @@ export class AuthService {
         email: user.email,
       },
     };
-    const userToken = jwt.sign(payload, env.USER_SECRET);
+    const userToken = jwt.sign(payload, USER_SECRET);
     const session: UserSessionT = {
       user,
       token: userToken,

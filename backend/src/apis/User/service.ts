@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { userM } from "@/models/User";
 import * as err from "@/errors";
 import { addDays } from "date-fns";
-import { env } from "@/env";
+import { USER_SECRET } from "@/env";
 import * as jwt from "jsonwebtoken";
 import { listUser } from "./fncs/list_user";
 import type { UserFormT, UserT, UserSessionT, GetUserOptionT, ListUserOptionT } from "@/types";
@@ -18,7 +18,7 @@ export class UserService {
       iss: "onioncontents",
       user,
     };
-    const token = jwt.sign(payload, env.USER_SECRET);
+    const token = jwt.sign(payload, USER_SECRET);
     const session: UserSessionT = {
       user,
       token,

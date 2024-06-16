@@ -15,7 +15,7 @@ import { useState, ChangeEvent } from "react";
 import { noEmptyValidator, maxLenValidator, charRemainingHelper } from "@/utils/validator";
 import { useAlertDialog } from "@/hooks/dialogs/ConfirmDialog";
 import { useTextForm } from "@/hooks/TextForm";
-import { MAX_FLAG_LABEL_CNT } from "@/config";
+import { MAX_FLAG_LABEL_CNT } from "@/env";
 import type { FlagT, FlagFormT } from "@/types";
 
 

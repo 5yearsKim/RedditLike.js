@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, ReactNode } from "react";
 import ReactPlayer from "react-player";
 import type { VideoT } from "@/types/Video";
-import { RESOURCE_URL } from "@/config";
+import { env } from "@/env";
 
 type VideoPlayer2Props = {
   video: VideoT;
@@ -61,10 +61,10 @@ export function VideoPlayer2({
   let src = "";
 
   if (video.converted_at && video.s_path) {
-    src = new URL(video.s_path, RESOURCE_URL).toString();
+    src = new URL(video.s_path, env.RESOURCE_URL).toString();
     // mimeType = 'application/x-mpegURL';
   } else {
-    let host = video.host ?? RESOURCE_URL;
+    let host = video.host ?? env.RESOURCE_URL;
     if (!host.startsWith("http://") && !host.startsWith("https://")) {
       host = "https://" + host;
     }

@@ -117,7 +117,7 @@ export function PostDialogShared(): ReactNode {
               size='small'
               onClick={handleClose}
             >
-              {t('moveToPage')}
+              {t("moveToPage")}
             </Button>
           </Link>
           <IconButton

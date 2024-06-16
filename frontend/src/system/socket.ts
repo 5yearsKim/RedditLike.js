@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
-import { SOCKET_URL } from "@/config";
+import { env } from "@/env";
 
-export const socket = io(SOCKET_URL, {
+export const socket = io(env.SOCKET_URL, {
   autoConnect: false,
   query: { authToken: "" },
 });

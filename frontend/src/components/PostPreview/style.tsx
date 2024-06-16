@@ -13,7 +13,7 @@ import {
   retrieveTweetId, retrievePollId,
 } from "@/utils/html";
 import type { PostT } from "@/types";
-import { RESOURCE_URL } from "@/config";
+import { env } from "@/env";
 import P from "path";
 
 interface TransparentBoxProps extends BoxProps {
@@ -190,7 +190,7 @@ export function PostSmallSizeThumbnail({
           />
         ) : (
           <video
-            src={P.join(video.host ?? RESOURCE_URL, video.path)}
+            src={P.join(video.host ?? env.RESOURCE_URL, video.path)}
             style={{
               width,
               height,

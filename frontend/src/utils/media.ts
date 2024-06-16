@@ -1,5 +1,5 @@
 import axios from "axios";
-import { RESOURCE_URL } from "@/config";
+import { env } from "@/env";
 
 // export async function uploadImageFromFile(
 //   file: File,
@@ -103,7 +103,7 @@ export function buildImgUrl(
   if (host !== null) {
     return new URL(path, host).toString();
   }
-  let url = new URL(path, RESOURCE_URL).toString();
+  let url = new URL(path, env.RESOURCE_URL).toString();
   if (option.size) {
     url = `${url}?w=${getResizeW(option.size)}`;
   }
