@@ -1,6 +1,6 @@
 import type {
   AdminT, AdminFormT,
-  ListAdminOptionT,
+  GetAdminOptionT, ListAdminOptionT
 } from "./Admin";
 
 

@@ -24,7 +24,6 @@ export * from "./FlairBox";
 export * from "./Image";
 export * from "./Muter";
 export * from "./Notification";
-export * from "./PointDailyQuota";
 export * from "./Poll";
 export * from "./PollCand";
 export * from "./PollVote";
