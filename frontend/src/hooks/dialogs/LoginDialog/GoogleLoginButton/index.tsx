@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import * as AuthApi from "@/apis/auth";
 import { useUserActions } from "@/stores/UserStore";
 import { useSnackbar } from "@/hooks/Snackbar";
+import { env } from "@/env";
 
 type GoogleLoginButtonProps = {
   onSuccess: () => void;
@@ -49,7 +50,17 @@ export function GoogleLoginButton({
             height={20}
           />
         }
-        onClick={() => handleGoogleClick()}
+        onClick={() => {
+          if (env.TEMPORARY_LOGIN_ONLY) {
+            alert("This app is not configured to support google login. (debug: Please disable TEMPORARY_LOGIN_ONLY)");
+            return;
+          }
+          if (env.OAUTH_GOOGLE_ID == "") {
+            alert("This app is not configured to support google login, (debug: Please set OAUTH_GOOGLE_ID)");
+            return;
+          }
+          handleGoogleClick();
+        }}
         sx={{
           bgcolor: "#fff",
           color: "#000",

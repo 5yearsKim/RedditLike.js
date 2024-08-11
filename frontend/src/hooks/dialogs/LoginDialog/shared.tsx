@@ -31,7 +31,17 @@ export function LoginDialogShared(): ReactNode {
   }
 
   function handleEmailLoginClick(): void {
+    if (env.TEMPORARY_LOGIN_ONLY) {
+      alert("This app is not configured to support email login. (degub: disable TEMPORARY_LOGIN_ONLY)");
+      return;
+    }
     router.push("/email-login");
+    closePostDialog();
+    closeLoginDialog();
+  }
+
+  function handleTemporaryLoginClick(): void {
+    router.push("/temporary-login");
     closePostDialog();
     closeLoginDialog();
   }
@@ -53,9 +63,11 @@ export function LoginDialogShared(): ReactNode {
           spacing={1}
           alignItems='center'
         >
-          <GoogleOAuthProvider clientId={env.OAUTH_GOOGLE_ID}>
-            <GoogleLoginButton onSuccess={handleGoogleLoginSuccess}/>
-          </GoogleOAuthProvider>
+          { env.OAUTH_GOOGLE_ID !== "" && env.TEMPORARY_LOGIN_ONLY == false && (
+            <GoogleOAuthProvider clientId={env.OAUTH_GOOGLE_ID}>
+              <GoogleLoginButton onSuccess={handleGoogleLoginSuccess}/>
+            </GoogleOAuthProvider>
+          )}
 
           <Button
             variant='contained'
@@ -74,6 +86,25 @@ export function LoginDialogShared(): ReactNode {
             <Gap x={1} />
             {t("loginWithEmail")}
           </Button>
+          {env.TEMPORARY_LOGIN_ONLY && (
+            <Button
+              variant='outlined'
+              onClick={handleTemporaryLoginClick}
+              sx={{
+                minWidth: 200,
+              }}
+            >
+              <EmailIcon
+                sx={{
+                  width: "26px",
+                  height: "26px",
+                  color: "primary",
+                }}
+              />
+              <Gap x={1} />
+              {t("loginTemporaryAccount")}
+            </Button>
+          )}
         </Col>
       </Box>
     </Dialog>

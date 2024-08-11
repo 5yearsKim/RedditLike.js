@@ -102,6 +102,14 @@ export class AuthService {
     return session;
   }
 
+  async temporaryLogin(id: string): Promise<UserSessionT> {
+    const sampleEmail = id + "@redditlike.js";
+    const user = await this.findOrCreateUser(sampleEmail);
+    const session = this.generateLoginSession(user);
+
+    return session;
+  }
+
   async verifyFakeLogin(email: string): Promise<UserSessionT> {
     // find or create account
     const user = await this.findOrCreateUser(email);

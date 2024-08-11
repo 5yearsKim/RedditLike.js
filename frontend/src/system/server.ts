@@ -6,10 +6,12 @@ export type AxiosOptions = {
   headers?: { [key: string]: string };
 };
 
+
 const server = axios.create({
   baseURL: env.API_URL,
   timeout: 10000,
 });
+
 
 // current tokens
 server.interceptors.request.use(
@@ -25,3 +27,10 @@ server.interceptors.request.use(
 );
 
 export { server };
+
+
+export function setupServerSideFetch(): void {
+  if (env.API_URL_FROM_DOCKER !== env.API_URL) {
+    server.defaults.baseURL = env.API_URL_FROM_DOCKER;
+  }
+}

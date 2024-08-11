@@ -21,6 +21,12 @@ export async function fakeLogin(email: string): Promise<R.FakeLoginRsp> {
   return rsp.data;
 }
 
+export async function temporaryLogin(id: string): Promise<R.TemporaryLoginRsp> {
+  const body: R.TemporaryLoginRqs = { id };
+  const rsp = await server.post(`${root}/temporary-login`, body);
+  return rsp.data;
+}
+
 export async function refresh(): Promise<R.RefreshRsp> {
   const rsp = await server.post(`${root}/refresh`);
   return rsp.data;

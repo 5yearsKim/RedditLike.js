@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build  -t onionkim/redditlike-front .
+docker buildx build -t onionkim/redditlike-front .

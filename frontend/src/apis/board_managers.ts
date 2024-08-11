@@ -4,7 +4,7 @@ import type { BoardManagerFormT, ListBoardManagerOptionT, GetBoardManagerOptionT
 
 const root = "/board-managers";
 
-export async function getMe(boardId: idT): Promise<R.GetMeRsp> {
+export async function getMe(boardId: idT ): Promise<R.GetMeRsp> {
   const rsp = await server.get(`${root}/boards/${boardId}/me`);
   return rsp.data;
 }

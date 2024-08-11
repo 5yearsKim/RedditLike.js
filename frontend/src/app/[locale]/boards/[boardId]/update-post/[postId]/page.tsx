@@ -5,6 +5,7 @@ import { ErrorBox } from "@/components/$statusTools";
 import * as PostApi from "@/apis/posts";
 import { toId } from "@/utils/formatter";
 import { UpdatePostPage } from "@/$pages/UpdatePostPage";
+import { setupServerSideFetch } from "@/system/server";
 import type { GetPostOptionT } from "@/types";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,6 +28,8 @@ export default async function UpdatePost({ params }: UpdatePostProps): Promise<J
   }
 
   try {
+    setupServerSideFetch();
+
     const getOpt: GetPostOptionT = {
       $defaults: true,
     };

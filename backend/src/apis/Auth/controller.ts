@@ -6,6 +6,7 @@ import {
   GoogleLoginDto,
   EmailLoginDto,
   FakeLoginDto,
+  TemporaryLoginDto,
 } from "./dtos";
 import { env } from "@/env";
 import * as err from "@/errors";
@@ -27,6 +28,13 @@ export class AuthController {
   async emailLogin(@Body() body: EmailLoginDto): Promise<R.EmailLoginRsp> {
     const { email, code } = body satisfies R.EmailLoginRqs;
     const session = await this.service.verifyEmailLogin(email, code);
+    return session;
+  }
+
+  @Post("/temporary-login")
+  async temporaryLogin(@Body() body: TemporaryLoginDto): Promise<R.TemporaryLoginRsp> {
+    const { id } = body satisfies R.TemporaryLoginRqs;
+    const session = await this.service.temporaryLogin(id);
     return session;
   }
 

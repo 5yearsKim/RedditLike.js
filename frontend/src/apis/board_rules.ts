@@ -10,7 +10,7 @@ export async function create(form: BoardRuleFormT): Promise<R.CreateRsp> {
   return rsp.data;
 }
 
-export async function list(listOpt: ListBoardRuleOptionT ): Promise<R.ListRsp> {
+export async function list(listOpt: ListBoardRuleOptionT): Promise<R.ListRsp> {
   const params = listOpt as R.ListRqs;
   const rsp = await server.get(`${root}`, { params });
   return rsp.data;

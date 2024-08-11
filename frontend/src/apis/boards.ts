@@ -10,7 +10,6 @@ export async function get(id: idT, option: GetBoardOptionT = {}): Promise<R.GetR
   return rsp.data;
 }
 
-
 export async function list(option: ListBoardOptionT): Promise<R.ListRsp> {
   const params: R.ListRqs = option;
   const rsp = await server.get(`${root}`, { params });

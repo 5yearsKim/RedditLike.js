@@ -11,6 +11,8 @@ import * as PostApi from "@/apis/posts";
 import { PostPage } from "@/$pages/PostPage";
 import type { GetPostOptionT } from "@/types";
 
+import {server} from '@/system/server'
+
 type MetadataProps = {
   params: { postId: string }
   searchParams: { [key: string]: string | string[] | undefined }
@@ -25,6 +27,9 @@ export async function generateMetadata(
   { params }: MetadataProps,
 ): Promise<Metadata> {
   try {
+
+    server.defaults.baseURL = 'http://backend:3030'
+
     const post = await getPost(parseInt(params.postId));
 
     let description = extractText(post.body ?? "", post.body_type);
@@ -87,6 +92,9 @@ export default async function PostMain({ params }: PostMainProps): Promise<JSX.E
       $board: true,
       $pin: true,
     };
+
+    server.defaults.baseURL = 'http://backend:3030'
+
     const { data: post } = await userTH.serverFetchWithCookie(cookies, async () => {
       return await PostApi.get(postId, getOpt);
     });

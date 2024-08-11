@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run --env-file ./._env.local \
+docker run\
   -d \
   -p 3010:3010 \
   --name redditlike-front \
