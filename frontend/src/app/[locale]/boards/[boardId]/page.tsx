@@ -10,11 +10,10 @@ import * as BoardUserApi from "@/apis/board_users";
 import * as FlagApi from "@/apis/flags";
 import * as BoardRuleApi from "@/apis/board_rules";
 import { toId } from "@/utils/formatter";
-import { buildImgUrl } from "@/utils/media";
+// import { buildImgUrl } from "@/utils/media";
 import { BoardMainPage } from "@/$pages/BoardMainPage";
 
 import { LRUCache } from "lru-cache";
-import { setupServerSideFetch } from "@/system/server";
 import type { GetBoardOptionT, BoardT } from "@/types/Board";
 
 type MetadataProps = {
@@ -33,7 +32,6 @@ const getBoard = async (boardId: idT) => {
   if (cached) {
     return cached;
   }
-  setupServerSideFetch();
   const rsp = await BoardApi.get(boardId, {});
   const board = rsp.data;
   boardCache.set(boardId, board);
@@ -97,7 +95,6 @@ export default async function BoardMain({ params }: BoardMainProps): Promise<JSX
       { data: flags },
       { data: rules },
     ] = await userTH.serverFetchWithCookie(cookies, async () => {
-      setupServerSideFetch();
       return await Promise.all([
         BoardApi.get(boardId, getOpt),
         BoardManagerApi.getMe(boardId),

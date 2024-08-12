@@ -2,7 +2,7 @@
 type MyEnvT = {
   STAGE: "dev"|"prod"
   API_URL: string
-  API_URL_FROM_DOCKER: string
+  API_URL_FROM_SERVER: string
   SOCKET_URL: string
   // This features disable all oauth features and allow only fake login.
   // Good way to start empty website template without any third party dependancy(Google auth and so on)
@@ -24,7 +24,7 @@ function validateEnv(): MyEnvT {
     console.warn("API_URL should be given");
     API_URL = "http://localhost:3030";
   }
-  const API_URL_FROM_DOCKER = process.env.NEXT_PUBLIC_API_URL_FROM_DOCKER ?? API_URL;
+  const API_URL_FROM_SERVER = process.env.NEXT_PUBLIC_API_URL_FROM_SERVER ?? API_URL;
 
   let SOCKET_URL = process.env.NEXT_PUBLIC_SOCKET_URL ?? "";
   if (SOCKET_URL == "") {
@@ -39,7 +39,7 @@ function validateEnv(): MyEnvT {
   return {
     STAGE: STAGE as ("dev"|"prod"),
     API_URL,
-    API_URL_FROM_DOCKER,
+    API_URL_FROM_SERVER,
     SOCKET_URL,
     TEMPORARY_LOGIN_ONLY,
     OAUTH_GOOGLE_ID,
