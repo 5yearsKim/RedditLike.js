@@ -1,7 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 
-echo 'Updating database schema..'
-pnpm mlatest
 
-echo 'running pm2 process..'
-pm2-runtime start scripts/ecosystem.config.js
+# Run database migrations
+echo "Running migrations..."
+knex --knexfile ./dist/knexfile.js migrate:latest
+
+
+# Start the application
+echo "Starting the application..."
+node ./dist/main.js &
+node ./dist/socket_main.js &
+
+# Wait for all background processes to finish
+wait
