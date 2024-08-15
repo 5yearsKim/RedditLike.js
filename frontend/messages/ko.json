@@ -38,6 +38,9 @@
     "EmailLogin": {
       "title": "이메일 로그인"
     },
+    "TemporaryLogin": {
+      "title": "임시 계정 로그인"
+    },
     "Hot": {
       "title": "인기 게시글"
     },
@@ -829,6 +832,13 @@
         "postSetting": "게시글 설정"
       }
     },
+    "TemporaryLoginPage": {
+      "loggedIn": "로그인 되었습니다.",
+      "toHome": "홈으로",
+      "temporaryLogin": "임시 계정 로그인",
+      "temporaryLoginDesc": "임시 계정 로그인을 통해 아무 인증 절차 없이 로그인을 할 수 있습니다.",
+      "login": "로그인"
+    },
     "UpdatePostPage": {
       "shouldFlag":"\"{boardName}\"에서는 플래그 설정이 필수에요. 플래그를 선택해주세요.",
       "shouldTitle":"게시글의 제목을 입력해주세요.",
@@ -1383,17 +1393,17 @@
       "EditableTextField": {
         "cancel": "취소",
         "apply": "적용"
+      },
+      "ImageCropper": {
+        "zoom": "줌",
+        "rotate": "회전",
+        "cancel": "취소",
+        "apply": "적용"
+      },
+      "ImageModal": {
+        "thisPicture": "이 사진만",
+        "all": "모두"
       }
-    },
-    "ImageCropper": {
-      "zoom": "줌",
-      "rotate": "회전",
-      "cancel": "취소",
-      "apply": "적용"
-    },
-    "ImageModal": {
-      "thisPicture": "이 사진만",
-      "all": "모두"
     }
   },
   "hooks": {
@@ -1422,6 +1432,7 @@
       },
       "LoginDialog": {
         "loginWithEmail": "이메일로 로그인",
+        "loginTemporaryAccount": "임시 계정 로그인",
 
         "GoogleLoginButton": {
           "loginSuccess": "{email}로 로그인했어요 :)",

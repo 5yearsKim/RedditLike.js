@@ -14,6 +14,10 @@ export type EmailLoginRqs = {
 };
 export type EmailLoginRsp = UserSessionT
 
+// (POST) /temporary-login
+export type TemporaryLoginRqs = {id: string}
+export type TemporaryLoginRsp = UserSessionT
+
 // (POST) /fake-login
 export type FakeLoginRqs = {
   email: string;

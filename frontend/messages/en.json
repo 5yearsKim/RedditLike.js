@@ -38,6 +38,9 @@
     "EmailLogin": {
       "title": "Email Login"
     },
+    "TemporaryLogin": {
+      "title": "Temporary Login"
+    },
     "Hot": {
       "title": "Popular Posts"
     },
@@ -829,6 +832,13 @@
         "postSetting": "Post Settings"
       }
     },
+    "TemporaryLoginPage": {
+      "loggedIn": "Logged in.",
+      "toHome": "To Home",
+      "temporaryLogin": "Temporary Login",
+      "temporaryLoginDesc": "Temporary Login allow you to login with temporary account without any verification.",
+      "login": "Login"
+    },
     "UpdatePostPage": {
       "shouldFlag": "Please select a flag for \"{boardName}\" as it's mandatory.",
       "shouldTitle": "Please enter a title for the post.",
@@ -1422,6 +1432,7 @@
       },
       "LoginDialog": {
         "loginWithEmail": "Login with Email",
+        "loginTemporaryAccount": "Login Temporary Account",
   
         "GoogleLoginButton": {
           "loginSuccess": "Logged in with {email} :)",

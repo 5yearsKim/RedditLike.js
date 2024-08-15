@@ -10,7 +10,7 @@ import * as BoardUserApi from "@/apis/board_users";
 import * as FlagApi from "@/apis/flags";
 import * as BoardRuleApi from "@/apis/board_rules";
 import { toId } from "@/utils/formatter";
-import { buildImgUrl } from "@/utils/media";
+// import { buildImgUrl } from "@/utils/media";
 import { BoardMainPage } from "@/$pages/BoardMainPage";
 
 import { LRUCache } from "lru-cache";
@@ -46,18 +46,18 @@ export async function generateMetadata(
     return {
       title: board.name,
       description: board.description,
-      openGraph: {
-        type: "website",
-        title: board.name,
-        description: board.description,
-        images: board.avatar_path ? [buildImgUrl(null, board.avatar_path)] : [],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: board.name,
-        description: board.description,
-        images: board.avatar_path ? [buildImgUrl(null, board.avatar_path)] : [],
-      },
+      // openGraph: {
+      //   type: "website",
+      //   title: board.name,
+      //   description: board.description,
+      //   images: board.avatar_path ? [buildImgUrl(null, board.avatar_path)] : [],
+      // },
+      // twitter: {
+      //   card: "summary_large_image",
+      //   title: board.name,
+      //   description: board.description,
+      //   images: board.avatar_path ? [buildImgUrl(null, board.avatar_path)] : [],
+      // },
     };
   } catch (e) {
     const t = await getTranslations("app.BoardMain");

@@ -14,6 +14,11 @@ export class EmailLoginDto extends createZodDto(z.object({
   code: z.string().min(1)
 })) {}
 
+// temporary login
+export class TemporaryLoginDto extends createZodDto(z.object({
+  id: z.string(),
+})) {}
+
 
 // fake-login
 export class FakeLoginDto extends createZodDto(z.object({

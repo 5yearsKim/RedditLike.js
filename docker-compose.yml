@@ -3,7 +3,7 @@
 services:
   db:
     image: postgres:14-alpine
-    container_name: "redditlike-db"
+    container_name: redditlike-db
     env_file:
       - ./envs/.env.db
     ports:
@@ -22,6 +22,14 @@ services:
       - "3031:3031"
     env_file:
       - ./envs/.env.backend
+
+  front:
+    depends_on:
+      - backend
+    image: onionkim/redditlike-front
+    container_name: redditlike-front
+    ports:
+      - "3010:3010"
 
 volumes:
   db_data:

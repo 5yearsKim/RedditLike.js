@@ -6,10 +6,13 @@ export type AxiosOptions = {
   headers?: { [key: string]: string };
 };
 
+const isClient = typeof window !== "undefined";
+
 const server = axios.create({
-  baseURL: env.API_URL,
+  baseURL: isClient ? env.API_URL : env.API_URL_FROM_SERVER,
   timeout: 10000,
 });
+
 
 // current tokens
 server.interceptors.request.use(
