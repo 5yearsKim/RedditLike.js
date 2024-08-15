@@ -32,7 +32,7 @@ export function LoginDialogShared(): ReactNode {
 
   function handleEmailLoginClick(): void {
     if (env.TEMPORARY_LOGIN_ONLY) {
-      alert("This app is not configured to support email login. (degub: disable TEMPORARY_LOGIN_ONLY)");
+      alert("This app is not configured to support email login. (debug: disable TEMPORARY_LOGIN_ONLY)");
       return;
     }
     router.push("/email-login");
