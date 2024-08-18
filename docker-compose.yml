@@ -12,10 +12,10 @@ services:
       - db_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 4s
-      timeout: 3s
-      retries: 3 
-
+      start_period: 2s    # Wait for n second before starting health checks
+      interval: 10s       # Time between each health check
+      timeout: 3s         # Time to wait for a health check to respond
+      retries: 3          # Number of consecutive failures needed to consider the container as unhealthy
 
 
   backend:
